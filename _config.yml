@@ -1,15 +1,15 @@
 # Site settings
-title: Clean Blog
+title: 자기개발자 개발블로그 devlog
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-copyright_name: Your/Project/Corporate Name
-description: "Write your site description here. It will be used as your sites meta description as well!"
-baseurl: "/startbootstrap-clean-blog-jekyll"
-url: "http://yourdomain.com"
+email: zooqzqz@gmail.com
+copyright_name: isme2n/자기개발자/개발블로그
+description: "자기개발자"
+baseurl: ""
+url: "http://isme2n.github.io"
 twitter_username: SBootstrap
 github_username:  davidtmiller
 facebook_username:  StartBootstrap
-email_username:  your-email@yourdomain.com
+email_username:  zooqzqz@gmail.com
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
