@@ -13,7 +13,7 @@ email_username:  zooqzqz@gmail.com
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
-# google_tracking_id:
+google_tracking_id: UA-92346434-1
 
 # Build settings
 markdown: kramdown
