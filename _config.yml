@@ -1,8 +1,8 @@
 # Site settings
-title: 자기개발자  devlog
+title: 자기개발자 개발블로그
 header-img: img/home-bg.jpg
 email: zooqzqz@gmail.com
-copyright_name: isme2n/자기개발자/개발블로그
+copyright_name: isme2n/자기개발자
 description: "자기개발자"
 baseurl: ""
 url: "http://isme2n.github.io"
