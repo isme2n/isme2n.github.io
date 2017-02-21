@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "TIL-JavaScript 스크롤 위치 옮기기"
+subtitle:   "세로로 길게 늘어지는 모바일 디바이스 브라우저의 특성상"
 date:   2017-02-09 20:21:33 +0900
 categories: TIL dev JavaScript
 ---

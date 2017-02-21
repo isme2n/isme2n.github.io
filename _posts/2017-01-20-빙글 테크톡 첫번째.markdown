@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "빙글 테크톡 첫번째"
+subtitle:   "Techtalk at Vingle 1"
 categories: review dev
 ---
 

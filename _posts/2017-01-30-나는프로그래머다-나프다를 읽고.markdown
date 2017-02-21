@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "나는 프로그래머다 - 나프다를 읽고"
+subtitle:   "팟캐스트 중에 *'나는 프로그래머다'* 라는 방송이 있다."
 date:   2017-01-31 20:21:33 +0900
 categories: review dev
 ---

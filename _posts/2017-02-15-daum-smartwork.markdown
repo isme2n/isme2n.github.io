@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "startup - daum 스마트워크로 기업메일 만들기"
+subtitle:   "기업메일이 없다는건 스타트업이라 할지라도 전문성과 자부심이 없어보일 수 있다."
 categories: startup TIL 
 ---
 

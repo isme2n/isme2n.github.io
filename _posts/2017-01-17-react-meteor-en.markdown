@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "react-redux-material-meteor-en"
+subtitle:   "react-redux-material front-end x meteor back-end"
 categories: review dev
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "TIL - git 되돌리기"
+subtitle:   "실수했다."
 categories: TIL dev
 ---
 

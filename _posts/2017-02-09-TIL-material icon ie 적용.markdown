@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "TIL - React Material Icon IE 적용"
+subtitle:   "Material Icon을 적용한 React 프로젝트는"
 date:   2017-02-09 20:21:33 +0900
 categories: TIL dev
 ---
