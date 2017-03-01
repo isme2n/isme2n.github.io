@@ -19,7 +19,7 @@ categories: meteor dev
     ```
     를 이용해 백그라운드 프로세스로 보낸다.
 2. 아래 명령어로 내가 시킨거 아니니까 계속 돌리라고 한다.
-    > disown -h
+    > $ disown -h
 
     
 

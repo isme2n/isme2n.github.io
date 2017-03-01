@@ -401,3 +401,11 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+
+.share h4{
+  font-size:0.83em;
+}
+
+.fa-sm {
+  font-size:0.85em;
+}

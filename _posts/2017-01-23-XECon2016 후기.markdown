@@ -7,8 +7,7 @@ categories: review dev
 
 XECon 2016에 다녀와서 메모한 것들을 정리해 본다.
 
-
- # webpack 실무
+# webpack 실무
 
  레진 개발자.
 
@@ -17,11 +16,12 @@ XECon 2016에 다녀와서 메모한 것들을 정리해 본다.
  로더 - 파일을 핸들링 -리소스파일 변환 - babel loader, css loader
  플러그인 - 청크를 핸들링
 
- ## 웹팩을 선택한 이유
+## 웹팩을 선택한 이유
 
  * ES2015(ES6)를 사용하기 위해
 
- ## 후보
+## 후보
+
  * 브라우저리파이
  * 시스템 JS
  * 웹팩
@@ -37,6 +37,7 @@ XECon 2016에 다녀와서 메모한 것들을 정리해 본다.
 * webpack dev server
 
 # 프론트엔드 스택변화 : JQuery, Backbone, ReactJS
+
 텀블벅 개발자.
 
 JQuery - 복잡한 클라에 대응

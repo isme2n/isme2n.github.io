@@ -19,6 +19,8 @@ layout: default
     </div>
 </header>
 
+
+
 <!-- Post Content -->
 <article>
     <div class="container">
@@ -28,7 +30,24 @@ layout: default
 				{{ content }}
 
                 <hr>
-
+            <div class="share">
+                <h4>Share this post</h4>
+                        <a href="http://twitter.com/share?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="fa-stack fa-sm">
+                                <i class="fa fa-circle fa-stack-2x "></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="fa-stack fa-sm">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                </div>
+                <hr>
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -45,6 +64,17 @@ layout: default
             </div>
         </div>
     </div>
-</article>
 
+
+<!-- jQuery -->
+<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
+
+
+</article>
 <hr>
