@@ -125,7 +125,7 @@ const logger = new (winston.Logger)({
 
 maxSize를 넘어가면 새로운 파일이 생기고, maxFiles만큼만 생성된다.
 
-results.log 다음은 results1.log이런식으로 생성된다.
+logs.log 다음은 logs1.log이런식으로 생성된다.
 
 ### 날짜별로 로그 파일관리하기
 
@@ -134,7 +134,7 @@ results.log 다음은 results1.log이런식으로 생성된다.
 winston-daily-rotate-file을 설치하자
 
 ```
-npm install --save winston-daily-ratate-file
+npm install --save winston-daily-rotate-file
 ```
 
 풀 소스는 이렇다.
