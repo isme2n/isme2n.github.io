@@ -23,7 +23,9 @@ npm install --save winston
 
 임포트해보자.
 
-### 기본 설정
+## 기본 설정
+
+---
 
 ```js
 var winston = require('winston');
@@ -56,7 +58,9 @@ logger.error('에러 로깅');
 
 나는 날짜별로 관리하기때문에 시간만 찍어보았다.
 
-### 타임스탬프 찍기
+## 타임스탬프 찍기
+
+---
 
 ```js
 const winston = require('winston');
@@ -83,7 +87,9 @@ logger.info('Hello world');
 
 커스텀도 가능하지만 그건 다루지 않을거고 [Winston 공식문서](https://github.com/winstonjs/winston)를 참조하자.
 
-### 파일로 로그 관리하기
+## 파일로 로그 관리하기
+
+---
 
 먼저 파일로 로그를 관리하기 위해 파일시스템 라이브러리 fs를 설치한다.
 
@@ -127,7 +133,9 @@ maxSize를 넘어가면 새로운 파일이 생기고, maxFiles만큼만 생성�
 
 logs.log 다음은 logs1.log이런식으로 생성된다.
 
-### 날짜별로 로그 파일관리하기
+## 날짜별로 로그 파일관리하기
+
+---
 
 원래는 winston안에 daily-rotate-file이 함께 있었는데, 어떤이유에서인지 분리되어 나왔다.
 
