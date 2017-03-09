@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blog테마 고를 때 고려할 5가지"
+title:  "Blog 테마 체크리스트 5가지"
 subtitle:   "블로그를 시작할 때, 아주 큰 고민이생긴다."
 categories: git jekyll dev
 ---
