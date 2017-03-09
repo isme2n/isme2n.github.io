@@ -15,6 +15,9 @@ email_username:  zooqzqz@gmail.com
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
 google_tracking_id: UA-92346434-1
 
+# Disqus comments
+disqus_shortname: isme2n
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
