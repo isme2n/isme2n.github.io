@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blog로써의 Jekyll테마 추천 5가지"
+title:  "Jekyll Blog 추천 테마 5가지"
 subtitle:   "요즘 Github Pages 기반의 블로그가 많아지고있다."
 categories: git jekyll dev
 ---
