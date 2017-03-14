@@ -48,7 +48,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 소개하는 모든 테마는 이름을 클릭하면 데모페이지로 이동한다.
 
-* #### [Jasper](https://biomadeira.github.io/jasper/)
+* ### [Jasper](https://biomadeira.github.io/jasper/)
 
 한동안 거의 세계를 재패했던 고스트의 대표적인 테마의 Jekyll판이다. 고스트는 설치형 블로그이기 때문에 진입장벽을 느끼는 분들이 많은데, 그런 때 이 테마는 정말 딱이다.
 
@@ -56,7 +56,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 댓글은 지원하지 않지만 개발자라면 댓글 붙이는데 몇분 걸리지 않는다.
 
-* #### [Long Haul](http://brianmaierjr.com/long-haul/)
+* ### [Long Haul](http://brianmaierjr.com/long-haul/)
 
 요즘 디자인트랜드는 '기존의 것들 박살내기'다. 정사각형에서, 그리드에서 벗어나자 뭐 이런내용인데 가장 쉽게 접할 수 있는게 사선또는 다른 도형을 본따서 레이아웃을 조금 바꾸는 거다.
 
@@ -66,7 +66,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 공유하기와 댓글은 지원하지 않지만 역시 개발자라면 몇분이면 달 수 있다.
 
-* #### [Vanilla Bean Creme](http://richbray.me/frap/vbc/)
+* ### [Vanilla Bean Creme](http://richbray.me/frap/vbc/)
 
 이 테마는 좀 재미있다. 오직 글. 거의 글을 위해 만들어진 테마라고 할 수 있을 것 같다. 그것도 꽤 긴 분량의 글을 소화했을 때 가장 아름다운 레이아웃을 가지고 있다.
 
@@ -76,7 +76,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 공유하기와 댓글은 지원하지 않는다.
 
-* #### [Clean Blog](https://blackrockdigital.github.io/startbootstrap-clean-blog/)
+* ### [Clean Blog](https://blackrockdigital.github.io/startbootstrap-clean-blog/)
 
 이 테마는 현재 내가 쓰고있는 테마이다. 서체도 깔끔하고 레이아웃도 좋다. 흠이라면 줄간격이나 세세한 것들이 좀 아쉽긴한데, 아주 좋은 테마라고 생각한다.
 
@@ -86,7 +86,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 공유하기와 댓글은 지원하지 않는다.
 
-* #### [Centrarium](http://bencentra.com/centrarium/)
+* ### [Centrarium](http://bencentra.com/centrarium/)
 
 내가 아마 Clean Blog테마를 사용하지 않았다면 이 테마를 사용하고 있었을거다. 사실 아직도 고민중이다. 서체가 제목은 산세리프였으면 좋겠는데, 그거야 커스텀하면 될 것 같다.
 
