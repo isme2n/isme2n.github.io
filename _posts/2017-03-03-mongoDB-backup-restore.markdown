@@ -13,6 +13,8 @@ DB이전이라던지 사고라던지에 대비해 백업은 숙명이다.
 
 ### 몽고DB 백업
 
+---
+
 ```
 mongodump -h 127.0.0.1:3001 –db meteor  –out  backups
 ```
@@ -23,6 +25,8 @@ backups/meteor라는 경로로 저장되어있다.
 
 ### 몽고DB 리스토어
 
+---
+
 ```
 mongorestore -h 127.0.0.1:3001 --db meteor backups/meteor/
 ```
@@ -30,6 +34,8 @@ mongorestore -h 127.0.0.1:3001 --db meteor backups/meteor/
 이 라인으로 깔끔하게 복원된다.
 
 ### 끝으로
+
+---
 
 DB관리를 소중히하자.
 
