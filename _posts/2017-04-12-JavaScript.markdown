@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "JavaScript에 대해"
+title:  "개발자를 위한 JavaScript"
 subtitle:   "대 자바스크립트 시대라고 할 수 있다."
-categories: aws review dev
+categories: javascript review dev
 ---
 
 대 자바스크립트 시대라고 할 수 있다.
@@ -144,6 +144,8 @@ for(var index in arr){
 function.apply(맥락,인자)
 
 함수를 맥락의 함수로 만든다.
+
+맥락에 객체를 넣는다면 객체의 함수로 사용하는 것 처럼 된다.
 
 ## 자주쓰는 Math함수
 ---
