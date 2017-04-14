@@ -8,6 +8,7 @@ categories: jwt review dev
 실제구조에 대해 알아보자.
 
 ## JWT란?
+---
 
 - JWT(JSON Web Token)는 웹표준([RFC 7519](https://tools.ietf.org/html/rfc7519))으로 JSON 객체를 사용하여 정보를 안전성있게 전달해준다.
 
@@ -20,8 +21,11 @@ categories: jwt review dev
 - 회원 인증과 정보 교류에 자주사용된다.
 
 ## JWT의 구조
+---
 
+```
 **헤더.내용.서명**
+```
 
 - ### 헤더 (JSON Object Signing and Encryption header)
 
