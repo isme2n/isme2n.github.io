@@ -24,7 +24,7 @@ categories: jwt review dev
 ---
 
 ```
-**헤더.내용.서명**
+헤더.내용.서명
 ```
 
 - ### 헤더 (JSON Object Signing and Encryption header)
