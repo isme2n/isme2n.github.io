@@ -65,7 +65,7 @@ categories: javascript review dev
 
 아래처럼 사용한다.
 
-```
+```js
 function Person(name){
     this.name = name;
     this.greeting = function(){
@@ -83,7 +83,7 @@ prototype은 원형이라고 할 수 있다.
 
 이를 사용해서 상속을 구현할 수 있다.
 
-```
+```js
 function Person(name){
     this.name = name;
     this.greeting = function(){
