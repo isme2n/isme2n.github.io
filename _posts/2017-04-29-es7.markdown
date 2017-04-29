@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "프론트엔드 개발자를 위한 ES6 #2"
+subtitle:   "ES6에 대해 알아보자."
+categories: javascript es6 dev
+---
+
+계속 이어서 알아보겠습니다.
+
+총 3부작이 될 예정입니다.
