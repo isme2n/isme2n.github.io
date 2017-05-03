@@ -10,6 +10,7 @@ ES6에 대해서 이어서 알아보자.
 총 3부작이 될 예정이다.
 
 ### Enhanced object Properties
+---
 
 - #### Property Shorhand
 
@@ -49,6 +50,7 @@ obj = {
 ```
 
 ### Destructuring Assignment
+---
 
 - #### Array Matching
 
@@ -113,6 +115,7 @@ d === undefined
 ```
 
 ### Modules
+---
 
 - #### Value Export/Import
 
@@ -148,6 +151,7 @@ console.log("e^{π} = " + exp(pi))
 ```
 
 ### Class
+---
 
 - #### Class Definition
 
@@ -319,6 +323,9 @@ r.area === 1000
 
 ### Symbol Type
 
+---
+
+
 - #### Symbol Type
 
 객체의 프로퍼티로 유니크하고 변하지않는 데이터타입이 식별자로써 사용되곤한다. 심볼은 디버깅목적으로 설명을 가질 수 있다.
@@ -360,6 +367,7 @@ Object.getOwnPropertySymbols(obj) // [ foo, bar ]
 ```
 
 ### Iterators
+---
 
 - #### Iterator & For-Of Operator
 
@@ -386,6 +394,7 @@ for (let n of fibonacci) {
 ```
 
 ### Generator
+---
 
 - #### Generator Function, Iterator Protocol
 
