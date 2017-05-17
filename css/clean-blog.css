@@ -411,3 +411,7 @@ body {
 .fa-sm {
   font-size:0.85em;
 }
+
+.adsbygoogle { width: 320px; height: 100px; }
+@media(min-width: 500px) { .adsbygoogle { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .adsbygoogle { width: 728px; height: 90px; } }
