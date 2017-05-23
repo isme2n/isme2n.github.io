@@ -21,6 +21,7 @@ phantomjs를 설치하고 사용하는데 horseman라이브러리를 사용하�
 디펜던시가 있기 때문인데 아래와 같은 명령어로 해결 가능하다.
 
 > $ sudo apt install -y libfontconfig
+
 > $ sudo apt install -y libfreetype6
 
 의존 라이브러리들을 설치하고나면 잘 실행된다.
