@@ -27,7 +27,7 @@ categories: jwt review dev
 헤더.내용.서명
 ```
 
-- ### 헤더 (JSON Object Signing and Encryption header)
+### 헤더 (JSON Object Signing and Encryption header)
 
 헤더는 두가지 정보를 지니고 있다.
 
@@ -45,13 +45,13 @@ categories: jwt review dev
 ```
 이 정보를 base64로 인코딩한 값이 헤더가 된다.
 
-- ### 내용 (JWT Claim Set / Payload)
+### 내용 (JWT Claim Set / Payload)
 
 내용에는 전달된 내용을 넣는다. 보통 라이브러리를 사용하면 내가 전달하고 싶은 것만 신경쓰면 되지만 실제로는 꽤 많은게 포함된다.
 
 등록 클레임, 공개 클레임, 비밀 클레임
 
-- #### 등록 클레임 (Registered)
+#### 등록 클레임 (Registered)
 
 모든 값이 필수 값은 아니지만 기본값이 정해져있다. 선택적으로 이용하면 된다.
 
@@ -63,11 +63,12 @@ categories: jwt review dev
 - iat: 토큰이 발급된 시간 (issued at)
 - jti: 고유식별자 (jwt identity)
 
-- #### 공개 클레임 (Public)
+
+#### 공개 클레임 (Public)
 
 충돌방지를 위해 공개된 클레임이다. 보통 URI형식으로 짓는다.
 
-- #### 비공개 클레임 (Private)
+#### 비공개 클레임 (Private)
 
 서버와 클라이언트간에 협의된 클레임 이름이다.
 
@@ -80,7 +81,7 @@ categories: jwt review dev
 }
 ```
 
-- ### 서명(Signature)
+### 서명(Signature)
 
 서명은 헤더의 base64값과 내용의 base64값을 합친 후 비밀키로 해쉬하여 생성한다.
 
