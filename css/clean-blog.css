@@ -412,9 +412,9 @@ body {
 .fa-sm {
   font-size:0.85em;
 }
-
+.pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
-@media(min-width: 500px) { .topAds { width: 468px; height: 60px; } }
+@media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
 @media(min-width: 800px) { .pc-ads { display: inline-block; } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
