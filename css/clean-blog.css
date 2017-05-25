@@ -412,6 +412,9 @@ body {
 .fa-sm {
   font-size:0.85em;
 }
+
+.top-ads-align { text-align: center; }
+
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
 @media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
