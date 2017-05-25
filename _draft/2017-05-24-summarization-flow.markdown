@@ -60,3 +60,25 @@ return 요약;
 셀레니움 - https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
 
 
+API
+
+list/:site/:section
+ex) list/brunch/IT
+
+output
+
+{
+    0: {
+        title : 'title0',
+        summarized : 'contents0',
+        origin : 'linkUrl0'
+    },
+    
+    1: {
+        title : 'title1',
+        summarized : 'contents1',
+        origin : 'linkUrl1'
+    }
+
+}
+
