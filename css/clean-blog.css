@@ -416,7 +416,8 @@ body {
 
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
-@media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
+.markdown-body { font-size : 16px; }
+@media(min-width: 500px) { .markdown-body { font-size : 16px; } .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
 @media(min-width: 720px) { .markdown-body { font-size : 1.8em; } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
@@ -428,7 +429,6 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: #333;
-  font-size: 16px;
   font-family: "Nanum Barun Gothic", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
   padding-left: 3%;
