@@ -7,7 +7,7 @@ categories:  til react
 
 React 컴포넌트를 만들다 고민이 생겼다.
 
-Stateless 컴포넌트를 만들까? Stateful 컴포넌트를 만들까?
+> Stateless 컴포넌트를 만들까? Stateful 컴포넌트를 만들까?
 
 결론부터 이야기하면 가능한 한 stateless 컴포넌트를 만들어라.
 

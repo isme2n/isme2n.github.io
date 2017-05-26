@@ -8,7 +8,7 @@ body {
   font-family: 'Lora', 'Times New Roman', serif;
   color: #404040;
   word-break: keep-all;
-  line-height: 1.64;
+  line-height: 1.72;
   font-size: 16px;
 }
 p {
@@ -418,26 +418,36 @@ body {
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
 @media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
-@media(min-width: 720px) { .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
+@media(min-width: 720px) { .markdown-body { font-size : 1.06em; } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
   font-family: 'Nanum Barun Gothic';
   src: url('../fonts/NanumBarunGothicLight.woff') format('woff');
 }
 
+@media(max-width: 700px) {
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: #333;
-  font-family: "Nanum Barun Gothic", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
   padding-left: 3%;
   padding-top: 0%;
   padding-right: 3%;
   padding-bottom: 6%;
+  word-wrap: break-word;
+  font-size: 16px;
 }
 
-@media(min-width: 720px) { .markdown-body { font-size : 1.16em; } }
+}
+
+.markdown-body {
+  font-family: "Nanum Barun Gothic", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body p {
+  word-break: break-word;
+}
 
 .markdown-body code,
 .markdown-body kbd,
