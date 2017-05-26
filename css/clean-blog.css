@@ -437,7 +437,7 @@ body {
   padding-bottom: 6%;
 }
 
-@media(min-width: 720px) { .markdown-body { font-size : 1.8em; } }
+@media(min-width: 720px) { .markdown-body { font-size : 4em; } }
 
 .markdown-body code,
 .markdown-body kbd,
