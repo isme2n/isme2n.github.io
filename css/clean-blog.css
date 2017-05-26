@@ -9,6 +9,7 @@ body {
   color: #404040;
   word-break: keep-all;
   line-height: 1.64;
+  font-size: 16px;
 }
 p {
   line-height: 1.64;
@@ -66,6 +67,9 @@ hr.small {
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.8em;
+  }
   .navbar-custom {
     background: transparent;
     border-bottom: 1px solid transparent;
@@ -416,9 +420,8 @@ body {
 
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
-.markdown-body { font-size : 16px; }
-@media(min-width: 500px) { .markdown-body { font-size : 16px; } .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
-@media(min-width: 720px) { .markdown-body { font-size : 1.8em; } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
+@media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
+@media(min-width: 720px) { .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
   font-family: 'Nanum Barun Gothic';
