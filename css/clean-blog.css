@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Lora', 'Times New Roman', serif;
-  font-size: 16px;
   color: #404040;
   word-break: keep-all;
   line-height: 1.64;
@@ -429,6 +428,7 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: #333;
+  font-size: 16px;
   font-family: "Nanum Barun Gothic", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
   padding-left: 3%;
