@@ -67,9 +67,6 @@ hr.small {
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
-  body {
-    font-size: 1.8em;
-  }
   .navbar-custom {
     background: transparent;
     border-bottom: 1px solid transparent;
