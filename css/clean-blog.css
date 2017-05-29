@@ -413,7 +413,7 @@ body {
   font-size:0.85em;
 }
 
-.top-ads-align { text-align: center; }
+.top-ads-align { display: flex; justify-content: space-around; }
 
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
