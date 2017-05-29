@@ -2,7 +2,8 @@
 layout: post
 title:  "Work & Life 밸런스"
 subtitle:   "일과 삶의 균형에 대해 이야기해보려한다."
-categories:  think work life 
+categories:  essay
+tags: work life
 ---
 
 일과 삶의 균형에 대해 이야기해보려한다.

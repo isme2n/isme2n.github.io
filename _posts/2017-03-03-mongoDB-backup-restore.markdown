@@ -2,7 +2,8 @@
 layout: post
 title:  "MongoDB Backup restore 하기"
 subtitle:   "DB만큼 소중한게 또 있을까."
-categories: meteor dev
+categories: mongoDB
+tags: mongodb backup restore
 ---
 
 DB만큼 소중한게 또 있을까.

@@ -441,6 +441,12 @@ body {
 
 }
 
+.category-head {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color : #111;
+}
+
 .markdown-body {
   font-family: "Nanum Barun Gothic", "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }

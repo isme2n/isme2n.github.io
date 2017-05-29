@@ -2,7 +2,8 @@
 layout: post
 title:  "JWT - 토큰기반인증 #2 구조"
 subtitle:   "실제구조에 대해 알아보자."
-categories: jwt review dev
+categories: JWT
+tags: jwt token
 ---
 
 실제구조에 대해 알아보자.

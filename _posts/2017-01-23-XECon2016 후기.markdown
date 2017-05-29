@@ -2,7 +2,8 @@
 layout: post
 title:  "XECon 2016 후기"
 subtitle:   "XECon 2016에 다녀와서 메모한 것들을 정리해 본다."
-categories: review dev
+categories: review
+tags: dev webpack xecon
 ---
 
 XECon 2016에 다녀와서 메모한 것들을 정리해 본다.

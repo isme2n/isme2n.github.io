@@ -2,7 +2,8 @@
 layout: post
 title:  "개발자를 위한 JavaScript - 2 객체지향적 자바스크립트"
 subtitle:   "자바스크립트의 객체지향적인 면모를 알아보자."
-categories: javascript review dev
+categories: javascript
+tags: javascript
 ---
 
 자바스크립트의 객체지향적인 면모를 알아보자.

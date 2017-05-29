@@ -2,7 +2,8 @@
 layout: post
 title:  "AWSome Day 후기"
 subtitle:   "AWSome Day에 다녀왔다."
-categories: aws review dev
+categories: review
+tags: aws
 ---
 
 AWSome Day에 다녀왔다.

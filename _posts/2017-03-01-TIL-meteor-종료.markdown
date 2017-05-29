@@ -2,7 +2,8 @@
 layout: post
 title:  "METEOR 프로세스 터미널 명령으로 종료시키기"
 subtitle:   "개발할 때 터미널 명령어는 익숙하면 편하다."
-categories: meteor dev
+categories: tip
+tags: linux
 ---
 
 개발할 때 터미널 명령어는 익숙하면 편하다.

@@ -2,7 +2,8 @@
 layout: post
 title:  "프론트엔드 개발자를 위한 ES6 #1"
 subtitle:   "ES6에 대해 알아보자."
-categories: javascript es6 dev
+categories: javascript
+tags : es6 javascript
 ---
 
 ES6에 대해 알아보자.

@@ -2,7 +2,8 @@
 layout: post
 title:  "Dynamic Programming - 알고리즘"
 subtitle:   "DP에 대해 알아보자."
-categories: algorythm dp dev
+categories: algorythm
+tags: algorythm dp
 ---
 
 ## DP란?

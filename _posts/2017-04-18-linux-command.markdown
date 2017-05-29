@@ -2,7 +2,8 @@
 layout: post
 title:  "Linux 명령어 정리"
 subtitle:   "Linux Command에 대해 알아보자."
-categories: linux command dev
+categories: linux
+tags: linux command
 ---
 
 리눅스 커맨드에 대해 알아보자.

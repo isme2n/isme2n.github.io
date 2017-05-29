@@ -2,7 +2,8 @@
 layout: post
 title:  "Meteor에서 publish 제대로 하기"
 subtitle:   "Meteor에서 publish할 때 조심해야 하는 경우가 있다."
-categories: meteor dev
+categories: meteor
+tags: meteor
 ---
 
 Meteor에서 publish할 때 조심해야 하는 경우가 있다.

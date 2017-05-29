@@ -2,7 +2,8 @@
 layout: post
 title:  "[강좌]React로 웹 어플리케이션 빌드하기"
 subtitle:   "React로 웹 어플리케이션 빌드하기"
-categories: javascript react dev
+categories: react
+tags: javascript react tutorial
 ---
 
 React로 웹 어플리케이션 빌드하기 동영상강좌를 촬영하고있습니다.

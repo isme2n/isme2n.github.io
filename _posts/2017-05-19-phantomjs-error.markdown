@@ -2,7 +2,8 @@
 layout: post
 title:  "Phantom immediately exited with: 127"
 subtitle:   "phantomjs를 쓸 일이 생겼다."
-categories:  conference javascript 
+categories:  web
+tags: nodejs 
 ---
 
 phantomjs를 쓸 일이 생겼다.

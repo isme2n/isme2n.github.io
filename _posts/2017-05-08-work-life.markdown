@@ -2,7 +2,8 @@
 layout: post
 title:  "일과 삶"
 subtitle:   "연휴를 맞아 휴가로 후쿠오카를 다녀왔다."
-categories:  work life 
+categories:  essay
+tags: work life
 ---
 
 연휴를 맞아 휴가로 후쿠오카를 다녀왔다. 여행을 다녀오면서 많은 생각을 하게 되었는데, 그 이야기를 해보려고 한다.

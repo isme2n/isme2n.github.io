@@ -2,7 +2,8 @@
 layout: post
 title:  "개발자를 위한 JavaScript"
 subtitle:   "대 자바스크립트 시대라고 할 수 있다."
-categories: javascript review dev
+categories: javascript
+tags: javascript
 ---
 
 대 자바스크립트 시대라고 할 수 있다.

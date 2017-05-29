@@ -2,7 +2,8 @@
 layout: post
 title:  "SPA(Single Page Application)에 대하여"
 subtitle:   "오늘은 SPA에 대해서 알아보려한다."
-categories:  spa javascript 
+categories:  web
+tags: javascript
 ---
 
 오늘은 SPA에 대해서 알아보려한다.

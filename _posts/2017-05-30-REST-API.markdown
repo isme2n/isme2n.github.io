@@ -2,7 +2,8 @@
 layout: post
 title:  "REST API #1 - REST의 기본"
 subtitle:   "REST에 대해 알아보자."
-categories:  think work life 
+categories:  web
+tags: rest 
 ---
 
 REST에 대해 알아보자.

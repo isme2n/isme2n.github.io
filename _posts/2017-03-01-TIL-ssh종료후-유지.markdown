@@ -2,7 +2,8 @@
 layout: post
 title:  "SSH 종료후에도 프로세스 유지시키기"
 subtitle:   "가끔 ssh접속을 통해 접근하는 경우가 있다."
-categories: meteor dev
+categories: linux
+tags: linux
 ---
 
 가끔 ssh접속을 통해 접근하는 경우가 있다.

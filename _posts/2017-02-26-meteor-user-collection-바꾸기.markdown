@@ -2,7 +2,8 @@
 layout: post
 title:  "Meteor default users 콜렉션 바꾸기"
 subtitle:   "Meteor는 기본적으로 유저컬렉션을 users로 fix해 놨다."
-categories: Meteor dev
+categories: meteor
+tags: meteor
 ---
 
 Meteor는 기본적으로 유저컬렉션을 users로 fix해 놨다.

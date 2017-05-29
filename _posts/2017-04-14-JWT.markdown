@@ -2,7 +2,8 @@
 layout: post
 title:  "JWT - 토큰기반인증 #1 장점과 작동원리"
 subtitle:   "토큰기반인증은 요즘 가장 핫한 인증개념이라고 할 수 있다."
-categories: jwt review dev
+categories: JWT
+tags: jwt token
 ---
 
 토큰기반인증은 요즘 가장 핫한 인증개념이라고 할 수 있다.

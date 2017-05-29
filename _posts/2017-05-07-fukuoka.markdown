@@ -2,7 +2,8 @@
 layout: post
 title:  "후쿠오카에서 3박 4일 - 1 Day 1 Commit"
 subtitle:   "연휴를 맞아 휴가로 후쿠오카로 출발했다."
-categories: javascript es6 dev
+categories: essay
+tags: 1day1commit
 ---
 
 연휴를 맞아 휴가로 후쿠오카로 출발했다.

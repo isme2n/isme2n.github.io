@@ -2,7 +2,8 @@
 layout: post
 title:  "secretary(기사 요약 크롬 확장프로그램) 개발"
 subtitle:   "요약 서비스를 만들고 있다."
-categories:  til regex 
+categories:  doc
+tags:  secretary 
 ---
 
 요약 서비스를 만들고 있다.

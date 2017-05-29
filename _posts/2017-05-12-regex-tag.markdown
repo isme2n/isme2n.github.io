@@ -2,7 +2,8 @@
 layout: post
 title:  "HTML 태그와 개행문자를 포함한 내용 찾기 정규표현식"
 subtitle:   "요약 서비스를 만들고 있다."
-categories:  til regex 
+categories:  web
+tags: regex
 ---
 
 요약 서비스를 만들고 있다.

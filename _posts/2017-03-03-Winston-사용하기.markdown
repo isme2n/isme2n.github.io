@@ -2,7 +2,8 @@
 layout: post
 title:  "Winston Logger 사용하기"
 subtitle:   "로그를 남기는건 중요하다."
-categories: meteor dev
+categories: meteor
+tags: nodejs meteor winston log
 ---
 
 로그를 남기는건 중요하다.

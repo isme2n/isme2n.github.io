@@ -2,14 +2,15 @@
 layout: post
 title:  "React Component - Stateless 또는 Stateful"
 subtitle:   "React 컴포넌트를 만들다 고민이 생겼다."
-categories:  til react 
+categories:  react
+tags: react component
 ---
 
 React 컴포넌트를 만들다 고민이 생겼다.
 
 > Stateless 컴포넌트를 만들까? Stateful 컴포넌트를 만들까?
 
-결론부터 이야기하면 가능한 한 stateless 컴포넌트를 만들어라.
+결론부터 이야기하면 가능한 한 stateless 컴포넌트를 만들자.
 
 ## Stateless 또는 Stateful
 

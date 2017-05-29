@@ -2,7 +2,8 @@
 layout: post
 title:  "react-redux-material-meteor-kr"
 subtitle:   "react-redux-material front-end x meteor back-end"
-categories: review dev
+categories: doc
+tags: dev boilerplate react meteor
 ---
 
 react-redux-material front-end x meteor back-end

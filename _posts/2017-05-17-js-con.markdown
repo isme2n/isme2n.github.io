@@ -2,7 +2,8 @@
 layout: post
 title:  "나는 자바스크립트 개발자다 컨퍼런스"
 subtitle:   "나는 자바스크립트 개발자다 컨퍼런스에 왔다."
-categories:  conference javascript 
+categories:  review
+tags: javascript 
 ---
 
 ## 코딩컨벤션 자동화 도구

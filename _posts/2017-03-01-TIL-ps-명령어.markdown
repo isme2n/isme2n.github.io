@@ -2,7 +2,8 @@
 layout: post
 title:  "ps, awk 명령어 사용하기"
 subtitle:   "개발할 때 터미널 명령어는 익숙하면 편하다."
-categories: Linux dev
+categories: linux
+tags: linux ps awk
 ---
 
 개발할 때 터미널 명령어는 익숙하면 편하다.
