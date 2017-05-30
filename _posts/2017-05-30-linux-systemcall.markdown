@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "리눅스 시스템 콜 추가하기"
-subtitle:   "리눅스 시스템 콜을 추가해보자."
+title:  "[리눅스] 라즈베리파이 시스템 콜 추가하기"
+subtitle:   "라즈베리파이에 시스템 콜을 추가해보자."
 categories:  linux
 tags: linux systemcall
 ---
