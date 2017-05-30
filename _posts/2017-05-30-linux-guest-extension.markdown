@@ -3,7 +3,7 @@ layout: post
 title:  "[리눅스]가상머신(virtualBox)에서 게스트 확장(드래그앤드롭, 클립보드 공유, 전체화면) 하기"
 subtitle:   "가상머신(virtualBox)에서 게스트 확장(드래그앤드롭, 클립보드 공유, 전체화면) 하기"
 categories:  linux
-tags: linux raspberrypi wlan
+tags: linux guest
 ---
 
 
