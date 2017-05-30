@@ -28,7 +28,7 @@ Jekyll은 Github Pages를 사용하기 쉽게 도와주는 스태틱 사이트 �
 
 ---
 
-[블로그 테마를 고를때 고려해야 할 점 5가지](https://isme2n.github.io/git/jekyll/dev/2017/03/09/Blog-Jekyll)는 아래와 같다.
+[블로그 테마를 고를때 고려해야 할 점 5가지](https://isme2n.github.io/jekyll/2017/03/09/Blog-Jekyll/)는 아래와 같다.
 
 * 첫째, 반응형이어야 한다.
 
