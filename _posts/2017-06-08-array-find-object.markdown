@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "JavaScript Array에서 Object 찾기"
-subtitle:   "JavaScript Array에서 Object 찾기"
+title:  "JavaScript Array에서 특정 객체 및 값 찾기"
+subtitle:   "JavaScript Array에서 특정 객체 및 값 찾기"
 categories: javascript
 tags: javascript array
 ---
