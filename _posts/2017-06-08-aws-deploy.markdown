@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "React 앱 AWS에 배포하기"
-subtitle:   "React 앱 AWS에 배포하기"
+title:  "[AWS] React 앱 AWS에 배포하기"
+subtitle:   "[AWS] React 앱 AWS에 배포하기"
 categories: aws
 tags: aws deploy
 ---
 
-이번에 [48wedding.com](http://48wedding.com)이라는 서비스를 만들었다. 만드는 과정에서 처음부터 혼자 만든 서비스는 꽤 있었는데, 배포까지 혼자하는건 처음이어서 그 경험을 공유해보려한다.
+이번에 [48wedding.com](http://48wedding.com)이라는 서비스를 만들고 있다. 만드는 과정에서 처음부터 혼자 만든 서비스는 꽤 있었는데, 배포까지 혼자하는건 처음이어서 그 경험을 공유해보려한다.
 
 ## 목차
 
