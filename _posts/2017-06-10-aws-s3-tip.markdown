@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[AWS] S3에 서비스 배포할 때 팁"
-subtitle:   "[AWS] S3에 서비스 배포할 때 팁"
+title:  "[AWS] S3에 서비스 배포 팁"
+subtitle:   "[AWS] S3에 서비스 배포 팁"
 categories: aws
 tags: aws deploy
 ---
