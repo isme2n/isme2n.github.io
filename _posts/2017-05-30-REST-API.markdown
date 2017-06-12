@@ -86,7 +86,7 @@ REST는 HTTP 표준에만 따르면 어디서든 사용가능한 인터페이스
 
 #### Stateless
 
-Stateless라는 개념은 [JWT](https://isme2n.github.io/jwt/review/dev/2017/04/14/JWT/)를 다룰때도 다뤘었는데, 사용자나 클라이언트의 상태를 저장할 필요가 없다는거다.
+Stateless라는 개념은 [JWT](https://isme2n.github.io/jwt/2017/04/14/JWT/)를 다룰때도 다뤘었는데, 사용자나 클라이언트의 상태를 저장할 필요가 없다는거다.
 
 독릭적으로 모든 메서드는 리소스와 메세지 정보만으로 실행된다.
 
