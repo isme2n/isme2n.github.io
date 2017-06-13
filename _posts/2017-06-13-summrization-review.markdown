@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "요약 서비스의 구성"
-subtitle:   "요약 서비스의 구성"
+title:  "기사요약 서비스의 구성"
+subtitle:   "기사요약 서비스의 구성을 공유하려한다."
 categories: doc
 tags: doc summarization
 ---
