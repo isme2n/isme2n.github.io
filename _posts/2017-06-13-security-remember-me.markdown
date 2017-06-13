@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[보안] 자동로그인 구현하기"
-subtitle:   "[보안] 자동로그인 구현하기"
+title:  "[보안] 자동로그인(Remember me) 설계"
+subtitle:   "자동로그인(Remember me) 설계하기"
 categories: web
 tags: web security
 ---
