@@ -417,8 +417,9 @@ body {
 
 .pc-ads { display: none; }
 .topAds { width: 320px; height: 100px; }
+.mob-ads { display:inline-block;width:336px;height:280px }
 @media(min-width: 500px) { .pc-ads { display: none; } .topAds { width: 468px; height: 60px; } }
-@media(min-width: 720px) { .markdown-body { font-size : 1.06em; } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
+@media(min-width: 720px) { .mob-ads{display:none;} .markdown-body { font-size : 1.06em; } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
   font-family: 'Nanum Barun Gothic';
