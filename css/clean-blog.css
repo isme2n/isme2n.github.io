@@ -417,11 +417,14 @@ body {
 
 .pc-ads { display: none; }
 .pc-ads-section { display: none; }
+.pc-side-ad { diaplay: none; }
 .topAds { display: none; }
 .mob-ads { display:inline-block;width:336px;height:280px }
-@media(min-width: 500px) { .pc-ads { display: none; } 
+@media(min-width: 500px) { 
+.pc-side-ad { diaplay: none; } .pc-ads { display: none; } 
 .pc-ads-section { display: none; } .topAds {display:none; } }
-@media(min-width: 720px) { .mob-ads{display:none;} .markdown-body { font-size : 1.06em; }
+@media(min-width: 720px) { 
+.pc-side-ad { position:fixed; width:200px; height:700px; top:100px; right:100px; } .mob-ads{display:none;} .markdown-body { font-size : 1.06em; }
 .pc-ads-section { width: 100% } .pc-ads { display:inline-block;width:336px;height:280px } .topAds { width: 728px; height: 90px; } }
 
 @font-face {
