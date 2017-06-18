@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[스인]스타트업형 인간"
+title:  "[스타트업]스타트업형 인간"
 subtitle:   "스타트업형 인간"
 categories: essay
 tags: essay startup
