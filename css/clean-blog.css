@@ -419,7 +419,7 @@ body {
 .pc-ads-section { display: none; }
 .pc-side-ad { diaplay: none; }
 .topAds { display: none; }
-.mob-ads { display: block; }
+.mob-ads { display: block; width:100%; }
 @media(min-width: 500px) { 
 .pc-side-ad { display: none; } .pc-ads { display: none; } 
 .pc-ads-section { display: none; } .topAds {display:none; } }
