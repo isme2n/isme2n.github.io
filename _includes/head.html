@@ -13,7 +13,7 @@
     <meta name="naver-site-verification" content="22c5b4ef3bfda7fc6100671413989219de7a4ac8"/>
     <meta name="og:title" content="{{ page.title }}">
     <meta name="og:description" content="{{ page.subtitle }}">
-    <meta name="og:image" content="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}"main-img.png"{% endif %}">
+    <meta name="og:image" content="{{ site.baseurl }}/{% if page.header-img %}"main-img.png"{% else %}"main-img.png"{% endif %}">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
