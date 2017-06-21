@@ -4,7 +4,7 @@ title:  "[pm2]pm2 사용하기 - Node.js 프로세스 관리 도구"
 subtitle:   "Node.js 프로세스 관리 도구 사용하기"
 categories: tool
 tags: tool node meteor
-header-img: "https://github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png"
+header-img: "/github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png"
 ---
 
 [![](https://github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png)](#)
