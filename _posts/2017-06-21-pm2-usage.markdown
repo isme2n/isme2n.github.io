@@ -6,6 +6,9 @@ categories: tool
 tags: tool node meteor
 ---
 
+[![](https://github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png)](#)
+
+
 서버에서 웹 어플리케이션을 운영할 때 데몬(백드라운드 잡)으로 서버를 띄워야하고, 충돌이 나면 재시작등을 해줘야한다.
 
 그래서 서버의 영속성을 위해 여러가지 툴들이 등장했는데, 최근 PM2라는 도구가 사용하기 좋아 도입하게 되었다.
