@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "오픈 소스 소프트웨어 활용과 커뮤니티 참여"
+title:  "[오픈소스]오픈 소스 소프트웨어 활용과 커뮤니티 참여"
 subtitle:   "오픈 소스 소프트웨어 활용과 커뮤니티 참여"
 categories:  opensource
 tags: opensource
