@@ -137,7 +137,7 @@ hr.small {
 }
 .intro-header {
   background: no-repeat center center;
-  background-color: #fff;
+  background-color: #808080;
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -417,9 +417,9 @@ body {
 
 .pc-ads { display: none; }
 .pc-ads-section { display: none; }
-.pc-side-ad { diaplay: none; }
+.pc-side-ad { display: none; }
 .topAds { display: none; }
-.mob-ads { display: block; width:100%; }
+.mob-ads { display: block; }
 @media(min-width: 500px) { 
 .pc-side-ad { display: none; } .pc-ads { display: none; } 
 .pc-ads-section { display: none; } .topAds {display:none; } }

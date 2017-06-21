@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Post Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{{ site.header-img }}')">
     <div class="markdown-body">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -46,16 +46,21 @@ layout: default
                 </script>
                 </div>
                 <div class="markdown-body">
+                <style>
+                .myAd1190 { width:100%; height: 280px; }
+                @media(min-width: 500px) { .myAd1190 { width: 336px; height: 280px; } }
+                @media(min-width: 768px) { .myAd1190 { width: 728px; height: 90px; } }
+                </style>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- 블로그-상단-모바일 -->
-                <ins class="adsbygoogle mob-ads"
+                <ins class="adsbygoogle myAd1190 mob-ads"
+                    style="display:block"
                     data-ad-client="ca-pub-9134477021095729"
                     data-ad-slot="6559875097"
-                    data-ad-format="auto"></ins>
+                    ></ins>
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                <br/>
+                {% if page.header-img %}<img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% endif %}"/>{% endif %}
 				{{ content }}
                 <br/>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
