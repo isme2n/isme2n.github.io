@@ -7,7 +7,9 @@ tags: review book
 header-img: img/modu-python.jpeg
 ---
 
+>
 > 이 리뷰는 길벗에게서 책을 제공받았습니다.
+>
 
 길벗에서 책이왔다. 모두의 파이썬이라는 파이썬 입문서인데, 출판된지는 1년정도 된 책이다.
 
