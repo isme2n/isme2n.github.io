@@ -4,6 +4,7 @@ title:  "[리뷰]모두의 파이썬을 읽고 "
 subtitle:   "모두의 파이썬을 읽고"
 categories: review
 tags: review book
+header-img: /img/modu-python.jpeg
 ---
 
 > 이 리뷰는 길벗에게서 책을 제공받았습니다.
