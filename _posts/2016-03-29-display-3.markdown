@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[노트북 바이블]신학기 개학/개강 기념 가성비 노트북 추천! BEST5"
-subtitle:   "[노트북 바이블]신학기 개학/개강 기념 가성비 노트북 추천! BEST5"
+title:  "[노트북바이블][디스플레이 3탄] 해상도"
+subtitle:   "[노트북바이블][디스플레이 3탄] 해상도"
 categories: programming
 tags: programming javascript mobile
 ---
