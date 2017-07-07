@@ -5,16 +5,16 @@ subtitle:   "TAMMUZ 타무즈 HDMI 2.0 프리미엄 골드"
 categories: programming
 tags: programming javascript mobile
 ---
-[![](http://postfiles8.naver.net/20160929_103/zooqzqz_1475149219047IMcCk_JPEG/a4d8dfd8-1b65-432a-beb2-ae7d07c5f4da.jpg?type=w773)](#) </div>
+[![](http://postfiles8.naver.net/20160929_103/zooqzqz_1475149219047IMcCk_JPEG/a4d8dfd8-1b65-432a-beb2-ae7d07c5f4da.jpg?type=w773)](#) 
 
 
 타무즈 흐드미 이쩜영 프리미엄 골드 리뷰  
 
 내가 어떻게 사용했는지 보기 전에 먼저 스펙부터보자.  
 
-##### ●스펙
+##### 스펙
 
-[![](http://postfiles9.naver.net/20160929_216/zooqzqz_1475151491693k0E8t_PNG/tammuz_hdmi.PNG?type=w773)](#) </div>
+[![](http://postfiles9.naver.net/20160929_216/zooqzqz_1475151491693k0E8t_PNG/tammuz_hdmi.PNG?type=w773)](#) 
 
 출처는 다나와.  
 
@@ -30,7 +30,7 @@ tags: programming javascript mobile
 요즘 해상도가 워낙 높아지고 있어서, 그리고 좀 싸길래 걍 좋은거 사봤다. (지금 옥션에서 사면 배송비 무료더라.)  
 
 
-##### ●후기
+##### 후기
 
 우선 단점.
 

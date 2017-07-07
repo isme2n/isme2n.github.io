@@ -5,493 +5,61 @@ subtitle:   "[외장하드 케이스][iptime hdd 3125]하드디스크(HDD)를 �
 categories: programming
 tags: programming javascript mobile
 ---
-<div class="se_component_wrap sect_dsc __se_component_area">
 
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 안녕하세요 계속해서 외장하드 케이스 iptime hdd 3125를 개봉하여 보겠습니다.  
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_quotation default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_fs_T2">
-
-<div class="se_editView">
-
-<div class="se_textView">
 
 > 1.개봉기
+[![](http://postfiles10.naver.net/20160331_297/zooqzqz_1459428017964N6Mmt_JPEG/IMG_20160330_210048.jpg?type=w773)](#) 
 
-</div>
+[![](http://postfiles8.naver.net/20160331_263/zooqzqz_1459428017771Yanud_JPEG/IMG_20160330_210203.jpg?type=w773)](#) 
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_imageStrip imageStrip2 default ">
-
-<div class="se_sectionArea se_align-extend">
-
-<div class="se_viewArea">
-
-<div class="se_editArea">
-
-<div class="se_imageStripView">
-
-<div class="se_mediaArea">
-
-<div class="se_imageStripArea" style="width:63.984425697598965%;">[![](http://postfiles10.naver.net/20160331_297/zooqzqz_1459428017964N6Mmt_JPEG/IMG_20160330_210048.jpg?type=w773)](#) </div>
-
-<div class="se_imageStripArea" style="width:36.01557430240104%;">[![](http://postfiles8.naver.net/20160331_263/zooqzqz_1459428017771Yanud_JPEG/IMG_20160330_210203.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 1.패키지는 이렇게 생겼습니다. 깨끗하고 심플하네요. 자동 백업 도우미가 있다고 스티커가 붙어있습니다.
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles14.naver.net/20160331_221/zooqzqz_1459428017659uNyE6_JPEG/IMG_20160330_210331.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
+[![](http://postfiles14.naver.net/20160331_221/zooqzqz_1459428017659uNyE6_JPEG/IMG_20160330_210331.jpg?type=w773)](#) 
 
 2\. 뒷면에는 스펙이 적혀있습니다. 자, 박스를 열어보면...
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles4.naver.net/20160331_259/zooqzqz_14594280170375E5kB_JPEG/IMG_20160330_210553.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
+[![](http://postfiles4.naver.net/20160331_259/zooqzqz_14594280170375E5kB_JPEG/IMG_20160330_210553.jpg?type=w773)](#) 
 
 3\. 구성품은 이렇게가 전부입니다. 왼쪽상단부터  
 
 ㅇ외장하드케이스 ㅇ파우치 ㅇUSB3.0케이블  
 ㅇ조임나사와마개 ㅇ사용설명서 ㅇ백업설명서및CD
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_quotation default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_fs_T2">
-
-<div class="se_editView">
-
-<div class="se_textView">
 
 > 2.사용법
 
-</div>
+[![](http://postfiles9.naver.net/20160331_136/zooqzqz_1459428016678FMAHV_JPEG/IMG_20160330_210824.jpg?type=w773)](#) 
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles9.naver.net/20160331_136/zooqzqz_1459428016678FMAHV_JPEG/IMG_20160330_210824.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 1.하드디스크(HDD) 트레이를 외장하드에서 꺼냅니다.
 
-</div>
+[![](http://postfiles11.naver.net/20160331_42/zooqzqz_1459431256798dsAzO_JPEG/IMG_20160330_211201.jpg?type=w773)](#) 
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles11.naver.net/20160331_42/zooqzqz_1459431256798dsAzO_JPEG/IMG_20160330_211201.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 2.트레이에 하드디스크를 결합합니다.
 
-</div>
+[![](http://postfiles11.naver.net/20160331_42/zooqzqz_1459431808063GTOyT_JPEG/IMG_20160331_224216.jpg?type=w773)](#) 
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles11.naver.net/20160331_42/zooqzqz_1459431808063GTOyT_JPEG/IMG_20160331_224216.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 3\. 짠. 무게가 들어가니 꽤나 듬직해졌습니다.
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles6.naver.net/20160331_181/zooqzqz_1459428016035fqPBC_JPEG/IMG_20160330_211602.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
+[![](http://postfiles6.naver.net/20160331_181/zooqzqz_1459428016035fqPBC_JPEG/IMG_20160330_211602.jpg?type=w773)](#) 
 
 4.노트북 또는 PC와 연결하면 하드의 내용에 접근 할 수 있습니다.
 
-</div>
+[![](http://postfiles10.naver.net/20160331_201/zooqzqz_1459431889298I6IRU_JPEG/IMG_20160331_224150.jpg?type=w773)](#) 
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_image default">
-
-<div class="se_sectionArea se_align-justify">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">[![](http://postfiles10.naver.net/20160331_201/zooqzqz_1459431889298I6IRU_JPEG/IMG_20160331_224150.jpg?type=w773)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 뽀너스 샷. 파우치에 넣었더니 귀엽네요.  
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_sticker default ">
-
-<div class="se_sectionArea se_align-center">
-
-<div class="se_editArea">
-
-<div class="se_viewArea">
-
-<div id="SEDOC-1459432099674-1151523598_sticker_0" class="se_sticker_area">[![스티커 이미지](http://gfmarket.phinf.naver.net/moon_and_james/original_2.png?type=p50_50)](#) </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_quotation default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_fs_T2">
-
-<div class="se_editView">
-
-<div class="se_textView">
+[![스티커 이미지](http://gfmarket.phinf.naver.net/moon_and_james/original_2.png?type=p50_50)](#) 
 
 > 3.마치며
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="se_component se_paragraph default">
-
-<div class="se_sectionArea">
-
-<div class="se_editArea">
-
-<div class="se_viewArea se_ff_nanumgothic">
-
-<div class="se_editView">
-
-<div class="se_textView se_fs_T3">
 
 세상이 점점 좋아진다는걸 새삼 느낍니다. 사용하지 않는 하드를 재활용 할 수 있는 방법으로 외장하드 케이스에 대하여 알아보았습니다. 외장하드케이스의 구매와 사용에 도움이 되셨길 바랍니다.  
 
 감사합니다.  
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
