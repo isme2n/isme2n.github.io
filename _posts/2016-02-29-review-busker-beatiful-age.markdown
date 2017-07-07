@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰]버스커버스커 2집 - 아름다운 나이"
 subtitle:   "[리뷰]버스커버스커 2집 - 아름다운 나이"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
 

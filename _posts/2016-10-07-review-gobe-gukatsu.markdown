@@ -2,7 +2,7 @@
 layout: post
 title:  "[부천] 고베규카츠"
 subtitle:   "[부천]고베규카츠"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
      

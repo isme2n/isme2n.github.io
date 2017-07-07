@@ -2,7 +2,7 @@
 layout: post
 title:  "갤럭시 노트 7(GalaxyNote7)과 아이폰7(iPhone7)을 통해 본 스마트폰 디자인"
 subtitle:   "갤럭시 노트 7(GalaxyNote7)과 아이폰7(iPhone7)을 통해 본 스마트폰 디자인"
-categories: programming
+categories: essay
 tags: programming javascript mobile
 ---
 

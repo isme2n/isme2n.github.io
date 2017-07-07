@@ -2,7 +2,7 @@
 layout: post
 title:  "[홍대] 사모님 돈까스"
 subtitle:   "[홍대] 사모님 돈까스"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
      

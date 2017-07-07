@@ -2,7 +2,7 @@
 layout: post
 title:  "[간단리뷰] TAMMUZ 타무즈 HDMI 2.0 프리미엄 골드"
 subtitle:   "TAMMUZ 타무즈 HDMI 2.0 프리미엄 골드"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
 [![](http://postfiles8.naver.net/20160929_103/zooqzqz_1475149219047IMcCk_JPEG/a4d8dfd8-1b65-432a-beb2-ae7d07c5f4da.jpg?type=w773)](#) 

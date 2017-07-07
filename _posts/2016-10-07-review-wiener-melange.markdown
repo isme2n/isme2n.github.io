@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰] 커핑로드 비너멜랑쉬 리뷰"
 subtitle:   "[리뷰]커핑로드 비너멜랑쉬 리뷰"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
       

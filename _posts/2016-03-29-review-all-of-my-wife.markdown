@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰]내 아내의 모든 것 - 지진은 땅을 흔들고 사람은 마음을 흔든다."
 subtitle:   "[리뷰]내 아내의 모든 것"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
    

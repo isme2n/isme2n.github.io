@@ -2,7 +2,7 @@
 layout: post
 title:  "아이폰7(iPhone7)에 실망한 4가지"
 subtitle:   "아이폰7(iPhone7)에 실망한 4가지"
-categories: programming
+categories: essay
 tags: programming javascript mobile
 ---
 

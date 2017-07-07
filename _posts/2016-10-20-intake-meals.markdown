@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰][인테이크] 밀스 2.0 오리지날"
 subtitle:   "[인테이크] 밀스 2.0 오리지날"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
  

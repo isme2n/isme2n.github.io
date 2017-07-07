@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰]파이이야기"
 subtitle:   "[리뷰]파이이야기"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
   

@@ -2,7 +2,7 @@
 layout: post
 title:  "[리뷰]버스커버스커 2집 - 잘할 걸"
 subtitle:   "[리뷰]버스커버스커 2집 - 잘할 걸"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
 

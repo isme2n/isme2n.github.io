@@ -2,7 +2,7 @@
 layout: post
 title:  "[부천][신중동] 빵장수 단팥빵"
 subtitle:   "[부천][신중동] 빵장수 단팥빵"
-categories: programming
+categories: review
 tags: programming javascript mobile
 ---
   
