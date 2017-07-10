@@ -8,7 +8,7 @@ tags: web security
 
 자동로그인을 구현하는데 가장 널리 쓰이는 디자인은 Charles Miller의 "Persistent Login Cookie Best Practice"이라고 본다.
 
-## 어떤 건데?
+## Persistent Login Cookie Best Practice
 
 ---
 
