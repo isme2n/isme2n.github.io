@@ -19,7 +19,7 @@ tags: programming javascript mobile
 ```js
 var result;
 if( !some_var ){
-    result = variable;
+    result = some_var;
 }else{
     result = 'default value';
 }
