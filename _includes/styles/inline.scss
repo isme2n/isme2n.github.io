@@ -35,8 +35,8 @@
 // @import "syntax";
 // @import "spinner";
 
-{% assign font = site.font | default:"'Noto Serif', Georgia, serif" %}
-{% assign font_heading = site.font_heading | default:"'Roboto Slab', Helvetica, Arial, sans-serif" %}
+{% assign font = site.font | default:"'Nanum Barun Gothic Light'" %}
+{% assign font_heading = site.font_heading | default:"'Helvetica'" %}
 {% assign google_fonts = site.google_fonts | default:"Roboto+Slab:700|Noto+Serif:400,400i,700,700i" %}
 
 {% unless site.no_google_fonts %}
@@ -44,5 +44,5 @@
   {% assign font_heading = font_heading | split:',' | shift | join:',' %}
 {% endunless %}
 
-html { font-family: {{ font | default:"serif" }}; }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: {{ font_heading | default:"serif" }}; }
+html { font-family: {{ font | default:"'Nanum Barun Gothic Light'" }}; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: {{ font_heading | default:"'Nanum Barun Gothic'" }}; }

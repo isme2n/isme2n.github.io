@@ -18,7 +18,9 @@
   </header>
 
   {% unless include.excerpt %}
-    {{ post.content }}
+    <div class="markdown-body">
+      {{ post.content }}
+    </div>
   {% else %}
     {{ post.excerpt }}
     <p class="read-more">Continue reading <a class="heading" href="{{ post.url | relative_url }}" data-flip="title">{{ post.title }}</a></p>

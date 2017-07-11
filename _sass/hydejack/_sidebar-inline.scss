@@ -62,6 +62,8 @@
 
 .sidebar-bg {
   position: absolute;
+  height: 100%;
+  overflow: hidden;
   top: 0;
   right: 0;
   bottom: 0;
@@ -69,16 +71,27 @@
   background: #202020 center / cover;
 }
 
+.sidebar-box {
+  display: flex;
+  justify-content: center;
+}
+
 .sidebar-sticky {
   position: relative;
   z-index: 3;
 
   @media screen {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    height: 100%;
+   overflow: auto;
     position: absolute;
-    right:  2rem;
-    bottom: 1rem;
-    left:   2rem;
+    right: 2.5rem;
+    left:   2.5rem;
   }
+}
+.sidebar-sticky::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
 }
 
 /* About section */
@@ -95,7 +108,16 @@
 }
 
 a.sidebar-nav-item {
-  font-weight: bold;
+  width:100%;
+  font-weight: normal;
+  display: block;
+  line-height: 1.75;
+  padding: .25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+a.sidebar-nav-subitem {
+  font-weight: normal;
   display: block;
   line-height: 1.75;
   padding: .25rem 0;

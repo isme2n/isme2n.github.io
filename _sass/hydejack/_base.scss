@@ -67,6 +67,7 @@ body, main {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+  background: red;
 }
 
 // .clearfix, .clearafter::after {
@@ -126,6 +127,16 @@ a, .a {
   margin-top: 3rem;
 }
 
+.author-body {
+  display: flex;
+}
+
+.author-body-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 // .fade-in {
 //   animation-duration: 500ms;
 //   animation-name: fade-in;
@@ -137,7 +148,7 @@ a, .a {
 //   50%  { transform: translateY(-2rem); opacity: 0; }
 //   to   { transform: translateY(0);     opacity: 1; }
 // }
-// 
+//
 // .mb6 {
 //   margin-bottom: 6rem;
 // }

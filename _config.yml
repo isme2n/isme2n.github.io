@@ -2,39 +2,39 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               Hydejack
+title:               Aiden
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://qwtel.com
+url:                 https://isme2n.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
-baseurl:             /hydejack
+baseurl:             ""
 
 # A very short description of your page
-tagline:             A pretentious two-column Jekyll theme.
+tagline:             가장 게으르기위해 가장 부지런한 개발자
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Open `_config.yml` to edit this text.
+  게으르기 때문에 게발자.
+  글쓰는 걸 좋아하고, 디자인과 개발을 좋아한다.
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              <firstname> <lastname>
-  email:             <mail@domain.tld>
+  name:              aiden min
+  email:             zoqozqz@gmail.com
 
 # Fallback image and color
-image:               /hydejack/assets/img/nap.jpg
+image:               /assets/img/nap.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:        "'Roboto Slab', Helvetica, Arial, sans-serif"
+font_heading:        "'Spoqa Han Sans', 'Sans-serif'"
 
 # The text font. Expects a string that is a valid CSS font-family value.
-font:                "'Noto Serif', Georgia, serif"
+font:                "'Spoqa Han Sans', 'Sans-serif'"
 
 # The string encoding what fonts to fetch from Google Fonts.
 # See: https://qwtel.com/hydejack/docs/configuration/
@@ -48,10 +48,10 @@ google_fonts:        Roboto+Slab:700|Noto+Serif:400,400i,700,700i
 google_analytics:    <UA-XXXXXXXX-X>
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
-disqus_shortname:    <username>
+disqus_shortname:    isme2n
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2017. All rights reserved.'
+copyright:           '&copy; 2017. by isme2n'
 
 # Format of the permalinks
 permalink:           pretty
