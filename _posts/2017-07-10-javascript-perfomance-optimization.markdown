@@ -107,20 +107,20 @@ document.getElementById('list')+=list;
 
 ```js
 
-var arr = new Array();  //bad
 var arr = [];   //good
+var arr = new Array();  //bad
 
-arr.push(i);    //bad
 arr[i] = i;     //good
+arr.push(i);    //bad
 
-var obj = new Object(); //bad
 var obj = {};   //good
+var obj = new Object(); //bad
 
-obj["a"] = 1;   //bad
 obj.a = 1;  //good
+obj["a"] = 1;   //bad
 
-var str = new String("test");   //bad
 var str = "test";   //good
+var str = new String("test");   //bad
 
 ```
 
