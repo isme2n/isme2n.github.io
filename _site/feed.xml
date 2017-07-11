@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-11T18:22:24+09:00</updated><id>http://localhost:4000/</id><title type="html">Aiden</title><subtitle>게으르기 때문에 게발자. 글쓰는 걸 좋아하고, 디자인과 개발을 좋아한다.
+</subtitle><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><entry><title type="html">[Javascript]자바스크립트 성능 최적화 팁</title><link href="http://localhost:4000/devlog/2017/07/10/javascript-perfomance-optimization/" rel="alternate" type="text/html" title="[Javascript]자바스크립트 성능 최적화 팁" /><published>2017-07-10T00:00:00+09:00</published><updated>2017-07-10T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/07/10/javascript-perfomance-optimization</id><content type="html" xml:base="http://localhost:4000/devlog/2017/07/10/javascript-perfomance-optimization/">&lt;p&gt;대부분의 언어가 그렇듯이 자바스크립트는 배우기도 쉽고 사용하기도 쉽지만, 잘 사용하기는 아주 어려운 언어이다. 그냥 작성해도 돌아는 가지만, 더욱 최적화 할 수 있는 방법을 알아보려한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;문법&quot;&gt;문법&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;-연산자&quot;&gt;|| 연산자&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt; 연산자는 참을 만나면 그 뒤는 연산을 하지 않으므로 if문 대신 사용 하면 코드량과 연산 횟수를 줄일 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some_var&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;some_var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'default value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// || 연산자 사용&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;some_var&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'default value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;-연산자-1&quot;&gt;&amp;amp;&amp;amp; 연산자&lt;/h3&gt;
+
+&lt;p&gt;&amp;amp;&amp;amp; 연산자는 참을 만나야 다음 연산을 하므로 어떤 조건을 만족할 때 실행하도록 하는 코드에서 사용하면 코드량과 연산 횟수를 줄일 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loggedIn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;userID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;userID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// &amp;amp;&amp;amp; 연산자 사용&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;userID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loggedIn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;double-exclamation-mark&quot;&gt;double exclamation mark(!!)&lt;/h3&gt;
+
+&lt;p&gt;!!표시를 사용하면 값의 유무를 판별할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 아래 경우를 제외하곤 true를 반환한다.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NaN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// !! 표시 사용&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/MSIE 8.0/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// returns null or array&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/MSIE 8.0/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// returns true or false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;scope&quot;&gt;scope&lt;/h3&gt;
+
+&lt;p&gt;자바스크립트는 블록내부에서 점차 큰 범위로 탐색한다. scope와 지역변수를 활용하면 성능 향상을 기대할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectorEx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'target1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'target2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//scope 활용&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;enhancedSelectorEx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'target1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'target2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;innerhtml&quot;&gt;innerHTML&lt;/h3&gt;
+
+&lt;p&gt;innerHTML 횟수는 최소한으로 하는 것이 좋다. 브라우저는 갱신할 때마다 렌더링을 거치게 되기 때문이다. 자세한 내용은 &lt;a href=&quot;&quot;&gt;브라우저가 웹을 그리는 법&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//루프를 돌 때마다 브라우저가 웹페이지를 다시 그린다.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'list'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;li&amp;gt;list&amp;lt;/li&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;li&amp;gt;list&amp;lt;/li&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'list'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;배정문&quot;&gt;배정문&lt;/h3&gt;
+
+&lt;p&gt;아래문법이 좀 더 효울적이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//good&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//bad&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//good&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//bad&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//good&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//bad&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//good&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//bad&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//good&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//bad&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;추가로 배정은 한번에 하는 것이 좋다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;cm&quot;&gt;/* array */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 아래 코드가 더 효율적이다.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* object */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'world'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 아래 코드가 더 효율적이다.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'world'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+
+&lt;p&gt;참조 횟수를 최소한으로 줄이는 것이 좋다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c1&quot;&gt;// loop를 돌때마다 array 참조가 일어남.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 아래와 같이 구현하는게 성능에 더 효율적이다.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;array-type&quot;&gt;array type&lt;/h3&gt;
+
+&lt;p&gt;배열의 타입이 변경되면 성능 저하가 발생하므로 타입을 관리하는 것이 좋다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;c1&quot;&gt;//타입이 변경되는 예&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;it occurs array type changing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 개선&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dummy string&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;this is string&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;try--catch&quot;&gt;try ~ catch&lt;/h3&gt;
+
+&lt;p&gt;try ~ catch 구문안에 있는 코드는 컴파일러가 최적화하지 못한다. 성능에 민감한 함수들은 도우미 함수를 생성하는 것이 좋다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helper_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 성능에 민감한 작업.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;helper_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="devlog" /><category term="javascript" /><summary type="html">대부분의 언어가 그렇듯이 자바스크립트는 배우기도 쉽고 사용하기도 쉽지만, 잘 사용하기는 아주 어려운 언어이다. 그냥 작성해도 돌아는 가지만, 더욱 최적화 할 수 있는 방법을 알아보려한다.</summary></entry><entry><title type="html">[git]git flow - git branching 전략</title><link href="http://localhost:4000/devlog/2017/07/07/git-branching/" rel="alternate" type="text/html" title="[git]git flow - git branching 전략" /><published>2017-07-07T00:00:00+09:00</published><updated>2017-07-07T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/07/07/git-branching</id><content type="html" xml:base="http://localhost:4000/devlog/2017/07/07/git-branching/">&lt;p&gt;Git을 이용한 협업은 이제 필수가 되었다. 많의 회사에서 협업능력을 강조하고, 협업을 위한 git의 사용여부를 묻기도한다.&lt;/p&gt;
+
+&lt;p&gt;git은 팀 내에서 공유되는 코드들의 체계적인 관리에 도움이 된다.&lt;/p&gt;
+
+&lt;p&gt;혼자서 모든 작업을 한다면 git의 branch를 따는 작업은 필요없을지도 모른다. 하지만 팀의 구성원들이 늘어나고 개발하는 피쳐가 늘어나면 그 복잡성과 충돌을 해결하기 위해 branching전략이 필요하게 된다.&lt;/p&gt;
+
+&lt;p&gt;다양한 branching 전략이 있지만, 오늘 소개할 전략은 git flow 방식의 전략이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;전략&quot;&gt;전략&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;소스-중앙-저장소&quot;&gt;소스 중앙 저장소&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;master : 최종 릴리즈한 안정된 버전&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;develop : 개발중인 최신 빌드 버전&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;중앙 저장소에는 2개의 branch를 만든다. master와 develop이 바로 그것이다. master브랜치는 현재 배포되고 있는 버전을 담고있는 브랜치이다. develop 브랜치는 개발이 완료된 테스트 브랜치라고 생각하면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;개발자의-pc&quot;&gt;개발자의 PC&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;feature : 특정 기능을 작성할 때의 브랜치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;release : develop 브랜치의 수정을 위한 브랜치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hotfix : master 브랜치의 버그 수정을 위한 브랜치&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;feature 브랜치는 기능을 작성할 때 develop브랜치에서 가져와 만든다. develop브랜치에 머지하면 feature브랜치는 삭제한다.&lt;/p&gt;
+
+&lt;p&gt;release 브랜치는 develop 브랜치에서 가져온다. release-x.y.z의 형식으로 이름짓는다. 이 이름으로 master브랜치에 태깅한다. develop과 master브랜치에 머지된다. master브랜치에 머지되면 삭제한다.&lt;/p&gt;
+
+&lt;p&gt;hotfix 브랜치는 master브랜치에서 가져온다. 작업이 완료되면 master에 머지하고 삭제한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;git flow를 기반으로 자신의 팀만의 branching전략을 세운다면 더 좋은 협업을 위한 시스템을 만들 수 있을 것이다.&lt;/p&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="git" /><category term="devlog" /><summary type="html">Git을 이용한 협업은 이제 필수가 되었다. 많의 회사에서 협업능력을 강조하고, 협업을 위한 git의 사용여부를 묻기도한다.</summary></entry><entry><title type="html">[web]브라우저가 웹페이지를 그리는 법</title><link href="http://localhost:4000/devlog/2017/07/06/browser-rendering/" rel="alternate" type="text/html" title="[web]브라우저가 웹페이지를 그리는 법" /><published>2017-07-06T00:00:00+09:00</published><updated>2017-07-06T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/07/06/browser-rendering</id><content type="html" xml:base="http://localhost:4000/devlog/2017/07/06/browser-rendering/">&lt;p&gt;이제 우리는 HTML을 사용하여 브라우저에 다양한 요소들을 표현하고, CSS로 요소들을 꾸밀 줄 알며,  JavaScript로 페이지를 조작할 수있다.&lt;/p&gt;
+
+&lt;p&gt;이 다음에 생각해 보아야 할 건 ‘실제 브라우저가 어떻게 돌아가는가?’이다. 원리를 알아야 최적화가 가능하다. 이떄까지 아무 물감으로 그림을 그렸다고 한다면, 종이와 물감의 상관관계를 파악하는 과정말이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;critical-rendering-path&quot;&gt;Critical Rendering Path&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;일반적으로 디스플레이는 1초에 화면을 60번 그린다. 짧게 60fps(frame per second)라는 표현으로 대체할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;디스플레이가 1초에 60번 바뀌는데 웹페이지가 1초에 10번 그려진다면, 버벅이는 현상이 발생한다. 우리는 이런 현상을 Jank라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;자, 그럼 웹페이지의 렌더링을 최적화 한다는 것은 브라우저가 1초에 60번 렌더링 할 수 있도록 하면된다. “참, 쉽죠?”&lt;/p&gt;
+
+&lt;h3 id=&quot;어떻게-해야하죠&quot;&gt;어떻게 해야하죠?&lt;/h3&gt;
+
+&lt;p&gt;웹페이지 최적화를 위해 우린 느린 부분을 찾아서 개선해야한다. 그 느린 부분을 찾기 위해 웹페이지가 화면을 그리는 법을 알아야 한다. 브라우저가 화면을 그리는데 사용하는 엔진에는 크게 두 종류가 있는데, 크롬과 사파리의 Webkit엔진과 파이어폭스의 Gecko 엔진이 있다.&lt;/p&gt;
+
+&lt;p&gt;이 엔진을 사용해서 화면을 그리는 데 거치는 주요한 과정을 우리는 ‘Critical Rendering Path’라고 부른다. 해석하면 ‘주요 렌더링 경로’라고 한다.&lt;/p&gt;
+
+&lt;p&gt;우리가 웹페이지를 호출하는 큰 그림을 그려보자.&lt;/p&gt;
+
+&lt;h3 id=&quot;critical-rendering-path-1&quot;&gt;Critical Rendering Path&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML데이터를 파싱한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파싱한 결과로 DOM Tree를 만든다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파싱 중 CSS파일 링크를 만나면 CSS파일을 요청해서 받고, CSS 파일을 읽어 CSSOM(CSS Object Model)을 만든다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DOM Tree와 CSSOM을 사용해 Render Tree를 만든다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Render Tree의 노드들이 화면의 어디에 위치할지 계산한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;웹페이지를 그린다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;심화공부&quot;&gt;심화공부&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1-html-파싱&quot;&gt;1. HTML 파싱&lt;/h3&gt;
+
+&lt;p&gt;브라우저는 응답으로 받아온 HTML문서를 DOM으로 만들기 위해 각각의 요소를 파싱한다. 이 과정에서 미디어파일(이미지나 비디오등)을 만나면 추가 요청을 보낸다.&lt;/p&gt;
+
+&lt;p&gt;JavaScript를 만나면 실행할 때까지 파싱을 멈춘다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-dom-만들기&quot;&gt;2. DOM 만들기&lt;/h3&gt;
+
+&lt;p&gt;브라우저는 읽어들인 HTML 바이트 데이터를 문자열로 바꾸게 된다. 이렇게 바꾼 문자열을 다시 읽어서, HTML 토큰으로 변환한다. 태그의 경우 StartTag와 EndTag로 바뀌게 된다.&lt;/p&gt;
+
+&lt;p&gt;토큰들은 다시 노드로 바뀌게 되는데, StartTag와 EndTag사이에 있는 노드들은 자식노드로 들어간다. 즉 트리모양이 되는데, 이 과정이 끝나면 DOM Tree가 생성되는 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-cssom-만들기&quot;&gt;3. CSSOM 만들기&lt;/h3&gt;
+
+&lt;p&gt;HTML을 파싱하다 CSS링크를 만나면, CSS파일을 받아온다. CSS파일은 파싱과정을 거쳐 역시 Tree형태의 CSSOM으로 만들어진다.&lt;/p&gt;
+
+&lt;p&gt;CSS 파싱은 cascading규칙(부모의 특성을 자식이 이어받음)이 추가되는 점을 제외하고는 HTML파싱과 동일하다.&lt;/p&gt;
+
+&lt;p&gt;CSSOM이 구성이 되어야 다음 과정을 밟을 수 있기 때문에, CSS는 렌더링의 블라킹 요소라고도 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-render-tree&quot;&gt;4. Render Tree&lt;/h3&gt;
+
+&lt;p&gt;DOM과 CSSOM을 합쳐 Render Tree를 만든다. Render Tree는 DOM Tree에 있는 것들 중에 실제 보이는 것들로만 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;즉, display:none으로 설정되어 있는 것은 DOM Tree에 있어도 Render Tree에는 없다. 마찬가지로 head태그안의 메타내용들은 Render Tree에는 존재하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;Render Tree에는 Render Object Tree, Render Layer Tree, Render Style Tree, InlineBox Tree등이 포함되어있다.&lt;/p&gt;
+
+&lt;p&gt;Render Object Tree가 보이는 것들로 이루어진 트리이다. block, inline, image, text 등등의 Object가 있는데, div는 block, p는 inline 요소에 배정되는 것이다.&lt;/p&gt;
+
+&lt;p&gt;Render Object의 필요에 따라 Render Layer가 만들어진다. 그리고 Render Layer중에 GPU처리가 필요하면 Graphic Layer가 만들어진다. 대표적인 예는 아래와 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;CSS 3D Transform(translate3d, preserve-3d 등)이나 perspective 속정이 적용된 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CSS 애니메이션함수나 필터함수를 사용하는 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;video나 canvas 요소를 사용하는 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자식 요소가 레이어로 구성된 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;z-index가 낮은 형제 요소가 레어이로 구성된 경우&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;일반적인 상황이라면 레이어는 하나만 사용하게 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-layout&quot;&gt;5. Layout&lt;/h3&gt;
+
+&lt;p&gt;Render Tree가 만들어지면, 이제 각각의 노드들이 어디에 위치할 지 계산하는 과정을 거친다. 이 과정을 Layout과정이라고 한다. position, width, height 등등 위치에 관련된 부분들을 계산한다.&lt;/p&gt;
+
+&lt;p&gt;width:100%인 상태에서 브라우저를 리사이즈하면, Render Tree는 변경되지 않고 Layout 이후 과정만 다시 거치게 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-paint&quot;&gt;6. Paint&lt;/h3&gt;
+
+&lt;p&gt;Layout과정을 거쳐 계산을 마치면, 실제 그리는 작업(Paint)에 들어가게 된다. 실제로 픽셀이 그려지는 작업이다. 만약 Render Layer가 2개 이상이면 각각의 Layer를 그린 뒤 하나의 이미지로 Composite하는 과정을 거친 뒤 브라우저에 실제로 그려지게 된다.&lt;/p&gt;
+
+&lt;p&gt;색이 바뀐다거나 노드의 스타일이 바뀌는 걸로는 Layout 과정을 거치지 않고 Paint만 일어난다.&lt;/p&gt;
+
+&lt;h2 id=&quot;간단한-최적화-팁&quot;&gt;간단한 최적화 팁&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;애니메이션이 들어간 노드는 positon:fixed 또는 position:absolute로 지정한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;애니메이션은 엄청난 Layout 비용이 들어간다. 이 때 absolute나 fixed로 전체 레이아웃과 분리해주면 애니메이션이 필요한 노드만 계산하게 된다.&lt;/p&gt;
+
+&lt;p&gt;그렇지 않을 경우 무든 노드들을 재계산 해야하기 때문에 아주 많은 비용이 들어 느려지게 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동일 요소에 스타일 변경은 가급적 한번에 처리한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;changeDivStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sampleEl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sample&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;sampleEl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cssText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'background:blue; width:200px;height:50px;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;changeDivStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="web" /><category term="devlog" /><summary type="html">이제 우리는 HTML을 사용하여 브라우저에 다양한 요소들을 표현하고, CSS로 요소들을 꾸밀 줄 알며, JavaScript로 페이지를 조작할 수있다.</summary></entry><entry><title type="html">[React]Higher Order Component 이해하기</title><link href="http://localhost:4000/video/2017/07/04/tuto-HOC/" rel="alternate" type="text/html" title="[React]Higher Order Component 이해하기" /><published>2017-07-04T00:00:00+09:00</published><updated>2017-07-04T00:00:00+09:00</updated><id>http://localhost:4000/video/2017/07/04/tuto-HOC</id><content type="html" xml:base="http://localhost:4000/video/2017/07/04/tuto-HOC/">&lt;p&gt;React로 웹 어플리케이션 빌드하기 동영상강좌를 촬영하고있습니다.&lt;/p&gt;
+
+&lt;p&gt;바이트사이즈로 10분이내의 강좌를 여러개 찍고있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt;전체강좌 바로가기&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-higher-order-component-이해하기-&quot;&gt;&lt;a href=&quot;https://youtu.be/FK9QjkEQ4sQ?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W&quot;&gt; Higher Order Component 이해하기 &lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;embed-container&quot;&gt;&lt;figure&gt;&lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;//www.youtube.com/embed/FK9QjkEQ4sQ&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/figure&gt;&lt;/div&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="javascript" /><category term="react" /><category term="tutorial" /><summary type="html">React로 웹 어플리케이션 빌드하기 동영상강좌를 촬영하고있습니다.</summary></entry><entry><title type="html">[JavaScript]모바일 페이지에서 keyup, keydown이 안먹힐때</title><link href="http://localhost:4000/devlog/2017/06/30/key-press/" rel="alternate" type="text/html" title="[JavaScript]모바일 페이지에서 keyup, keydown이 안먹힐때 " /><published>2017-06-30T00:00:00+09:00</published><updated>2017-06-30T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/06/30/key-press</id><content type="html" xml:base="http://localhost:4000/devlog/2017/06/30/key-press/">&lt;p&gt;모바일 페이지를 열심히 만들다 실제 테스트를 해보면 가끔 문제가 있다.&lt;/p&gt;
+
+&lt;p&gt;이번 문제는 키업 이벤트가 작동을 안하는 문제였다. 아마 iphone은 잘 먹는 걸로 알고 있는데, 안드로이드에서 보통 발생하는 문제인 것 같다.&lt;/p&gt;
+
+&lt;p&gt;이럴 때 해결방법은 keyup keydown에 이어 change 이벤트가 있을 경우를 추가로 바인드 해준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keyup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이 파트를 아래와 같이 수정한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;change keyup input&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="devlog" /><category term="javascript" /><category term="mobile" /><summary type="html">모바일 페이지를 열심히 만들다 실제 테스트를 해보면 가끔 문제가 있다.</summary></entry><entry><title type="html">[Node]Node.js와 비동기 프로그래밍</title><link href="http://localhost:4000/devlog/2017/06/27/node-js/" rel="alternate" type="text/html" title="[Node]Node.js와 비동기 프로그래밍 " /><published>2017-06-27T00:00:00+09:00</published><updated>2017-06-27T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/06/27/node-js</id><content type="html" xml:base="http://localhost:4000/devlog/2017/06/27/node-js/">&lt;p&gt;Node js와 비동기 프로그래밍에 대한 이야기를 적어보려한다. 이 이슈는 예전에 어떤 기업의 기술면접에서 질문받았던 내용이다.&lt;/p&gt;
+
+&lt;p&gt;기술면접에선 이런 개념적인 부분들을 물어볼 때가 많다. 미리 공부해 두면 개발할 때에도 도움이 되고, 이직등의 상황을 맞이하게 되었을 때 도움이 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;항상 개발을 할 때나 공부를 할 때 ‘왜?’라는 걸 고려하면 더 좋은 개발자가 될 수 있을거라고 생각한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;서버&quot;&gt;서버&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;대부분의 어플리케이션은 서버를 기반으로 동작한다. 수많은 클라이언트의 요청을 받는 서버는 요청 처리과정에 병목현상이 발생하게 된다. 이를 해결하기 위해 기업들은 로드밸런싱이나 서버 성능향상에 많은 노력과 돈을 쓰곤한다.&lt;/p&gt;
+
+&lt;p&gt;병목이 발생하는 구간은 대부분 I/O처리 작업이다. 즉 Disk에 접근하거나 Network Access로 데이터를 주고 받는 것이 병목현상의 주범인 것이다. Disk나 Network 접근은 캐시나 램에 비해 수만배에서 수천만배정도의 성능 차이가 난다.&lt;/p&gt;
+
+&lt;p&gt;이처럼 서버에서 I/O를 처리하는 데에 오랜 시간이 걸리기 때문에, 다른 요청이 대기되는 상황이 벌어진다. 이런 문제를 해결하기 위해 개발자들은 클라이언트의 요청을 쓰레드로 처리하는 방법을 고안해 내었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;쓰레드와-처리방식&quot;&gt;쓰레드와 처리방식&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;쓰레드는 어떤 프로그램 내에서, 특히 프로세스 내에서 실행되는 흐름의 단위를 말한다. 이 흐름이 한개면 싱글쓰레드이고, 여러개면 멀티쓰레드가 되는 것이다.&lt;/p&gt;
+
+&lt;p&gt;싱글쓰레드와 동기방식은 일반적인 상식선에서 생각 가능한 일반적인 경우이므로, 멀티쓰레드와 비동기처리방식에 대해서 조금 더 알아보자.&lt;/p&gt;
+
+&lt;h3 id=&quot;멀티쓰레드&quot;&gt;멀티쓰레드&lt;/h3&gt;
+
+&lt;p&gt;멀티쓰레드 방식은 서버의 요청 처리를 여러개의 쓰레드가 나누어 처리하여 병렬적인 작업이 가능하도록 하는 방식이다. 쓰레드는 독립적으로 실행되어 각기 다른 요청을 각각의 쓰레드가 받아서 처리할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;멀티쓰레드는 병목현상제거에 이상적인 방식이라고 볼 수 있지만 몇가지 문제가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;접속자의 수만큼 쓰레드를 생성하는 방식이기 때문에 동접자가 많아지면 쓰레드가 그만큼 많이 생기게 된다. 쓰레드는 서버에게서 메모리를 할당받기 때문에, 서버의 메모리 소모가 극심해지게 되는 것이다.&lt;/p&gt;
+
+&lt;p&gt;결국 제한 된 자원을 가진 서버는 일정 수 이상의 쓰레드는 생성할 수 없고, 프로그래머는 다시 고민에 빠지게 된다.&lt;/p&gt;
+
+&lt;p&gt;멀티쓰레드의 이런 한계때문에 실무에서는 서버에 많은 돈을 써서 업그레이드하거나 로드밸런싱등으로 분산처리를 하게 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;비동기-처리&quot;&gt;비동기 처리&lt;/h3&gt;
+
+&lt;p&gt;쓰레드에 단일쓰레드방식과 멀티쓰레드방식이 있다면, 쓰레드의 처리 방식에는 동기방식과 비동기방식이 있다.&lt;/p&gt;
+
+&lt;p&gt;동기방식은 하나의 요청이 처리되는 동안 다른 요청이 펜딩되어 처리가 미루어지는 방식을 이야기한다. 동기방식은 병목현상의 주범으로 지금까지는 멀티쓰레드를 사용하여 각각의 쓰레드가 서로 다른 요청을 맡아 처리하도록 하였다.&lt;/p&gt;
+
+&lt;p&gt;하지만 동기방식의 문제점에 이어 멀티쓰레드방식의 문제점을 발견한 개발자들은 또 다른 방식의 병렬처리기법을 고안하게 되는데, 그게 바로 비동기처리 방식이다.&lt;/p&gt;
+
+&lt;p&gt;비동기처리방식은 하나의 요청 처리가 끝나기 전에 제어권을 다음 요청에게 넘기게 된다. 요청의 처리는 다른 곳에 맡기고 다음 처리를 받는것이다. I/O 논블로킹 방식이라고 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs의-비동기처리&quot;&gt;Node.js의 비동기처리&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Node.js가 바로 이 비동기처리방식을 사용한다. Node.js는 싱글쓰레드이지만 비동기처리방식이기때문에 요청을 처리하면서도 다음 요청을 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Node.js의 비동기 처리는 이벤트를 기반으로 이루어진다. 클라이언트의 요청을 비동기로 처리하기 위해 이벤트를 발생시키고 서버 내부에 메세지 형태로 전달한다. (이 과정에서 쓰레드가 사용되지만 넘어가자.)&lt;/p&gt;
+
+&lt;p&gt;서버 내부에서는 이 메세지가 이벤트 루프로 처리된다. 이벤트루프가 요청을 처리하는동안 제어권이 다음요청으로 넘어가고 처리가 끝나면 callback으로 이벤트를 호출한 요청에게 알려준다.&lt;/p&gt;
+
+&lt;p&gt;즉 끊임없이 다음 요청을 받을 수 있게 되는 것이다. 이런 방식으로 Node.js는 적당한 수준의 I/O처리가 많을경우 아주 뛰어난 성능을 발휘한다.&lt;/p&gt;
+
+&lt;p&gt;물론 Node.js의 이러한 특징때문에 고려해야할 문제가 있는데, 싱글쓰레드이기 때문에 하나의 처리가 늦어지면 전체 처리에 영향을 미칠 수 있다.&lt;/p&gt;
+
+&lt;p&gt;즉, 대용량 처리나 CPU를 많이 사용하는 처리가 연속된다면, Node.js의 처리방식에 의해서 다음요청에도 영향을 미치게 되는 것이다. 대용량 처리나 고비용 처리가 자주 일어나게 되는 경우에는 Node.js를 사용하는 것은 좋지 않은 선택이다.&lt;/p&gt;
+
+&lt;p&gt;또한 Node.js를 사용하면서 동기방식의 코딩을 한다면, 비동기 방식의 설께가 무색해져 제성능을 발휘할 수 없으므로 이 경우에도 Node.js의 사용이 추천되지 않는다.&lt;/p&gt;
+
+&lt;p&gt;비동기 처리방식을 적용하기 위해서는 개발자 역시 비동기적 사고를 할 수 있어야한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Node.js의 비동기처리 방식은 코드 패러다임에 많은 변화를 주었다. 다양한 구현체들도 등장하였다.&lt;/p&gt;
+
+&lt;p&gt;코드를 비동기적으로 프로그래밍하다보니 콜백지옥(비동기 처리의 뎁스가 너무깊어지는 현상)에 빠지게 된 개발자들은 async와 같은 방법을 고안하게 된다.&lt;/p&gt;
+
+&lt;p&gt;또한 너무 큰 처리의 경우를 아주 잘게 나누어서 처리하는 방법도 고안하게 된다. 비동기 처리 방식의 구현은 다양하게 존재한다.&lt;/p&gt;
+
+&lt;p&gt;문제 해결에 있어서 개발자를 따라올 수 있는 직종이 드물지 않을까. 덕분에 공부할게 좀 많지만. 거인의 어깨위로 올라가는 과정을 밟고있다.&lt;/p&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="programming" /><category term="nodejs" /><category term="javascript" /><summary type="html">Node js와 비동기 프로그래밍에 대한 이야기를 적어보려한다. 이 이슈는 예전에 어떤 기업의 기술면접에서 질문받았던 내용이다.</summary></entry><entry><title type="html">[리뷰]모두의 파이썬을 읽고</title><link href="http://localhost:4000/review/2017/06/24/review-modu-pythone/" rel="alternate" type="text/html" title="[리뷰]모두의 파이썬을 읽고 " /><published>2017-06-24T00:00:00+09:00</published><updated>2017-06-24T00:00:00+09:00</updated><id>http://localhost:4000/review/2017/06/24/review-modu-pythone</id><content type="html" xml:base="http://localhost:4000/review/2017/06/24/review-modu-pythone/">&lt;blockquote&gt;
+  &lt;p&gt;이 리뷰는 길벗에게서 책을 제공받았습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;길벗에서 책이왔다. 모두의 파이썬이라는 파이썬 입문서인데, 출판된지는 1년정도 된 책이다.&lt;/p&gt;
+
+&lt;p&gt;책이 도착했다는 소식에 퇴근 후 한달음에 도착한 집에는 책이 다소곳하게 놓여있었다. 평소에 보고싶었던 책이기도하고 재미있을 것 같아 조금은 거칠게 펼쳐보았다.&lt;/p&gt;
+
+&lt;h2 id=&quot;모두의-파이썬&quot;&gt;모두의 파이썬&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;나는 파이썬 공부를 전혀 한적이 없다. 최근에 데이터관련 분야에 흥미가 생겨 뭐좀 해보려고 하니 라이브러리며 언어며 대부분 파이썬을 사용하기도 하고, 한창 몇년전에 장고가 뜰때부터 한번쯤 접해봐야지 하고있던 언어기도 했다.&lt;/p&gt;
+
+&lt;p&gt;시덥잖은 이야기를 하자면 이 책은 간결하고, 친절하며, 잘 쓰여저 있다.&lt;/p&gt;
+
+&lt;p&gt;프로그램을 아는 사람도 모르는사람도 쉽게 접할 수있게 적혀있으며, 술술 읽힌다. 예제는 충분히 재밌고, 간단하다.&lt;/p&gt;
+
+&lt;p&gt;파이썬으로 60줄이면 단순한 게임정도는 만들 수 있다는걸 직접 보여준다.&lt;/p&gt;
+
+&lt;p&gt;간단한 이론과, 재밌는 예제를 적절히 배합한 입문서로써 정말 최고의 책이 아닐까싶다.&lt;/p&gt;
+
+&lt;h2 id=&quot;감상&quot;&gt;감상&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;프로그래밍 언어 입문서를 읽으면서 가장 많이 느낀 점이 ‘결혼하고 싶다’라고 하면 좀 이상해 보일까?&lt;/p&gt;
+
+&lt;p&gt;이 책은 글쓴이가 그의 아이들과 함께 하며 만든 책이라고 한다.&lt;/p&gt;
+
+&lt;p&gt;그래서인지 정말 그의 아이들에게 설명하는 듯한 따뜻함이 느껴졌다. 난 이 책을 읽으며 이미 내 아이들과 재밌는 그림을 그리기도 했고, 아이들이 재밌는 그림을 그렸다고 나에게 다가왔으며, 아이들과 게임을 만들고 함께 플레이했다. 머리속에서.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;나는 미혼이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;파이썬은 가장 쉽게 입문할 수 있는 언어 중에 가장 실용적인 언어라고 생각한다. 즉, 완전초보자부터 완전고수까지 함께 공존하는 언어인것이다.&lt;/p&gt;
+
+&lt;p&gt;배워서 써먹기 좋은 언어라는 이야기이기도 하다.&lt;/p&gt;
+
+&lt;p&gt;그리고 만약, 당신이 아이가 있다면. 그 아이가 어느 정도의 논리적인 생각을 할 수 있다면(아마 중학생쯤) 함께 파이썬을 공부해보는 건 어떨까?&lt;/p&gt;
+
+&lt;p&gt;이 책은 그 때에 가장 완벽한 길라잡이가 될 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;추천&quot;&gt;추천&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로그래밍을 처음 접했거나 익숙하지 않은 사람&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파이썬을 처음 배우는 사람&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="review" /><category term="book" /><summary type="html">이 리뷰는 길벗에게서 책을 제공받았습니다.</summary></entry><entry><title type="html">[web]로컬스토리지, 세션스토리지 그리고 쿠키</title><link href="http://localhost:4000/devlog/2017/06/21/storage-cookie/" rel="alternate" type="text/html" title="[web]로컬스토리지, 세션스토리지 그리고 쿠키" /><published>2017-06-21T00:00:00+09:00</published><updated>2017-06-21T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/06/21/storage-cookie</id><content type="html" xml:base="http://localhost:4000/devlog/2017/06/21/storage-cookie/">&lt;p&gt;오늘은 웹에서 스토리지와 쿠키에 대해서 알아보려한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;스토리지와-쿠키&quot;&gt;스토리지와 쿠키&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;클라이언트의 정보를 저장하는 역할을 하는 것에는 크게 스토리지와 쿠키가 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;스토리지&quot;&gt;스토리지&lt;/h3&gt;
+
+&lt;p&gt;스토리지는 말그대로 저장소를 이야기 하는데, 데이터를 저장하는 역할을 한다. HTML5에서 추가된 스펙으로 키와 벨류가 쌍으로 저장되는 키-벨류 스토리지이다.&lt;/p&gt;
+
+&lt;p&gt;종류는 로컬 스토리지와 세션 스토리지 두 종류로 나뉜다. 두 스토리지의 차이점은 영구성이다. 로컬스토리지는 특별히 지우지 않는 한 계속 브라우저에 남아있는 스토리지인 반면에, 세션스토리지는 브라우저가 닫힐 경우 제거된다.&lt;/p&gt;
+
+&lt;p&gt;이런 특징 때문에 서로 사용처들이 다른데, 로컬스토리지는 보통 지속적으로 필요한 &lt;a href=&quot;https://isme2n.github.io/web/2017/06/13/security-remember-me/&quot;&gt;자동로그인&lt;/a&gt;이나 설정값 데이터등을 저장하고, 세션스토리지에는 간단한 입력폼 정보라던가를 저장해서 문제시 복구하는 기능으로 사용되곤한다.&lt;/p&gt;
+
+&lt;p&gt;물론 클라이언트의 저장소에 저장하는 것이기 때문에 민감한 정보(비밀번호 등)는 저장하지 않는 것이 좋다.&lt;/p&gt;
+
+&lt;h3 id=&quot;쿠키&quot;&gt;쿠키&lt;/h3&gt;
+
+&lt;p&gt;쿠키도 역시 키-벨류 저장소인데, 만료기한도 함께 있는 저장소이다. HTTP요청시 사용자의 쿠키 정보가 서버로 전달되어 사용자를 구별하곤한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;쿠키의-단점&quot;&gt;쿠키의 단점&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;그렇다면 왜 쿠키라는 기능이 있는데 스토리지를 만든 것일까?&lt;/p&gt;
+
+&lt;h3 id=&quot;용량&quot;&gt;용량&lt;/h3&gt;
+
+&lt;p&gt;먼저, 쿠키는 사이즈가 매우 작다. 쿠키는 4kb의 용량을 한계로 가지고 있는 저장소로, 많은 양의 데이터를 저장할 수 없다.&lt;/p&gt;
+
+&lt;h3 id=&quot;속도&quot;&gt;속도&lt;/h3&gt;
+
+&lt;p&gt;쿠키는 매 HTTP요청마다 포함되어 서버에 전달된다. 물론 쿠키는 4kb의 매우 작은 용량이지만 매요청마다 필요하지 않은 데이터가 전달 되는 것은 낭비이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;보안&quot;&gt;보안&lt;/h3&gt;
+
+&lt;p&gt;쿠키는 사용자의 로컬에도 저장되고, 매 HTTP요청마다 전달된다. 쿠키는 별도의 암호화 없이 전달되기 때문에 로컬또는 요청이 도청당하면 사용자의 정보가 쉽게 도난당할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;스토리지의-장점과-사용&quot;&gt;스토리지의 장점과 사용&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;장점&quot;&gt;장점&lt;/h3&gt;
+
+&lt;p&gt;스토리지는 쿠키의 문제점을 보안하기위해 나온 것이기 때문에 쿠키의 단점을 대부분 커버하였다. 스토리지의 용량은 꽤 크고, HTTP요청 때 전달되지 않으며, 표준을 지켜 설계한다면 보안도 한층 강화할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;스토리지의 용량은 쿠키에 비해 상대적으로 큰데, 표준에서는 한사이트당 5mb를 권장한다. 키와 벨류값만 저장하기엔 충분히 큰 사이즈이다.&lt;/p&gt;
+
+&lt;p&gt;또한 서버에 전송되지 않기 때문에, 자원 낭비에 대해 크게 고려할 필요가 없다.&lt;/p&gt;
+
+&lt;h3 id=&quot;사용&quot;&gt;사용&lt;/h3&gt;
+
+&lt;p&gt;스토리지는 브라우저, 디바이스 등등의 환경을 많이 타고, 그 때문에 제대로 작동을 하지 않을 수도있다. 그러므로 꼭 필요한 주요한 정보라면 서버에서 관리를 해야하며, 스토리지는 없어도 되지만 있으면 좋은 기능을 구현하는 것이 좋다.&lt;/p&gt;
+
+&lt;p&gt;예를들어 ‘팝업 일주일간 열지않기’라거나 ‘글쓰기 도중 나갔을 때 내용 복구하기’등의 기능에 사용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;사용법&quot;&gt;사용법&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;쿠키-1&quot;&gt;쿠키&lt;/h3&gt;
+
+&lt;p&gt;쿠키는 보통 따로 함수를 만들어서 사용한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cvalue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exdays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exdays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;expires=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toUTCString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;=&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cvalue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expires&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getCookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ca&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;';'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charAt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;스토리지-1&quot;&gt;스토리지&lt;/h3&gt;
+
+&lt;p&gt;스토리지는 setItem,getItem,remove,clear 등의 함수를 이용해서 사용한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'isme2n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gender'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'male'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// isme2n&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gender'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// male&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gender'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// isme2n&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gender'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// null (삭제됨)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 전체 삭제&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;쿠키와 스토리지는 서로 대립되는 관계가 아니다. 쿠키와 스토리지를 적절히 혼합하여 사용하면 더 좋은 서비스를 만들 수 있을 것이다.&lt;/p&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="web" /><category term="storage" /><category term="cookie" /><summary type="html">오늘은 웹에서 스토리지와 쿠키에 대해서 알아보려한다.</summary></entry><entry><title type="html">[PM2]PM2 사용하기 - Node.js 프로세스 관리 도구</title><link href="http://localhost:4000/devlog/2017/06/21/pm2-usage/" rel="alternate" type="text/html" title="[PM2]PM2 사용하기 - Node.js 프로세스 관리 도구" /><published>2017-06-21T00:00:00+09:00</published><updated>2017-06-21T00:00:00+09:00</updated><id>http://localhost:4000/devlog/2017/06/21/pm2-usage</id><content type="html" xml:base="http://localhost:4000/devlog/2017/06/21/pm2-usage/">&lt;p&gt;서버에서 웹 어플리케이션을 운영할 때 데몬(백드라운드 잡)으로 서버를 띄워야하고, 충돌이 나면 재시작등을 해줘야한다.&lt;/p&gt;
+
+&lt;p&gt;그래서 서버의 영속성을 위해 여러가지 툴들이 등장했는데, 최근 PM2라는 도구가 사용하기 좋아 도입하게 되었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;pm2&quot;&gt;PM2&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;PM2는 앞서 이야기 한 것 처럼 백그라운드 잡으로 Node.js 프로세스를 관리해주는 역할을 한다. 서버다운없이 다시로드할 수 있도록 도와주기 때문에, 서버를 잘 만들기만 하면 굳이 와치독등을 이용한 관제에 큰 힘을 쓰지 않아도 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;설치하기&quot;&gt;설치하기&lt;/h3&gt;
+
+&lt;p&gt;npm을 이용하여 글로벌로 설치한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install pm2 -g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;끝-. npm 만세&lt;/p&gt;
+
+&lt;h3 id=&quot;실행하기&quot;&gt;실행하기&lt;/h3&gt;
+
+&lt;p&gt;아래 명령어처럼 실행하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 start app.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;만약 노드로만 실행을 했다면 아래와 같았을 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node app.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;너무도 유사하기 때문에 쉽게 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;자주쓰는-기능&quot;&gt;자주쓰는 기능&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 stop {id}   //id 앱을 종료한다.
+pm2 kill    //pm2 자체를 종료한다.
+pm2 list    //pm2로 실행되고 있는 앱의 리스트를 확인한다.
+pm2 restart {id}    //id 앱을 재시작한다.
+pm2 delete {id}     //id 앱을 리스트에서 제거한다.
+pm2 describe {id}   //id 앱의 자세한 내용을 확인한다.
+pm2 monit   //cpu/ memory등을 모니터링한다.
+pm2 logs {id}   // id 앱의 로그를 확인한다.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이 외에도 클러스터링과 json파일 실행하기 등등 기능이 다양하다. 나같은 경우는 스크립트를 짜서 pm2로 실행시키기도 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;서버를 배포하는데는 안정성이 중요하다. PM2는 여러분들의 서버에 안정성을 더해줄 수 있을 것이다.&lt;/p&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="tool" /><category term="nodejs" /><category term="meteor" /><summary type="html">서버에서 웹 어플리케이션을 운영할 때 데몬(백드라운드 잡)으로 서버를 띄워야하고, 충돌이 나면 재시작등을 해줘야한다.</summary></entry><entry><title type="html">[공부]나를 공부하게 만드는 방법</title><link href="http://localhost:4000/essay/2017/06/20/make-me-to-study/" rel="alternate" type="text/html" title="[공부]나를 공부하게 만드는 방법" /><published>2017-06-20T00:00:00+09:00</published><updated>2017-06-20T00:00:00+09:00</updated><id>http://localhost:4000/essay/2017/06/20/make-me-to-study</id><content type="html" xml:base="http://localhost:4000/essay/2017/06/20/make-me-to-study/">&lt;p&gt;오늘은 공부에 대해서 이야기 하려한다. 나는 2010년부터 지금까지 부업으로 꾸준히 고등학생들을 가르쳐오고 있다. 그 친구들과 함께 연구하고, 실천해 본 실현가능한 공부법을 소개하려한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;왜-공부를-해야하죠&quot;&gt;왜 공부를 해야하죠?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://m.zdnet.co.kr/column_view.asp?artice_id=20170616090644#imadnews&quot;&gt;임백준님의 칼럼&lt;/a&gt;처럼 어떤 직업이던 공부는 평생 함께 가야할 요소이다. 뒷걸음을 한다고 도태되는 것이 아니라, 가만히 머무르는 것만으로도 도태된다.&lt;/p&gt;
+
+&lt;p&gt;직종마다 공부의 방법은 조금씩 다를 수 있어도, 공부는 언제나 우리를 따라오기 마련이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;어떻게-나를-공부하게-만드는가&quot;&gt;어떻게 나를 공부하게 만드는가?&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;나를 공부하게 만드는법은 단순하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;공부를-할-수-밖에-없게-만들어라&quot;&gt;공부를 할 수 밖에 없게 만들어라&lt;/h3&gt;
+
+&lt;p&gt;나는 타고난 성향이 내향적이고 가만히 있는 것을 좋아하는 편이다. 덕분에 스마트폰의 유혹에 잘 빠지지 않는 편인데, 난 이런 내 성향의 덕을 보았다.&lt;/p&gt;
+
+&lt;p&gt;우선 스마트폰을 멀리해야한다. 만약 멀리하지 못했다면 스마트폰을 코스터처럼 사용하라. 스마트폰위에 물병을 올려놓고 있으면 스마트폰을 보고싶을 때 물을 한모금 더 마시게 되고, 스마트폰을 집지 않는데에 도움이 된다.&lt;/p&gt;
+
+&lt;p&gt;그리고 만약 공부를 시작하려는데 ‘아 맞다 빨래해야되는데.’,’물 한모금만 마시고 하자.’ 등등의 다른생각이 든다면 해도 된다.&lt;/p&gt;
+
+&lt;p&gt;그 대신 공부를 할 세팅을 마치고 가야한다. 책상위에 펜과 종이 책을 펴놓고, 빨래를 하러, 물을 마시러 가면 된다.&lt;/p&gt;
+
+&lt;p&gt;해야 할 일을 마치고 자리에 돌아왔을 때 나를 반기는 책을 보면, 공부를 하지 않고는 못 베길거다.&lt;/p&gt;
+
+&lt;h3 id=&quot;의무감을-가져라&quot;&gt;의무감을 가져라&lt;/h3&gt;
+
+&lt;p&gt;하루에 공부목표치를 정하고 그걸 반드시 한다고 생각해라. 모든 일의 반 이상은 계획에 있다. 지키지 못할 계획은 없느니만 못하다. 충분히 공을 들여 계획을 세우고, 지켜나가는 방식이 좋다.&lt;/p&gt;
+
+&lt;p&gt;그날의 목표를 다 채웠다면 공부를 더 해도 좋고, 이제 놀아도 좋다. 사실 이 방법의 목표는 공부를 무조건 하는데에 있는 것이 아니라 노는 데 죄책감을 없애는 것에 있다.&lt;/p&gt;
+
+&lt;p&gt;사람이 공부만 할 순 없으니까.&lt;/p&gt;
+
+&lt;p&gt;만약 목표를 세우지 못했다면 차라리 그 날은 공부하지 말고 계획을 세우는 시간을 가져라. 충분히 공을 들여 일주일치 계획을 세우자.&lt;/p&gt;
+
+&lt;p&gt;이 때도 역시 계획을 세운 뒤 공부를 해도 좋고, 놀아도 좋다.&lt;/p&gt;
+
+&lt;h3 id=&quot;단기-목표를-만들어라&quot;&gt;단기 목표를 만들어라&lt;/h3&gt;
+
+&lt;p&gt;다음달에 토익을 본다던지, 블로그에 글을 쓸거라던지, 프로그램을 하나 만든다던지, 아두이노로 뭔가를 만든다던지. 뭐가 되도 좋다. 목표가 있다면 당신의 공부는 날개를 단 것이나 다름없다.&lt;/p&gt;
+
+&lt;p&gt;아주 먼 미래에 대한 목표보다는 짧고 단순한 목표를 세우는 편이 공부하는 데에 도움이 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;정리&quot;&gt;정리&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;공부를 할 수 밖에 없게 만들어라. 내가 자리에 돌아왔을 때 공부거리가 세팅이 되어있다면 좋은 시작이 될 수 있다. 같은 예로 책상에 항상 책을 펴놓고 있는 것도 좋다.&lt;/p&gt;
+
+&lt;p&gt;노는 데에 죄책감을 갖지 말자. 우리는 그날의 할당량을 해치웠고, 충분히 놀 자격이 있다. 공부하는게 직업이 아닌이상 하루에 몇시간씩 잘 되지도 않는 공부를 버티고 있을 필요는 없다.&lt;/p&gt;
+
+&lt;p&gt;고등학생처럼 방학때도 공부를 해야하는 경우(풀타임 공부) 나는 ‘8,8,4,8,8,4’를 추천한다. 숫자는 하루에 공부하는 시간이고, 일주일에 6일을 공부하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;목표를 가진다면 공부의 성과는 더 좋을 것이다.&lt;/p&gt;
+
+&lt;p&gt;다음 시간에는 공부를 조금 더 잘하는 법에 대해서 이야기 해보려한다.&lt;/p&gt;</content><author><name>aiden min</name><email>zoqozqz@gmail.com</email></author><category term="essay" /><category term="study" /><summary type="html">오늘은 공부에 대해서 이야기 하려한다. 나는 2010년부터 지금까지 부업으로 꾸준히 고등학생들을 가르쳐오고 있다. 그 친구들과 함께 연구하고, 실천해 본 실현가능한 공부법을 소개하려한다.</summary></entry></feed>

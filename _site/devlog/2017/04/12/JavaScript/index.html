@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
+-->
+
+
+
+
+
+
+
+
+
+<head>
+  <!-- =============== -->
+<!-- META            -->
+<!-- =============== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+
+
+  <title>개발자를 위한 JavaScript &middot; Aiden</title>
+
+
+
+<meta name="description" content="대 자바스크립트 시대라고 할 수 있다.
+
+">
+
+
+
+<!-- =============== -->
+<!-- LINKS           -->
+<!-- =============== -->
+<link rel="canonical" href="http://localhost:4000/devlog/2017/04/12/JavaScript/">
+
+<link rel="alternate" type="application/atom+xml" title="Aiden Feed" href="http://localhost:4000/feed.xml">
+
+
+  <link rel="prev" href="http://localhost:4000/review/2017/03/17/AWSome-Day/">
+
+
+
+  <link rel="next" href="http://localhost:4000/devlog/2017/04/13/JavaScript2/">
+
+
+<link rel="apple-touch-icon" href="http://localhost:4000/apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+<script>
+  !function(n,e){function t(n,e){n.onload=function(){this.onerror=this.onload=null,e(null,n)},n.onerror=function(){this.onerror=this.onload=null,e(new Error("Failed to load "+this.src),n)}}function o(n,e){n.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||(this.onreadystatechange=null,e(null,n))}}n._loaded=!1,n.loadJSDeferred=function(a,d){function r(){n._loaded=!0;var r=e.createElement("script");r.src=a,d&&(("onload"in r?t:o)(r,d),r.onload||t(r,d));var l=e.getElementsByTagName("script")[0];l.parentNode.insertBefore(r,l)}n._loaded?r():n.addEventListener?n.addEventListener("load",r,!1):n.attachEvent?n.attachEvent("onload",r):n.onload=r}}(window,document);
+
+  !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+
+  !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(t){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+
+  window.disablePushState = false;
+  window.disableDrawer = false;
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://unpkg.com/html5shiv/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- =============== -->
+<!-- STYLES          -->
+<!-- =============== -->
+<!--[if gt IE 8]><!---->
+<style>
+  
+  article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}*{box-sizing:border-box}html,body{margin:0;padding:0}html{font-size:16px;line-height:1.75}body{color:#333;background-color:#fff;overflow-y:scroll}a{text-decoration:none}.lead{margin-left:-1rem;margin-right:-1rem}img,.img{display:block;max-width:100%;margin-bottom:1rem;border:none}img.lead,.img.lead{max-width:calc(100% + 2rem);width:calc(100% + 2rem)}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-weight:bold;text-rendering:optimizeLegibility}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{margin:1.6rem 0 1rem;line-height:1.6}h1,.h1{font-size:2rem;line-height:1.25}h2,.h2{font-size:1.5rem}h3,.h3{font-size:1.17em}p{margin-top:0;margin-bottom:1rem}p.lead{font-size:1.25rem;font-weight:300;padding:0 1rem}ul,ol,dl{margin-top:0;margin-bottom:1rem}ul,ol{padding-left:1.25rem}hr{position:relative;margin:1.5rem 0;border:0;border-top:1px solid #eee}.hr{padding-bottom:.5rem;border-bottom:1px solid #eee;margin-bottom:1.5rem}h4,h5,h6,.h4,.h5,.h6{margin-bottom:0.5rem;font-size:1rem}table{margin-bottom:1rem;width:100%;width:calc(100% + 2rem);margin-left:-1rem;border:1px solid #e5e5e5;border-collapse:collapse;border-spacing:0}td,th{padding:.25rem .5rem;border:1px solid #e5e5e5}td:first-child,th:first-child{padding-left:1rem}td:last-child,th:last-child{padding-right:1rem}thead+tbody,tbody+tbody,tfoot{border-top:3px double #e5e5e5}tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th{background-color:#f9f9f9}footer{margin-bottom:2rem}.page,.post{margin-bottom:3em}.page li+li,.post li+li{margin-top:.25rem}.page>header,.post>header{margin-bottom:2rem}.page-title,.post-title{margin-top:0}.post-date{display:block;margin-top:-0.5rem;margin-bottom:1rem;color:#9a9a9a}.related-posts{padding-left:0;list-style:none}.related-posts>li,.related-posts>li+li{margin-top:1rem}.related-posts>li>small,.related-posts>li+li>small{font-size:75%;color:#9a9a9a}.message{margin-bottom:1rem;padding:1rem;color:#787878;background-color:#f9f9f9;margin-left:-1rem;margin-right:-1rem}body,main{position:relative;overflow-x:hidden}@media screen{body::before{content:'';background:#e5e5e5;position:absolute;left:0;top:0;bottom:0}}@media screen and (min-width: 40em){html{font-size:17px}}@media screen and (min-width: 54em){html{font-size:16px}}@media screen and (min-width: 72em){html{font-size:17px}}@media screen and (min-width: 125em){html{font-size:18px}}.sr-only{display:none}.clearfix,.sidebar-social::after,.clearafter::after{content:"";display:table;clear:both}a,.a{position:relative;padding-bottom:.15rem;border-bottom:1px solid}.img{overflow:hidden;background-color:#f9f9f9}.img>img{margin:0;width:100%;height:100%}.sixteen-nine{position:relative}.sixteen-nine::before{display:block;content:"";width:100%;padding-top:56.25%}.sixteen-nine>*{position:absolute;top:0;left:0;right:0;bottom:0}h1+hr,h2+hr,h3+hr,h4+hr,h5+hr,h6+hr{margin-top:0}.fade-in{animation-duration:500ms;animation-name:fade-in;animation-fill-mode:forwards}@keyframes fade-in{from{transform:translateY(-2rem);opacity:0}50%{transform:translateY(-2rem);opacity:0}to{transform:translateY(0);opacity:1}}.mb6{margin-bottom:6rem}.sidebar{color:rgba(255,255,255,0.75);text-align:left}.sidebar::before{content:"";position:absolute;z-index:2;top:0;left:0;bottom:0;right:0;background:linear-gradient(to bottom, rgba(32,32,32,0) 0%, rgba(32,32,32,0.5) 100%)}.sidebar a{color:#fff;border-bottom-color:rgba(255,255,255,0.2)}#_yDrawer{position:relative;padding:1rem 0}@media screen{#_yDrawer{padding:2rem 1rem;min-height:640px;min-height:100vh}}@media screen and (min-width: 54em){#_yDrawer{position:fixed;top:0;left:0;bottom:0;width:18rem;margin-left:0}}@media screen and (min-width: 97.5em){#_yDrawer{width:calc(50% - 28rem)}}@media screen{#_yDrawer.loaded{min-height:0;padding:0}}.sidebar-bg{position:absolute;height:100%;overflow:hidden;top:0;right:0;bottom:0;left:0;background:#202020 center / cover}.sidebar-box{display:flex;justify-content:center}.sidebar-sticky{position:relative;z-index:3}@media screen{.sidebar-sticky{-ms-overflow-style:none;overflow:-moz-scrollbars-none;height:100%;overflow:auto;position:absolute;right:2.5rem;left:2.5rem}}.sidebar-sticky::-webkit-scrollbar{display:none}.sidebar-about>h1{color:#fff;font-size:2rem}.sidebar-nav>ul{list-style:none;padding-left:0;margin-bottom:.5rem}a.sidebar-nav-item{width:100%;font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}a.sidebar-nav-subitem{font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}@media screen{.y-drawer-scrim{z-index:2}.y-drawer-content{width:18rem;left:-18rem;z-index:3}}@media screen and (min-width: 97.5em){.y-drawer-content{width:calc(50% - 28rem)}}.sidebar-social{margin-bottom:.5rem}.sidebar-social>ul{list-style:none;padding-left:0;margin:0 -.25rem}.sidebar-social>ul>li{float:left}.sidebar-social>ul>li>a{display:inline-block;text-align:center;font-size:1.6rem;line-height:3rem;width:3.1249rem;height:4rem;padding:.5rem 0}.sidebar-social>ul li+li{margin-top:0}.fixed-top{position:fixed;top:0;left:0;width:100%;z-index:1}.navbar>.content{padding-top:0;padding-bottom:0;min-height:0;height:0}.menu{display:inline-block;padding:1.75rem 1.5rem;border-bottom:none;margin-left:-1.5rem;color:#9a9a9a !important}.menu::after{content:"\2630"}@media screen and (min-width: 54em){.menu{padding:1.25rem 1.5rem;position:absolute;left:-9999px}.menu:focus{position:static}}.animation-main{pointer-events:none}.loading{display:none}@media print{.menu{display:none}}.animation-main{opacity:0;will-change:opacity}.loading{position:absolute;top:0;right:0;padding:5.25rem 4.5rem;transform-origin:top right;transform:scale(0.33)}.content{position:relative;margin-left:auto;margin-right:auto;padding:5rem 1rem 12rem}@media screen{.content{max-width:38rem;padding-left:1.5rem;min-height:100vh}}@media screen and (min-width: 54em){.content{padding:4rem 1rem 12rem;margin-left:22rem;margin-right:4rem}}@media screen and (min-width: 72em){.content{margin-left:22rem;margin-right:4rem}}@media screen and (min-width: 92em){.content{max-width:48rem}}@media screen and (min-width: 97.5em){.content{margin:auto}}.me{width:6.5rem;height:6.5rem;align-self:center;margin-right:20px;border-radius:100%;position:relative}@media screen and (min-width: 40em){.me{width:7rem;height:7rem}}@media screen and (min-width: 54em){.me{width:6.5rem;height:6.5rem}}@media screen and (min-width: 60em){.me{width:7rem;height:7rem}}main>footer{position:absolute;bottom:0;left:0;right:0;padding:0 1rem;color:#9a9a9a;font-size:smaller;text-align:center}main>footer>p{margin-bottom:0}html{font-family:'Sans-serif'}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-family:'Sans-serif'}
+
+</style>
+
+
+<link rel="preload" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0" as="style" onload="this.rel='stylesheet'">
+
+<style id="_pageStyle">
+
+.content a{color:#4f86aa;border-color:rgba(79,134,170,0.2)}.content a:hover{border-color:#4f86aa}:focus{outline-color:#4f86aa}::selection{color:#fff;background:#4f86aa}::-moz-selection{color:#fff;background:#4f86aa}
+
+</style>
+
+
+<noscript>
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0">
+
+  
+  
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Serif:400,400i,700,700i">
+    <style>
+      html { font-family: 'Spoqa Han Sans', 'Sans-serif' }
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: 'Spoqa Han Sans', 'Sans-serif' }
+    </style>
+  
+
+  
+  <link rel="stylesheet" href="http://localhost:4000/assets/icomoon/style.css">
+</noscript>
+<!--<![endif]-->
+
+</head>
+
+<body>
+  <!-- =============== -->
+<!-- MENU            -->
+<!-- =============== -->
+<div class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <a id="_menu" class="menu no-hover" href="#_title">
+      <span class="sr-only">Menu</span>
+    </a>
+  </div>
+</div>
+
+<!-- =============== -->
+<!-- CONTENT         -->
+<!-- =============== -->
+<div id="_yPushState">
+  <div class="fade-in">
+    <main id="_main" class="content" role="main" data-color="#4f86aa" data-image="/assets/img/nap.jpg">
+      
+
+<article id="post-devlog/2017/04/12/JavaScript" class="post" role="article">
+  <header>
+    <h1 class="post-title">
+      
+        개발자를 위한 JavaScript
+      
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2017-04-12T00:00:00+09:00">12 Apr 2017</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/devlog/" data-flip="title">Devlog</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <a href="/tag/devlog-javascript/" data-flip="title">JavaScript</a>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+
+  
+    <div class="markdown-body">
+      <p>대 자바스크립트 시대라고 할 수 있다.</p>
+
+<p>자바스크립트를 쓴지도 오래되었고, 자바스크립트로 풀스택 개발한지도 1년이 되었는데, 단 한번도 이 자바스크립트라는 녀석을 공부해본적이 없다.</p>
+
+<p>필요할 때마다 찾다보니 성에 차지 않고 부족한 게 많아, 이번 기회에 자바스크립트를 공부하며 정리해보았다.</p>
+
+<h2 id="javascript">JavaScript</h2>
+<hr />
+<p>자바스크립트는 웹페이지를 프로그램적으로 제어하기위한 언어다. 웹이 너무나 접근성이 좋고 방대해졌기 때문에 자연스럽게 발전한 케이스라고 할 수 있다.</p>
+
+<p>지금 시대는 웹이 비약적으로 발전하고 웹을 표현해주는 브라우저도 많이 발전했는데, 자바스크립트가 제어하는건 사실 이 브라우저다.</p>
+
+<p>IOS앱 또는 안드로이드 앱, 윈도우 앱, 리눅스앱.. 등등을 만들 때, 그 특징에 맞춰 네이티브 앱을 만들던 것에 비해(물론 요즘엔 ReactNative 같은 게 있지만) 웹은 브라우저만 있으면 어디서든 접근 할 수있다.</p>
+
+<p>적어도 현재는 향후 몇년간은 자바스크립트가 망할거라는 전망이 없다.</p>
+
+<p>웹은 더 방대해질 것이고, 자바스크립트는 충분히 사용하기 좋다. (타입스크립트가 치고올라오고 있긴하지만. 결국 이녀석도 자바스크립트다.)</p>
+
+<p>친 자바스크립트 DB인 몽고DB나 서버로써의 자바스크립트인 Node.js 등 자바스크립트가 웹브라우저에서만 활약하는게 아니라 그 분야가 엄청나게 방대해졌다.</p>
+
+<p>그리고 이녀석이 또 마법같은게, 자바스크립트를 특별히 배우지 않아도 그냥 쓰다보면 ‘저 자바스크립트 할 줄 알아요.’라고 할 수 있게된다. (그만큼 간단하다.)</p>
+
+<h2 id="ecmascript">ECMAScript</h2>
+<hr />
+<p>사실 자바스크립트가 이렇게 커지게 될 수 있었던 건 Ecma International이라는 기관의 덕이 크다.</p>
+
+<p>자바스크립트가 자주쓰이는데 규칙도 없고해서 여러기업들이 모여서 자바스크립트 표준안을 만든다. 그게 ECMAScript다.</p>
+
+<p>ECMAScript는 ES라고도 불리며 매년갱신되고 있어 현재 ES8이 준비중이다.</p>
+
+<h2 id="함께-알면-좋을-것">함께 알면 좋을 것</h2>
+<hr />
+<p>이미 앞에 언급했다시피 JavaScript는 웹페이지를 제어하기 때문에 기본적으로 HTML과 CSS를 알면 좋다.</p>
+
+<ul>
+  <li>
+    <p>HTML - Hyper Text Markup Language의 약자로 웹페이지를 만들고 JavaScript가 직접 제어하는 대상이다.</p>
+  </li>
+  <li>
+    <p>CSS - Cascading Style Sheets로 HTML페이지를 아름답게 만들 때 사용된다고 보면 된다.</p>
+  </li>
+</ul>
+
+<h2 id="변수">변수</h2>
+<hr />
+<p>변수는 var로 선언한다. var를 생략해도 되지만 예상과는 좀 다른 결과가 나올 수 있다.</p>
+
+<h2 id="-과-">== 과 ===</h2>
+<hr />
+<p>==과 ===은 비교할 때 사용한다. 같으면 true 다르면 false를 반환한다.</p>
+
+<p>===은 타입까지 같은 경우를 체크한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">==</span><span class="s1">'1'</span><span class="p">)</span>   <span class="c1">//true</span>
+<span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="o">===</span><span class="s1">'1'</span><span class="p">)</span>  <span class="c1">//false</span>
+</code></pre>
+</div>
+
+<p>===의 사용이 추천된다.</p>
+
+<h2 id="객체">객체</h2>
+<hr />
+<p>상당히 자주쓰는 개념이 객체이다.</p>
+
+<p>반복문은 아래와 같이 사용한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">grades</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'me'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'you'</span><span class="p">:</span> <span class="mi">20</span> <span class="p">};</span>
+<span class="k">for</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">grade</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">key</span> <span class="err">:</span> <span class="nx">grades</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="모듈">모듈</h2>
+<hr />
+<p>프로그램을 쪼개다보면 결국 기초적인 녀석들로 이루어진 덩어리들이다. 하나의 의미있는 작은 덩어리들을 만들어 여러가지 장점을 누릴 수 있다.</p>
+
+<ul>
+  <li>재사용할 수 있다.</li>
+  <li>어느 부분이 문제인지 금방알 수 있다.</li>
+  <li>작은 모듈하나를 개선하면 그 모듈을 사용하는 모든 모듈이 개선된다.</li>
+</ul>
+
+<h2 id="arguments">arguments</h2>
+<hr />
+<p>함수에는 arguments라는 객체가 있어서 함수내에서 꺼내쓸 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">a</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">a</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h2 id="클로져">클로져</h2>
+<hr />
+<p>클로져는 외부함수의 지역변수가 소멸된 후에도 내부함수가 외부함수의 변수에 접근 할 수 있는 방식을 말한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">arr</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">]());</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>이 경우 출력값은 5,5,5,5,5 이다.</p>
+
+<p>이유는 함수가 arr[i]에 배당된 것이라서 출력할 때 결국 마지막 i 값을 리턴하기 때문이다.</p>
+
+<p>0,1,2,3,4를 출력하고 싶다면 아래처럼 해야한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">arr</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">index</span><span class="p">]());</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>나 같은 경우는 클로져 개념이 들어간 프로그램은 여태까지 단 한번도 한번에 작성한 적이 없다.</p>
+
+<p>꼭 한번 값이 이상한걸 보고 고친다.</p>
+
+<h2 id="functionapply">function.apply</h2>
+<hr />
+<p>function.apply(맥락,인자)</p>
+
+<p>함수를 맥락의 함수로 만든다.</p>
+
+<p>맥락에 객체를 넣는다면 객체의 함수로 사용하는 것 처럼 된다.</p>
+
+<h2 id="자주쓰는-math함수">자주쓰는 Math함수</h2>
+<hr />
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span><span class="nx">n</span><span class="p">);</span> <span class="c1">// m의 n승</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>  <span class="c1">// f를 반올림</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>  <span class="c1">// f를 올림</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>  <span class="c1">// f를 내림</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>  <span class="c1">// n의 제곱근</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>  <span class="c1">// 0 과 1.0사이의 난수 발생</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p>객체지향적 자바스크립트는 따로 작성하려한다.</p>
+
+    </div>
+  
+
+</article>
+
+
+  <hr class="dingbat" />
+
+
+
+
+
+
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
+    
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="aiden min"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
+  
+  <div class="author-body-description">
+    <p>세상에서 가장 게으르기 위해 가장 부지런한 타입.
+글쓰는 것과 디자인, 개발을 좋아한다. 좋은게 좋은거고, 예쁜게 좋은거고, 노는게 좋은거다. 좋아하는게 많은 편.</p>
+
+  </div>
+</div>
+  
+    <div class="sidebar-social">
+      <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://facebook.com/zooqzqz">
+    <span class="icon-facebook" title="Facebook"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/isme2n">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:zooqzqz@gmail.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://isme2n.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+    </div>
+  
+</div>
+
+  </aside>
+
+
+
+
+
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
+
+  <ul class="related-posts">
+    
+      
+      
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/10/javascript-perfomance-optimization/" data-flip="title">
+    <span>[Javascript]자바스크립트 성능 최적화 팁</span>
+  </a>
+  <small><time datetime="2017-07-10T00:00:00+09:00">
+    10 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/07/git-branching/" data-flip="title">
+    <span>[git]git flow - git branching 전략</span>
+  </a>
+  <small><time datetime="2017-07-07T00:00:00+09:00">
+    07 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/06/browser-rendering/" data-flip="title">
+    <span>[web]브라우저가 웹페이지를 그리는 법</span>
+  </a>
+  <small><time datetime="2017-07-06T00:00:00+09:00">
+    06 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+      
+    
+  </ul>
+</aside>
+
+
+
+      
+
+      <footer>
+  <hr/>
+  
+    <p>© 2017. by isme2n</p>
+
+  
+  <p>
+    <code>Powered by <a href="https://isme2n.github.io/">aiden</a></code>
+  </p>
+</footer>
+
+    </main>
+  </div>
+  <div id="_yDrawer">
+  <div id="_sidebar" class="sidebar">
+    <div class="sidebar-bg" style="background-color:#4f86aa;background-image:url(/assets/img/nap.jpg)"></div>
+    <header class="sidebar-sticky" role="banner">
+      <br/>
+      <div class="sidebar-about">
+        <h1><a id="_title" href="/">Aiden</a></h1>
+        <p>가장 게으르기위해 가장 부지런한 개발자</p>
+
+      </div>
+
+      <br/>
+      <br/>
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+
+  
+
+  
+  
+  
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/devlog/">Devlog</a>
+       <label class="folder" for="list-item-1">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-javascript/">JavaScript</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-node/">Node.js</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-react/">React</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-web/">Web</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-aws/">AWS</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-linux/">Linux</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-data/">Data</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-git/">Git</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-meteor/">Meteor</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-mongo/">MongoDB</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-jekyll/">Jekyll</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-algorithm/">Algorithm</a>
+             </li>
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/doc/">Documents</a>
+       <label class="folder" for="list-item-2">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-48wedding/">48wedding</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-boilerplate/">Boilerplate</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-secreport/">Secreport</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-3"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/review/">Review</a>
+       <label class="folder" for="list-item-3">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-book/">Book</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-event/">Event</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-things/">Things</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-4"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/essay/">Essay</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/essay-essay/">Essay</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-5"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/video/">Video</a>
+       <label class="folder" for="list-item-5">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/video-react/">React</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-6"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/about/">About</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/category/artwork/">Artwork</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+</ul>
+
+      </nav>
+    <br/>
+    <br/>
+      <div class="sidebar-box">
+        
+          
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="aiden min"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
+        
+      </div>
+      <p>게으르기 때문에 게발자. 글쓰는 걸 좋아하고, 디자인과 개발을 좋아한다.</p>
+
+      
+      
+        <div class="sidebar-social">
+          <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://facebook.com/zooqzqz">
+    <span class="icon-facebook" title="Facebook"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/isme2n">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:zooqzqz@gmail.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://isme2n.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+      
+    </header>
+  </div>
+</div>
+
+</div>
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', '<UA-XXXXXXXX-X>', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+
+
+
+<!--[if gt IE 8]><!---->
+<script>
+  WebFontConfig = {
+    
+    google: {
+      families: 'Roboto+Slab:700|Noto+Serif:400,400i,700,700i'.split('|')
+    },
+    
+
+    custom: {
+      families: ['icomoon'],
+      urls: ['/assets/icomoon/style.css']
+    }
+  };
+  loadJSDeferred('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+</script>
+<!--<![endif]-->
+
+
+  <!--[if gt IE 9]><!---->
+  
+  <script>loadJSDeferred('/assets/js/hydejack.js?v=6.4.0');</script>
+
+  
+  <!--<![endif]-->
+
+
+
+</body>
+
+</html>

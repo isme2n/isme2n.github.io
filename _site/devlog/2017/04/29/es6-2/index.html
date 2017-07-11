@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
+-->
+
+
+
+
+
+
+
+
+
+<head>
+  <!-- =============== -->
+<!-- META            -->
+<!-- =============== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+
+
+  <title>프론트엔드 개발자를 위한 ES6 #2 &middot; Aiden</title>
+
+
+
+<meta name="description" content="ES6에 대해서 이어서 알아보자.
+
+">
+
+
+
+<!-- =============== -->
+<!-- LINKS           -->
+<!-- =============== -->
+<link rel="canonical" href="http://localhost:4000/devlog/2017/04/29/es6-2/">
+
+<link rel="alternate" type="application/atom+xml" title="Aiden Feed" href="http://localhost:4000/feed.xml">
+
+
+  <link rel="prev" href="http://localhost:4000/devlog/2017/04/28/es6/">
+
+
+
+  <link rel="next" href="http://localhost:4000/devlog/2017/04/30/react-tutorial/">
+
+
+<link rel="apple-touch-icon" href="http://localhost:4000/apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+<script>
+  !function(n,e){function t(n,e){n.onload=function(){this.onerror=this.onload=null,e(null,n)},n.onerror=function(){this.onerror=this.onload=null,e(new Error("Failed to load "+this.src),n)}}function o(n,e){n.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||(this.onreadystatechange=null,e(null,n))}}n._loaded=!1,n.loadJSDeferred=function(a,d){function r(){n._loaded=!0;var r=e.createElement("script");r.src=a,d&&(("onload"in r?t:o)(r,d),r.onload||t(r,d));var l=e.getElementsByTagName("script")[0];l.parentNode.insertBefore(r,l)}n._loaded?r():n.addEventListener?n.addEventListener("load",r,!1):n.attachEvent?n.attachEvent("onload",r):n.onload=r}}(window,document);
+
+  !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+
+  !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(t){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+
+  window.disablePushState = false;
+  window.disableDrawer = false;
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://unpkg.com/html5shiv/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- =============== -->
+<!-- STYLES          -->
+<!-- =============== -->
+<!--[if gt IE 8]><!---->
+<style>
+  
+  article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}*{box-sizing:border-box}html,body{margin:0;padding:0}html{font-size:16px;line-height:1.75}body{color:#333;background-color:#fff;overflow-y:scroll}a{text-decoration:none}.lead{margin-left:-1rem;margin-right:-1rem}img,.img{display:block;max-width:100%;margin-bottom:1rem;border:none}img.lead,.img.lead{max-width:calc(100% + 2rem);width:calc(100% + 2rem)}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-weight:bold;text-rendering:optimizeLegibility}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{margin:1.6rem 0 1rem;line-height:1.6}h1,.h1{font-size:2rem;line-height:1.25}h2,.h2{font-size:1.5rem}h3,.h3{font-size:1.17em}p{margin-top:0;margin-bottom:1rem}p.lead{font-size:1.25rem;font-weight:300;padding:0 1rem}ul,ol,dl{margin-top:0;margin-bottom:1rem}ul,ol{padding-left:1.25rem}hr{position:relative;margin:1.5rem 0;border:0;border-top:1px solid #eee}.hr{padding-bottom:.5rem;border-bottom:1px solid #eee;margin-bottom:1.5rem}h4,h5,h6,.h4,.h5,.h6{margin-bottom:0.5rem;font-size:1rem}table{margin-bottom:1rem;width:100%;width:calc(100% + 2rem);margin-left:-1rem;border:1px solid #e5e5e5;border-collapse:collapse;border-spacing:0}td,th{padding:.25rem .5rem;border:1px solid #e5e5e5}td:first-child,th:first-child{padding-left:1rem}td:last-child,th:last-child{padding-right:1rem}thead+tbody,tbody+tbody,tfoot{border-top:3px double #e5e5e5}tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th{background-color:#f9f9f9}footer{margin-bottom:2rem}.page,.post{margin-bottom:3em}.page li+li,.post li+li{margin-top:.25rem}.page>header,.post>header{margin-bottom:2rem}.page-title,.post-title{margin-top:0}.post-date{display:block;margin-top:-0.5rem;margin-bottom:1rem;color:#9a9a9a}.related-posts{padding-left:0;list-style:none}.related-posts>li,.related-posts>li+li{margin-top:1rem}.related-posts>li>small,.related-posts>li+li>small{font-size:75%;color:#9a9a9a}.message{margin-bottom:1rem;padding:1rem;color:#787878;background-color:#f9f9f9;margin-left:-1rem;margin-right:-1rem}body,main{position:relative;overflow-x:hidden}@media screen{body::before{content:'';background:#e5e5e5;position:absolute;left:0;top:0;bottom:0}}@media screen and (min-width: 40em){html{font-size:17px}}@media screen and (min-width: 54em){html{font-size:16px}}@media screen and (min-width: 72em){html{font-size:17px}}@media screen and (min-width: 125em){html{font-size:18px}}.sr-only{display:none}.clearfix,.sidebar-social::after,.clearafter::after{content:"";display:table;clear:both}a,.a{position:relative;padding-bottom:.15rem;border-bottom:1px solid}.img{overflow:hidden;background-color:#f9f9f9}.img>img{margin:0;width:100%;height:100%}.sixteen-nine{position:relative}.sixteen-nine::before{display:block;content:"";width:100%;padding-top:56.25%}.sixteen-nine>*{position:absolute;top:0;left:0;right:0;bottom:0}h1+hr,h2+hr,h3+hr,h4+hr,h5+hr,h6+hr{margin-top:0}.fade-in{animation-duration:500ms;animation-name:fade-in;animation-fill-mode:forwards}@keyframes fade-in{from{transform:translateY(-2rem);opacity:0}50%{transform:translateY(-2rem);opacity:0}to{transform:translateY(0);opacity:1}}.mb6{margin-bottom:6rem}.sidebar{color:rgba(255,255,255,0.75);text-align:left}.sidebar::before{content:"";position:absolute;z-index:2;top:0;left:0;bottom:0;right:0;background:linear-gradient(to bottom, rgba(32,32,32,0) 0%, rgba(32,32,32,0.5) 100%)}.sidebar a{color:#fff;border-bottom-color:rgba(255,255,255,0.2)}#_yDrawer{position:relative;padding:1rem 0}@media screen{#_yDrawer{padding:2rem 1rem;min-height:640px;min-height:100vh}}@media screen and (min-width: 54em){#_yDrawer{position:fixed;top:0;left:0;bottom:0;width:18rem;margin-left:0}}@media screen and (min-width: 97.5em){#_yDrawer{width:calc(50% - 28rem)}}@media screen{#_yDrawer.loaded{min-height:0;padding:0}}.sidebar-bg{position:absolute;height:100%;overflow:hidden;top:0;right:0;bottom:0;left:0;background:#202020 center / cover}.sidebar-box{display:flex;justify-content:center}.sidebar-sticky{position:relative;z-index:3}@media screen{.sidebar-sticky{-ms-overflow-style:none;overflow:-moz-scrollbars-none;height:100%;overflow:auto;position:absolute;right:2.5rem;left:2.5rem}}.sidebar-sticky::-webkit-scrollbar{display:none}.sidebar-about>h1{color:#fff;font-size:2rem}.sidebar-nav>ul{list-style:none;padding-left:0;margin-bottom:.5rem}a.sidebar-nav-item{width:100%;font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}a.sidebar-nav-subitem{font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}@media screen{.y-drawer-scrim{z-index:2}.y-drawer-content{width:18rem;left:-18rem;z-index:3}}@media screen and (min-width: 97.5em){.y-drawer-content{width:calc(50% - 28rem)}}.sidebar-social{margin-bottom:.5rem}.sidebar-social>ul{list-style:none;padding-left:0;margin:0 -.25rem}.sidebar-social>ul>li{float:left}.sidebar-social>ul>li>a{display:inline-block;text-align:center;font-size:1.6rem;line-height:3rem;width:3.1249rem;height:4rem;padding:.5rem 0}.sidebar-social>ul li+li{margin-top:0}.fixed-top{position:fixed;top:0;left:0;width:100%;z-index:1}.navbar>.content{padding-top:0;padding-bottom:0;min-height:0;height:0}.menu{display:inline-block;padding:1.75rem 1.5rem;border-bottom:none;margin-left:-1.5rem;color:#9a9a9a !important}.menu::after{content:"\2630"}@media screen and (min-width: 54em){.menu{padding:1.25rem 1.5rem;position:absolute;left:-9999px}.menu:focus{position:static}}.animation-main{pointer-events:none}.loading{display:none}@media print{.menu{display:none}}.animation-main{opacity:0;will-change:opacity}.loading{position:absolute;top:0;right:0;padding:5.25rem 4.5rem;transform-origin:top right;transform:scale(0.33)}.content{position:relative;margin-left:auto;margin-right:auto;padding:5rem 1rem 12rem}@media screen{.content{max-width:38rem;padding-left:1.5rem;min-height:100vh}}@media screen and (min-width: 54em){.content{padding:4rem 1rem 12rem;margin-left:22rem;margin-right:4rem}}@media screen and (min-width: 72em){.content{margin-left:22rem;margin-right:4rem}}@media screen and (min-width: 92em){.content{max-width:48rem}}@media screen and (min-width: 97.5em){.content{margin:auto}}.me{width:6.5rem;height:6.5rem;align-self:center;margin-right:20px;border-radius:100%;position:relative}@media screen and (min-width: 40em){.me{width:7rem;height:7rem}}@media screen and (min-width: 54em){.me{width:6.5rem;height:6.5rem}}@media screen and (min-width: 60em){.me{width:7rem;height:7rem}}main>footer{position:absolute;bottom:0;left:0;right:0;padding:0 1rem;color:#9a9a9a;font-size:smaller;text-align:center}main>footer>p{margin-bottom:0}html{font-family:'Sans-serif'}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-family:'Sans-serif'}
+
+</style>
+
+
+<link rel="preload" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0" as="style" onload="this.rel='stylesheet'">
+
+<style id="_pageStyle">
+
+.content a{color:#4f86aa;border-color:rgba(79,134,170,0.2)}.content a:hover{border-color:#4f86aa}:focus{outline-color:#4f86aa}::selection{color:#fff;background:#4f86aa}::-moz-selection{color:#fff;background:#4f86aa}
+
+</style>
+
+
+<noscript>
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0">
+
+  
+  
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Serif:400,400i,700,700i">
+    <style>
+      html { font-family: 'Spoqa Han Sans', 'Sans-serif' }
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: 'Spoqa Han Sans', 'Sans-serif' }
+    </style>
+  
+
+  
+  <link rel="stylesheet" href="http://localhost:4000/assets/icomoon/style.css">
+</noscript>
+<!--<![endif]-->
+
+</head>
+
+<body>
+  <!-- =============== -->
+<!-- MENU            -->
+<!-- =============== -->
+<div class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <a id="_menu" class="menu no-hover" href="#_title">
+      <span class="sr-only">Menu</span>
+    </a>
+  </div>
+</div>
+
+<!-- =============== -->
+<!-- CONTENT         -->
+<!-- =============== -->
+<div id="_yPushState">
+  <div class="fade-in">
+    <main id="_main" class="content" role="main" data-color="#4f86aa" data-image="/assets/img/nap.jpg">
+      
+
+<article id="post-devlog/2017/04/29/es6-2" class="post" role="article">
+  <header>
+    <h1 class="post-title">
+      
+        프론트엔드 개발자를 위한 ES6 #2
+      
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2017-04-29T00:00:00+09:00">29 Apr 2017</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/devlog/" data-flip="title">Devlog</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>Es6</span>, <a href="/tag/devlog-javascript/" data-flip="title">JavaScript</a>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+
+  
+    <div class="markdown-body">
+      <p>ES6에 대해서 이어서 알아보자.</p>
+
+<p>총 3부작이 될 예정이다.</p>
+
+<h3 id="enhanced-object-properties">Enhanced object Properties</h3>
+<hr />
+
+<h4 id="property-shorhand">Property Shorhand</h4>
+
+<p>객체의 프로퍼티값 배정할 때 줄여서 쓸 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="p">}</span> <span class="c1">//obj = { x: x, y: y }</span>
+</code></pre>
+</div>
+
+<h4 id="computed-property-names">Computed Property Names</h4>
+
+<p>객체를 정의할 때 이름에 계산식을 쓸 수 있게 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">foo</span><span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span>
+    <span class="p">[</span> <span class="s2">"baz"</span> <span class="o">+</span> <span class="nx">quux</span><span class="p">()</span> <span class="p">]:</span> <span class="mi">42</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="method-properties">Method Properties</h4>
+
+<p>객체에 메소드를 프로퍼티로 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">foo</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">},</span>
+    <span class="nx">bar</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">},</span>
+    <span class="o">*</span><span class="nx">quux</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="destructuring-assignment">Destructuring Assignment</h3>
+<hr />
+
+<h4 id="array-matching">Array Matching</h4>
+
+<p>직관적이고 유연하게 배열의 값을 배정할 수 있게 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+<span class="kd">var</span> <span class="p">[</span> <span class="nx">a</span><span class="p">,</span> <span class="p">,</span> <span class="nx">b</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">list</span>
+<span class="p">[</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">a</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">]</span>
+</code></pre>
+</div>
+
+<h4 id="object-matching-shorthand-notation-deep-matching">Object Matching, Shorthand Notation, Deep Matching</h4>
+
+<p>직관적이고 유연하게 객체를 배정할 수 있게되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="p">{</span> <span class="nx">op</span><span class="p">,</span> <span class="nx">lhs</span><span class="p">,</span> <span class="nx">rhs</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">getASTNode</span><span class="p">()</span>
+<span class="kd">var</span> <span class="p">{</span> <span class="na">op</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">lhs</span><span class="p">:</span> <span class="p">{</span> <span class="na">op</span><span class="p">:</span> <span class="nx">b</span> <span class="p">},</span> <span class="na">rhs</span><span class="p">:</span> <span class="nx">c</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">getASTNode</span><span class="p">()</span> <span class="c1">//Deep Matching</span>
+</code></pre>
+</div>
+
+<h4 id="object-and-array-matching-default-values">Object And Array Matching, Default Values</h4>
+
+<p>간단하고 직관적인 객체와 배열의 기본 값을 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+<span class="kd">var</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span>
+<span class="kd">var</span> <span class="p">[</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">list</span>
+</code></pre>
+</div>
+
+<h4 id="parameter-context-matching">Parameter Context Matching</h4>
+
+<p>함소를 호출할 때 각각의 파라미터를 직관적이고 유연하게 객체와 배열에서 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span> <span class="p">([</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">val</span> <span class="p">])</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">g</span> <span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="nx">n</span><span class="p">,</span> <span class="na">val</span><span class="p">:</span> <span class="nx">v</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">h</span> <span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">val</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">([</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="mi">42</span> <span class="p">])</span>
+<span class="nx">g</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="na">val</span><span class="p">:</span>  <span class="mi">7</span> <span class="p">})</span>
+<span class="nx">h</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span> <span class="na">val</span><span class="p">:</span> <span class="mi">42</span> <span class="p">})</span>
+</code></pre>
+</div>
+
+<h4 id="fail-soft-destructuring">Fail-Soft Destructuring</h4>
+
+<p>실패에 유연하게 기본값을 선택할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">42</span> <span class="p">]</span>
+<span class="kd">var</span> <span class="p">[</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">d</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">list</span>
+<span class="nx">a</span> <span class="o">===</span> <span class="mi">7</span>
+<span class="nx">b</span> <span class="o">===</span> <span class="mi">42</span>
+<span class="nx">c</span> <span class="o">===</span> <span class="mi">3</span>
+<span class="nx">d</span> <span class="o">===</span> <span class="kc">undefined</span>
+</code></pre>
+</div>
+
+<h3 id="modules">Modules</h3>
+<hr />
+
+<h4 id="value-exportimport">Value Export/Import</h4>
+
+<p>export/import를 지원한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">//  lib/math.js</span>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sum</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="p">}</span>
+<span class="kr">export</span> <span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.141593</span>
+
+<span class="c1">//  someApp.js</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">math</span> <span class="nx">from</span> <span class="s2">"lib/math"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2π = "</span> <span class="o">+</span> <span class="nx">math</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">pi</span><span class="p">))</span>
+
+<span class="c1">//  otherApp.js</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sum</span><span class="p">,</span> <span class="nx">pi</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"lib/math"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2π = "</span> <span class="o">+</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">pi</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<h4 id="default--wildcard">Default &amp; Wildcard</h4>
+
+<p>와일드카드 또는 디폴트를 사용하여 export할 수있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">//  lib/mathplusplus.js</span>
+<span class="kr">export</span> <span class="o">*</span> <span class="nx">from</span> <span class="s2">"lib/math"</span>
+<span class="kr">export</span> <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="mf">2.71828182846</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+
+<span class="c1">//  someApp.js</span>
+<span class="kr">import</span> <span class="nx">exp</span><span class="p">,</span> <span class="p">{</span> <span class="nx">pi</span><span class="p">,</span> <span class="nx">e</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"lib/mathplusplus"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"e^{π} = "</span> <span class="o">+</span> <span class="nx">exp</span><span class="p">(</span><span class="nx">pi</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<h3 id="class">Class</h3>
+<hr />
+
+<h4 id="class-definition">Class Definition</h4>
+
+<p>객체지향적 스타일로 좀 더 직관적이 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">class</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">move</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="class-inheritance">Class Inheritance</h4>
+
+<p>객체지향적 스타일로 좀 더 직관적이 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Rectangle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">width</span>  <span class="o">=</span> <span class="nx">width</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">class</span> <span class="nx">Circle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="nx">radius</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="class-inheritance-from-expressions">Class Inheritance, From Expressions</h4>
+
+<p>믹스인 스타일로 상속도 더 쉽게 할 수 있게 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">aggregation</span> <span class="o">=</span> <span class="p">(</span><span class="nx">baseClass</span><span class="p">,</span> <span class="p">...</span><span class="nx">mixins</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">base</span> <span class="o">=</span> <span class="kr">class</span> <span class="nx">_Combined</span> <span class="kr">extends</span> <span class="nx">baseClass</span> <span class="p">{</span>
+        <span class="nx">constructor</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kr">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+            <span class="nx">mixins</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">mixin</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">mixin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">initializer</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">copyProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">source</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyNames</span><span class="p">(</span><span class="nx">source</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">source</span><span class="p">))</span>
+            <span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">prop</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">prop</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^</span><span class="se">(?:</span><span class="sr">constructor|prototype|arguments|caller|name|bind|call|apply|toString|length</span><span class="se">)</span><span class="sr">$/</span><span class="p">))</span>
+                <span class="k">return</span>
+            <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">prop</span><span class="p">,</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="nx">prop</span><span class="p">))</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+    <span class="nx">mixins</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">mixin</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">copyProps</span><span class="p">(</span><span class="nx">base</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">mixin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
+        <span class="nx">copyProps</span><span class="p">(</span><span class="nx">base</span><span class="p">,</span> <span class="nx">mixin</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">base</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Colored</span> <span class="p">{</span>
+    <span class="nx">initializer</span> <span class="p">()</span>     <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_color</span> <span class="o">=</span> <span class="s2">"white"</span> <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">color</span> <span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_color</span> <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">color</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span>      <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_color</span> <span class="o">=</span> <span class="nx">v</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">ZCoord</span> <span class="p">{</span>
+    <span class="nx">initializer</span> <span class="p">()</span>     <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_z</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">z</span> <span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_z</span> <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">z</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span>          <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_z</span> <span class="o">=</span> <span class="nx">v</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_y</span> <span class="o">=</span> <span class="nx">y</span> <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">x</span> <span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_x</span> <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">x</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span>          <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_x</span> <span class="o">=</span> <span class="nx">v</span> <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">y</span> <span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_y</span> <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">y</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span>          <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_y</span> <span class="o">=</span> <span class="nx">v</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Rectangle</span> <span class="kr">extends</span> <span class="nx">aggregation</span><span class="p">(</span><span class="nx">Shape</span><span class="p">,</span> <span class="nx">Colored</span><span class="p">,</span> <span class="nx">ZCoord</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kd">var</span> <span class="nx">rect</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+<span class="nx">rect</span><span class="p">.</span><span class="nx">z</span>     <span class="o">=</span> <span class="mi">1000</span>
+<span class="nx">rect</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">"red"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rect</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">z</span><span class="p">,</span> <span class="nx">rect</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="base-class-access">Base Class Access</h4>
+
+<p>프로토타입을 사용하지 않고도 직관적으로 기본 클래스 컨스트럭터와 메소드에 접근 할 수 있게 되었다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="err">…</span>
+    <span class="nx">toString</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="err">`</span><span class="nx">Shape</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">})</span><span class="err">`</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">class</span> <span class="nx">Rectangle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+    <span class="nx">toString</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Rectangle &gt; "</span> <span class="o">+</span> <span class="kr">super</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">class</span> <span class="nx">Circle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+    <span class="nx">toString</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Circle &gt; "</span> <span class="o">+</span> <span class="kr">super</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="static-members">Static Members</h4>
+
+<p>정적인 멤버에대한 간단한 지원이 된다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Rectangle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="err">…</span>
+    <span class="kr">static</span> <span class="nx">defaultRectangle</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">class</span> <span class="nx">Circle</span> <span class="kr">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+    <span class="err">…</span>
+    <span class="kr">static</span> <span class="nx">defaultCircle</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">defRectangle</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">.</span><span class="nx">defaultRectangle</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">defCircle</span>    <span class="o">=</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">defaultCircle</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<h4 id="gettersetter">Getter/Setter</h4>
+
+<p>Getter/Setter 도 클래스내에서 직접 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Rectangle</span> <span class="p">{</span>
+    <span class="nx">constructor</span> <span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_width</span>  <span class="o">=</span> <span class="nx">width</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_height</span> <span class="o">=</span> <span class="nx">height</span>
+    <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">width</span>  <span class="p">(</span><span class="nx">width</span><span class="p">)</span>  <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_width</span> <span class="o">=</span> <span class="nx">width</span>               <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">width</span>  <span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_width</span>                <span class="p">}</span>
+    <span class="nx">set</span> <span class="nx">height</span> <span class="p">(</span><span class="nx">height</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">_height</span> <span class="o">=</span> <span class="nx">height</span>             <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">height</span> <span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_height</span>               <span class="p">}</span>
+    <span class="nx">get</span> <span class="nx">area</span>   <span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_width</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">_height</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nx">r</span><span class="p">.</span><span class="nx">area</span> <span class="o">===</span> <span class="mi">1000</span>
+</code></pre>
+</div>
+
+<h3 id="symbol-type">Symbol Type</h3>
+
+<hr />
+
+<h4 id="symbol-type-1">Symbol Type</h4>
+
+<p>객체의 프로퍼티로 유니크하고 변하지않는 데이터타입이 식별자로써 사용되곤한다. 심볼은 디버깅목적으로 설명을 가질 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Symbol</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">()</span>
+<span class="k">typeof</span> <span class="nx">foo</span> <span class="o">===</span> <span class="s2">"symbol"</span>
+<span class="k">typeof</span> <span class="nx">bar</span> <span class="o">===</span> <span class="s2">"symbol"</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">foo</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">bar</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"bar"</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// {}</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// []</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyNames</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// []</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [ foo, bar ]</span>
+</code></pre>
+</div>
+
+<h4 id="global-symbols">Global Symbols</h4>
+
+<p>유니크키로써 글로벌 심볼을 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"app.foo"</span><span class="p">)</span> <span class="o">===</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"app.foo"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"app.foo"</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">"app.bar"</span><span class="p">)</span>
+<span class="nx">Symbol</span><span class="p">.</span><span class="nx">keyFor</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="o">===</span> <span class="s2">"app.foo"</span>
+<span class="nx">Symbol</span><span class="p">.</span><span class="nx">keyFor</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="o">===</span> <span class="s2">"app.bar"</span>
+<span class="k">typeof</span> <span class="nx">foo</span> <span class="o">===</span> <span class="s2">"symbol"</span>
+<span class="k">typeof</span> <span class="nx">bar</span> <span class="o">===</span> <span class="s2">"symbol"</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">foo</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="nx">obj</span><span class="p">[</span><span class="nx">bar</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"bar"</span>
+<span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// {}</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// []</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyNames</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// []</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [ foo, bar ]</span>
+</code></pre>
+</div>
+
+<h3 id="iterators">Iterators</h3>
+<hr />
+
+<h4 id="iterator--for-of-operator">Iterator &amp; For-Of Operator</h4>
+
+<p>간편한 반복문을 사용할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">{</span>
+           <span class="nx">next</span> <span class="p">()</span> <span class="p">{</span>
+               <span class="p">[</span> <span class="nx">pre</span><span class="p">,</span> <span class="nx">cur</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">pre</span> <span class="o">+</span> <span class="nx">cur</span> <span class="p">]</span>
+               <span class="k">return</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">cur</span> <span class="p">}</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="nx">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="generator">Generator</h3>
+<hr />
+
+<h4 id="generator-function-iterator-protocol">Generator Function, Iterator Protocol</h4>
+
+<p>제너레이터를 지원한다. 반복자가 제너레이터함수를 지니고있으면, 컨트롤 플로우를 멈추거나 다시시작할 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">*</span><span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+            <span class="p">[</span> <span class="nx">pre</span><span class="p">,</span> <span class="nx">cur</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">pre</span> <span class="o">+</span> <span class="nx">cur</span> <span class="p">]</span>
+            <span class="k">yield</span> <span class="nx">cur</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="nx">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="generator-function-direct-use">Generator Function, Direct Use</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span><span class="o">*</span> <span class="nx">range</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">yield</span> <span class="nx">start</span>
+        <span class="nx">start</span> <span class="o">+=</span> <span class="nx">step</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="nx">of</span> <span class="nx">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// 0, 2, 4, 6, 8</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="generator-matching">Generator Matching</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="kd">function</span><span class="o">*</span> <span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">numbers</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span> <span class="nx">pre</span><span class="p">,</span> <span class="nx">cur</span> <span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">pre</span> <span class="o">+</span> <span class="nx">cur</span> <span class="p">]</span>
+        <span class="k">yield</span> <span class="nx">cur</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="nx">of</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+
+<span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="p">...</span><span class="nx">fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="p">]</span>
+
+<span class="kd">let</span> <span class="p">[</span> <span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">,</span> <span class="nx">n3</span><span class="p">,</span> <span class="p">...</span><span class="nx">others</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="generator-control-flow">Generator Control-Flow</h4>
+
+<p>코루틴 방식으로 프라미스와 결합한 비동기적 프로그래밍을 지원한다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">//  generic asynchronous control-flow driver</span>
+<span class="kd">function</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">proc</span><span class="p">,</span> <span class="p">...</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">proc</span><span class="p">(...</span><span class="nx">params</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">loop</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">result</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="nx">result</span> <span class="o">=</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span>
+                <span class="nx">resolve</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>   <span class="k">typeof</span> <span class="nx">result</span><span class="p">.</span><span class="nx">value</span>      <span class="o">===</span> <span class="s2">"object"</span>
+                     <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">then</span> <span class="o">===</span> <span class="s2">"function"</span><span class="p">)</span>
+                <span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">loop</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+                <span class="p">})</span>
+            <span class="k">else</span>
+                <span class="nx">loop</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nx">loop</span><span class="p">()</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">//  application-specific asynchronous builder</span>
+<span class="kd">function</span> <span class="nx">makeAsync</span> <span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">after</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">text</span><span class="p">),</span> <span class="nx">after</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">//  application-specific asynchronous procedure</span>
+<span class="nx">async</span><span class="p">(</span><span class="kd">function</span><span class="o">*</span> <span class="p">(</span><span class="nx">greeting</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">makeAsync</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nx">bar</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">makeAsync</span><span class="p">(</span><span class="s2">"bar"</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nx">baz</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">makeAsync</span><span class="p">(</span><span class="s2">"baz"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">return</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">greeting</span><span class="p">}</span> <span class="nx">$</span><span class="p">{</span><span class="nx">foo</span><span class="p">}</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bar</span><span class="p">}</span> <span class="nx">$</span><span class="p">{</span><span class="nx">baz</span><span class="p">}</span><span class="err">`</span>
+<span class="p">},</span> <span class="s2">"Hello"</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">msg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"RESULT:"</span><span class="p">,</span> <span class="nx">msg</span><span class="p">)</span> <span class="c1">// "Hello foo bar baz"</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+<h4 id="generator-methods">Generator Methods</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Clz</span> <span class="p">{</span>
+    <span class="o">*</span> <span class="nx">bar</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">Obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">*</span> <span class="nx">foo</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="err">…</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+    </div>
+  
+
+</article>
+
+
+  <hr class="dingbat" />
+
+
+
+
+
+
+  <aside class="author" role="complementary">
+    <div class="author">
+  <h2 class="page-title hr">
+    About
+  </h2>
+<div class="author-body">
+  
+    
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="aiden min"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
+  
+  <div class="author-body-description">
+    <p>세상에서 가장 게으르기 위해 가장 부지런한 타입.
+글쓰는 것과 디자인, 개발을 좋아한다. 좋은게 좋은거고, 예쁜게 좋은거고, 노는게 좋은거다. 좋아하는게 많은 편.</p>
+
+  </div>
+</div>
+  
+    <div class="sidebar-social">
+      <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://facebook.com/zooqzqz">
+    <span class="icon-facebook" title="Facebook"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/isme2n">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:zooqzqz@gmail.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://isme2n.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+    </div>
+  
+</div>
+
+  </aside>
+
+
+
+
+
+<aside class="related" role="complementary">
+  <h2 class="hr">Related Posts</h2>
+
+  <ul class="related-posts">
+    
+      
+      
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/10/javascript-perfomance-optimization/" data-flip="title">
+    <span>[Javascript]자바스크립트 성능 최적화 팁</span>
+  </a>
+  <small><time datetime="2017-07-10T00:00:00+09:00">
+    10 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/07/git-branching/" data-flip="title">
+    <span>[git]git flow - git branching 전략</span>
+  </a>
+  <small><time datetime="2017-07-07T00:00:00+09:00">
+    07 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+          
+
+
+<li class="h4">
+  <a href="/devlog/2017/07/06/browser-rendering/" data-flip="title">
+    <span>[web]브라우저가 웹페이지를 그리는 법</span>
+  </a>
+  <small><time datetime="2017-07-06T00:00:00+09:00">
+    06 Jul 2017
+  </time></small>
+</li>
+
+        
+      
+        
+        
+      
+    
+  </ul>
+</aside>
+
+
+
+      
+
+      <footer>
+  <hr/>
+  
+    <p>© 2017. by isme2n</p>
+
+  
+  <p>
+    <code>Powered by <a href="https://isme2n.github.io/">aiden</a></code>
+  </p>
+</footer>
+
+    </main>
+  </div>
+  <div id="_yDrawer">
+  <div id="_sidebar" class="sidebar">
+    <div class="sidebar-bg" style="background-color:#4f86aa;background-image:url(/assets/img/nap.jpg)"></div>
+    <header class="sidebar-sticky" role="banner">
+      <br/>
+      <div class="sidebar-about">
+        <h1><a id="_title" href="/">Aiden</a></h1>
+        <p>가장 게으르기위해 가장 부지런한 개발자</p>
+
+      </div>
+
+      <br/>
+      <br/>
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+
+  
+
+  
+  
+  
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/devlog/">Devlog</a>
+       <label class="folder" for="list-item-1">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-javascript/">JavaScript</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-node/">Node.js</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-react/">React</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-web/">Web</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-aws/">AWS</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-linux/">Linux</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-data/">Data</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-git/">Git</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-meteor/">Meteor</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-mongo/">MongoDB</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-jekyll/">Jekyll</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/devlog-algorithm/">Algorithm</a>
+             </li>
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/doc/">Documents</a>
+       <label class="folder" for="list-item-2">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-48wedding/">48wedding</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-boilerplate/">Boilerplate</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/doc-secreport/">Secreport</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-3"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/review/">Review</a>
+       <label class="folder" for="list-item-3">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-book/">Book</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-event/">Event</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/review-things/">Things</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-4"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/essay/">Essay</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/essay-essay/">Essay</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-5"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/video/">Video</a>
+       <label class="folder" for="list-item-5">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/video-react/">React</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-6"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/about/">About</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/category/artwork/">Artwork</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+</ul>
+
+      </nav>
+    <br/>
+    <br/>
+      <div class="sidebar-box">
+        
+          
+  
+
+  
+
+  <img
+    src="/assets/img/me.jpeg"
+    class="me"
+    alt="aiden min"
+    srcset="/assets/img/me.jpeg 1x,/assets/img/me.jpeg 2x"
+    
+  />
+
+
+        
+      </div>
+      <p>게으르기 때문에 게발자. 글쓰는 걸 좋아하고, 디자인과 개발을 좋아한다.</p>
+
+      
+      
+        <div class="sidebar-social">
+          <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://facebook.com/zooqzqz">
+    <span class="icon-facebook" title="Facebook"></span>
+    <span class="sr-only">Facebook</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/isme2n">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:zooqzqz@gmail.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://isme2n.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+      
+    </header>
+  </div>
+</div>
+
+</div>
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', '<UA-XXXXXXXX-X>', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+
+
+
+<!--[if gt IE 8]><!---->
+<script>
+  WebFontConfig = {
+    
+    google: {
+      families: 'Roboto+Slab:700|Noto+Serif:400,400i,700,700i'.split('|')
+    },
+    
+
+    custom: {
+      families: ['icomoon'],
+      urls: ['/assets/icomoon/style.css']
+    }
+  };
+  loadJSDeferred('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+</script>
+<!--<![endif]-->
+
+
+  <!--[if gt IE 9]><!---->
+  
+  <script>loadJSDeferred('/assets/js/hydejack.js?v=6.4.0');</script>
+
+  
+  <!--<![endif]-->
+
+
+
+</body>
+
+</html>
