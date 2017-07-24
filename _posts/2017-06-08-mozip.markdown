@@ -2,8 +2,8 @@
 layout: post
 title:  "48wedding 기획/마케팅/디자이너를 찾습니다."
 subtitle:   "기획/마케팅/디자이너를 찾습니다."
-categories: 48wedding
-tags: service hiring
+categories: doc
+tags: 48wedding service hiring
 ---
 
 안녕하세요. 이번에 48wedding.com이란 서비스를 만든 개발자입니다.
@@ -69,4 +69,3 @@ zooqzqz@naver.com 박민
 ---
 
 혹시 멘토링 해주실 분도 계시면 좋을 것같습니다. 연락주시면 정말 감사드리겠습니다.
-

@@ -2,8 +2,8 @@
 layout: post
 title:  "SSH 종료후에도 프로세스 유지시키기"
 subtitle:   "가끔 ssh접속을 통해 접근하는 경우가 있다."
-categories: linux
-tags: linux
+categories: devlog
+tags: linux devlog
 ---
 
 가끔 ssh접속을 통해 접근하는 경우가 있다.
@@ -13,7 +13,7 @@ tags: linux
 
 이런 상황을 피하기 위해서 방법을 찾아 보았다.
 
-1. 프로세스를 백그라운드로 돌린다. 또는 포그라운드 실행 후 
+1. 프로세스를 백그라운드로 돌린다. 또는 포그라운드 실행 후
     ```
     ctrl + z
     $ bg
@@ -22,9 +22,6 @@ tags: linux
 2. 아래 명령어로 내가 시킨거 아니니까 계속 돌리라고 한다.
     > $ disown -h
 
-    
+
 
 위의 방법으로 ssh 접속으로 실행시킨 프로세스도 자유롭게 사용할 수 있다.
-
-
-

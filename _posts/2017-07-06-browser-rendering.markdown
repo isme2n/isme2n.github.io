@@ -2,13 +2,13 @@
 layout: post
 title:  "[web]브라우저가 웹페이지를 그리는 법"
 subtitle:   "브라우저가 웹페이지를 그리는 법"
-categories: programming
-tags: programming javascript mobile
+categories: devlog
+tags: web devlog
 ---
 
 이제 우리는 HTML을 사용하여 브라우저에 다양한 요소들을 표현하고, CSS로 요소들을 꾸밀 줄 알며,  JavaScript로 페이지를 조작할 수있다.
 
-이 다음에 생각해 보아야 할 건 '실제 브라우저가 어떻게 돌아가는가?'이다. 원리를 알아야 최적화가 가능하다. 이떄까지 아무 물감으로 그림을 그렸다고 한다면, 종이와 물감의 상관관계를 파악하는 과정말이다.
+이 다음에 생각해 보아야 할 건 '실제 브라우저가 어떻게 돌아가는가?'이다. 원리를 알아야 최적화가 가능하다. 이떄까지 아무 물감으로 그림을 그렸다고 한다면, 종이와 물감의 상관관계를 파악하는 과정 말이다.
 
 ## Critical Rendering Path
 
@@ -22,11 +22,11 @@ tags: programming javascript mobile
 
 ### 어떻게 해야하죠?
 
-웹페이지 최적화를 위해 우린 느린 부분을 찾아서 개선해야한다. 그 느린 부분을 찾기 위해 웹페이지가 화면을 그리는 법을 알아야 한다. 브라우저가 화면을 그리는데 사용하는 엔진에는 크게 두 종류가 있는데, 크롬과 사파리의 Webkit엔진과 파이어폭스의 Gecko 엔진이 있다.
+웹페이지 최적화를 위해 우린 느린 부분을 찾아서 개선해야한다. 어떤 부분이 느린지를 찾으려면 웹페이지가 화면을 어떻게 그리는지를 알아야 한다. 브라우저가 화면을 그리는데 사용하는 엔진에는 크게 두 종류가 있는데, 크롬과 사파리의 Webkit엔진과 파이어폭스의 Gecko 엔진이 있다.
 
-이 엔진을 사용해서 화면을 그리는 데 거치는 주요한 과정을 우리는 'Critical Rendering Path'라고 부른다. 해석하면 '주요 렌더링 경로'라고 한다. 
+브라우저가 이런 엔진을 사용해서 화면을 그리는 데 거치는 주요한 과정을 우리는 'Critical Rendering Path'라고 부른다. 해석하면 '주요 렌더링 경로'.
 
-우리가 웹페이지를 호출하는 큰 그림을 그려보자. 
+웹페이지를 호출하는 방식의 큰 그림을 그려보자.
 
 ### Critical Rendering Path
 
@@ -41,6 +41,17 @@ tags: programming javascript mobile
 5. Render Tree의 노드들이 화면의 어디에 위치할지 계산한다.
 
 6. 웹페이지를 그린다.
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 ## 심화공부
 

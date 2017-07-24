@@ -2,8 +2,8 @@
 layout: post
 title:  "git 되돌리기"
 subtitle:   "실수했다."
-categories: git
-tags: git
+categories: devlog
+tags: git devlog
 ---
 
 실수했다.
@@ -39,4 +39,3 @@ tags: git
     > git push origin +master //강제로 씌운다.
 
 이제 어제 하던 작업을 다시하러가야겠다.
-

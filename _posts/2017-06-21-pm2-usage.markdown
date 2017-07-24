@@ -2,8 +2,8 @@
 layout: post
 title:  "[PM2]PM2 사용하기 - Node.js 프로세스 관리 도구"
 subtitle:   "Node.js 프로세스 관리 도구 사용하기"
-categories: tool
-tags: tool node meteor
+categories: devlog
+tags: tool nodejs meteor
 header-img: "/github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png"
 ---
 
@@ -39,7 +39,7 @@ pm2 start app.js
 
 ```
 node app.js
-````
+```
 
 너무도 유사하기 때문에 쉽게 사용할 수 있다.
 

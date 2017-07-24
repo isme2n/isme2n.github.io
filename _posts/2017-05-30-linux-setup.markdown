@@ -2,8 +2,8 @@
 layout: post
 title:  "[리눅스]가상머신(virtualBox)에 리눅스(Fedora18) 설치하기"
 subtitle:   "가상머신(virtualBox)에 리눅스(Fedora18) 설치하기"
-categories:  linux
-tags: linux install 
+categories:  devlog
+tags: linux install
 ---
 
 
@@ -13,11 +13,11 @@ tags: linux install
 
 ### 0.사전준비
 
-#### virtualBox 또는 vmWare같은 가상머신 프로그램을 설치합니다. 
+#### virtualBox 또는 vmWare같은 가상머신 프로그램을 설치합니다.
 
 저는 virtualBox를 선택했습니다. 버츄얼 박스는 [이 곳](https://www.virtualbox.org/)에서 다운로드 하실 수 있습니다.
 
-#### Fedora 운영체제의 이미지파일(.iso)를 구하시면 됩니다. 
+#### Fedora 운영체제의 이미지파일(.iso)를 구하시면 됩니다.
 
 무료운영체제이기때문에 최신판은 https://getfedora.org/ 에서 배급하고 있습니다.
 
@@ -35,7 +35,7 @@ tags: linux install
 
 [![](http://postfiles3.naver.net/20160315_258/zooqzqz_1458028834976eS3F0_PNG/3.PNG?type=w773)](#)
 
-[![](http://postfiles5.naver.net/20160315_196/zooqzqz_1458028835196FOPWE_PNG/4.PNG?type=w773)](#) 
+[![](http://postfiles5.naver.net/20160315_196/zooqzqz_1458028835196FOPWE_PNG/4.PNG?type=w773)](#)
 
 [![](http://postfiles10.naver.net/20160315_217/zooqzqz_1458028835396ahHfg_PNG/5.PNG?type=w773)](#)
 
@@ -52,14 +52,14 @@ tags: linux install
 
 5, 자, 이제 가상머신에 페도라를 설치합니다. 페도라 운영체제 이미지를 삽입하기 위해 저장소를 클릭합니다.
 
-[![](http://postfiles6.naver.net/20160315_37/zooqzqz_1458028836151O6W4c_PNG/9.PNG?type=w773)](#) 
+[![](http://postfiles6.naver.net/20160315_37/zooqzqz_1458028836151O6W4c_PNG/9.PNG?type=w773)](#)
 
 
 [![](http://postfiles4.naver.net/20160315_35/zooqzqz_14580288363452dIPE_PNG/10.PNG?type=w773)](#)
 
 6.컨트롤러:IDE의 비어있음을 클릭하고 광학 드라이브 오른쪽 CD버튼을 클릭하여 자신이 가진 운영체제 이미지 파일을 삽입합니다.
 
-[![](http://postfiles10.naver.net/20160315_137/zooqzqz_1458028836484v8rv5_PNG/11.PNG?type=w773)](#) 
+[![](http://postfiles10.naver.net/20160315_137/zooqzqz_1458028836484v8rv5_PNG/11.PNG?type=w773)](#)
 
 [![](http://postfiles6.naver.net/20160315_5/zooqzqz_1458028836737qe1gu_PNG/12.PNG?type=w773)](#)
 
@@ -88,7 +88,7 @@ tags: linux install
 
 12.그냥 들어가서 완료를 누르면 됩니다. 오른쪽아래 설치버튼을 누르면 다음 스탭으로 진행됩니다.
 
-[![](http://postfiles2.naver.net/20160315_49/zooqzqz_1458028838175w9Alt_PNG/19.PNG?type=w773)](#) 
+[![](http://postfiles2.naver.net/20160315_49/zooqzqz_1458028838175w9Alt_PNG/19.PNG?type=w773)](#)
 
 [![](http://postfiles4.naver.net/20160315_19/zooqzqz_1458028838352EF4GE_PNG/20.PNG?type=w773)](#)
 
@@ -108,7 +108,7 @@ tags: linux install
 
 ### 2.설치 완료
 
-가상머신에 페도라를 설치하는 방법은 어렵지 않습니다. 자신이 가진 운영체제 이미지 파일에 맞춰 32비트 또는 64비트 머신을 만들고 보통의 운영체제 설치방법처럼 설치하게 됩니다. 이제 여러분은 다양한 가상운영체제를 설치하실 수 있게 되었습니다. 
+가상머신에 페도라를 설치하는 방법은 어렵지 않습니다. 자신이 가진 운영체제 이미지 파일에 맞춰 32비트 또는 64비트 머신을 만들고 보통의 운영체제 설치방법처럼 설치하게 됩니다. 이제 여러분은 다양한 가상운영체제를 설치하실 수 있게 되었습니다.
 
 다음에는 가상머신의 간단한 설정과 게스트모드 확장에대해 알아보겠습니다.
 

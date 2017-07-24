@@ -2,8 +2,8 @@
 layout: post
 title:  "ps, awk 명령어 사용하기"
 subtitle:   "개발할 때 터미널 명령어는 익숙하면 편하다."
-categories: linux
-tags: linux ps awk
+categories: devlog
+tags: linux ps awk devlog
 ---
 
 개발할 때 터미널 명령어는 익숙하면 편하다.
@@ -44,5 +44,3 @@ awk는 필드 단위로 패턴을 검색하고, 조작하는 명령어이다.
 > kill -9 \`ps ax \| grep node \| awk '{print $1}'\`
 
 이렇게 호출하면 node 프로세스를 전부 kill할 수 있다.
-
-

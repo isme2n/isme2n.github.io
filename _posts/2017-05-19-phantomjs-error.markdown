@@ -2,8 +2,8 @@
 layout: post
 title:  "Phantom immediately exited with: 127"
 subtitle:   "phantomjs를 쓸 일이 생겼다."
-categories:  web
-tags: nodejs 
+categories:  devlog
+tags: nodejs web
 ---
 
 phantomjs를 쓸 일이 생겼다.
@@ -26,4 +26,3 @@ phantomjs를 설치하고 사용하는데 horseman라이브러리를 사용하�
 > $ sudo apt install -y libfreetype6
 
 의존 라이브러리들을 설치하고나면 잘 실행된다.
-

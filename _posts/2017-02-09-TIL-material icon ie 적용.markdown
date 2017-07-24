@@ -3,8 +3,8 @@ layout: post
 title:  "React Material Icon IE 적용"
 subtitle:   "Material Icon을 적용한 React 프로젝트는"
 date:   2017-02-09 20:21:33 +0900
-categories: web
-tags: react material icon ie
+categories: devlog
+tags: react material icon ie devlog
 ---
 
 Material Icon을 적용한 React 프로젝트는 IE 10 이하에서 적용이 안된다.
@@ -13,7 +13,7 @@ Material Icon을 적용한 React 프로젝트는 IE 10 이하에서 적용이 �
 
 팀에 디자이너도 없고 다른 아이콘 가져다 쓰기엔 불편해서 연구해봤다.
 
-chrome의 Element Inspector를 뒤져보니 .material-icon CSS에 
+chrome의 Element Inspector를 뒤져보니 .material-icon CSS에
 
 
 > -webkit-font-feature-settings : 'liga';

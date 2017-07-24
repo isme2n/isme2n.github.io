@@ -2,7 +2,7 @@
 layout: post
 title:  "[48wedding] 업데이트 로그"
 subtitle:   "[48wedding] 업데이트 로그"
-categories: 48wedding
+categories: doc
 tags: 48wedding log
 ---
 
@@ -44,13 +44,13 @@ tags: 48wedding log
 
 - 디스커스로 댓글 구현
 
-### 170602 - 프로젝트 시작 
+### 170602 - 프로젝트 시작
 
 - 레이아웃 작성
 
 ### 170619 - 대격변 중
 
-- 커스텀 레이아웃 
+- 커스텀 레이아웃
 
 - 테마 추가
 
@@ -67,4 +67,3 @@ tags: 48wedding log
 - ### 컴포넌트 추가 기능
 
 - ### 소셜 기능
-

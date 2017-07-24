@@ -2,7 +2,7 @@
 layout: post
 title:  "[리눅스] 라즈베리파이 시스템 콜 추가하기"
 subtitle:   "라즈베리파이에 시스템 콜을 추가해보자."
-categories:  linux
+categories:  devlog
 tags: linux raspberrypi systemcall
 ---
 
@@ -27,9 +27,9 @@ tags: linux raspberrypi systemcall
 [![](http://postfiles14.naver.net/20160424_45/zooqzqz_1461481203354OjTb3_PNG/2.PNG?type=w773)](#)
 2.git 및 개발도구를 다운로드합니다.
 
-[![](http://postfiles12.naver.net/20160424_283/zooqzqz_1461481203516pIWyB_PNG/3.PNG?type=w773)](#) 
+[![](http://postfiles12.naver.net/20160424_283/zooqzqz_1461481203516pIWyB_PNG/3.PNG?type=w773)](#)
 
-[![](http://postfiles15.naver.net/20160424_158/zooqzqz_1461481203722pjJ1g_PNG/4.PNG?type=w773)](#) 
+[![](http://postfiles15.naver.net/20160424_158/zooqzqz_1461481203722pjJ1g_PNG/4.PNG?type=w773)](#)
 3.커널 소스를 다운로드 하고 다운로드한 커널 버전을 확입합니다.
 
 [![](http://postfiles11.naver.net/20160424_122/zooqzqz_1461481203948hzGu6_PNG/5.PNG?type=w773)](#)
@@ -49,7 +49,7 @@ tags: linux raspberrypi systemcall
 
 7.크로스 컴파일 prefix를 설정하고 설정파일을 만듭니다.
 
-   [![](http://postfiles12.naver.net/20160424_251/zooqzqz_1461481205062IamwI_PNG/8-1.PNG?type=w773)](#) 
+   [![](http://postfiles12.naver.net/20160424_251/zooqzqz_1461481205062IamwI_PNG/8-1.PNG?type=w773)](#)
 
    [![](http://postfiles8.naver.net/20160424_135/zooqzqz_1461481205231PNUbh_PNG/9.PNG?type=w773)](#)
 
@@ -93,7 +93,7 @@ tags: linux raspberrypi systemcall
 
 3.include/linux/syscalls.h에 시스템 콜 함수 원형을 선언합니다.
 
-[![](http://postfiles11.naver.net/20160424_266/zooqzqz_14614812078913n0w1_PNG/20.PNG?type=w773)](#) 
+[![](http://postfiles11.naver.net/20160424_266/zooqzqz_14614812078913n0w1_PNG/20.PNG?type=w773)](#)
 
 4.커널에 포함되어 컴파일 해야하므로 kernel아래에 mysyscall.c함수를 작성합니다.
 
@@ -132,6 +132,6 @@ tags: linux raspberrypi systemcall
 ## 2.마치며
 ---
 
-라즈베리파이에도 시스템콜을 추가해보았습니다. 시스템 콜 추가라는게 사실은 리눅스 기반의 OS에서는 대동소이 합니다. 크로스 컴파일이라는 기능은 쉽게 말해 다른 시스템의 기계에서 실행될수 있도록 컴파일 하는 것을 말합니다. 크로스컴파일을 통하면 여러가지 기계에서 쓸 수 있는 프로그램을 만들 수 있겠지요. 
+라즈베리파이에도 시스템콜을 추가해보았습니다. 시스템 콜 추가라는게 사실은 리눅스 기반의 OS에서는 대동소이 합니다. 크로스 컴파일이라는 기능은 쉽게 말해 다른 시스템의 기계에서 실행될수 있도록 컴파일 하는 것을 말합니다. 크로스컴파일을 통하면 여러가지 기계에서 쓸 수 있는 프로그램을 만들 수 있겠지요.
 
 좋은하루되세요!

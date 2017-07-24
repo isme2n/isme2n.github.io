@@ -2,8 +2,8 @@
 layout: post
 title:  "[git]git flow - git branching 전략"
 subtitle:   "git branching 전략"
-categories: programming
-tags: programming javascript mobile
+categories: devlog
+tags: git devlog
 ---
 
 Git을 이용한 협업은 이제 필수가 되었다. 많의 회사에서 협업능력을 강조하고, 협업을 위한 git의 사용여부를 묻기도한다.
@@ -38,11 +38,10 @@ feature 브랜치는 기능을 작성할 때 develop브랜치에서 가져와 �
 
 release 브랜치는 develop 브랜치에서 가져온다. release-x.y.z의 형식으로 이름짓는다. 이 이름으로 master브랜치에 태깅한다. develop과 master브랜치에 머지된다. master브랜치에 머지되면 삭제한다.
 
-hotfix 브랜치는 master브랜치에서 가져온다. 작업이 완료되면 master에 머지하고 삭제한다. 
+hotfix 브랜치는 master브랜치에서 가져온다. 작업이 완료되면 master에 머지하고 삭제한다.
 
 ## 마치며
 
 ---
 
 git flow를 기반으로 자신의 팀만의 branching전략을 세운다면 더 좋은 협업을 위한 시스템을 만들 수 있을 것이다.
-

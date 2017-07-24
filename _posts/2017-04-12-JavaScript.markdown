@@ -2,7 +2,7 @@
 layout: post
 title:  "개발자를 위한 JavaScript"
 subtitle:   "대 자바스크립트 시대라고 할 수 있다."
-categories: javascript
+categories: devlog
 tags: javascript
 ---
 
@@ -63,7 +63,7 @@ alert(1==='1')  //false
 
 ## 객체
 ---
-상당히 자주쓰는 개념이 객체이다. 
+상당히 자주쓰는 개념이 객체이다.
 
 반복문은 아래와 같이 사용한다.
 
@@ -71,7 +71,7 @@ alert(1==='1')  //false
 var grades = { 'me': 10, 'you': 20 };
 for(key in grade){
     alert(key : grades[key]);
-} 
+}
 ```
 
 ## 모듈

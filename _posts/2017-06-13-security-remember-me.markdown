@@ -2,13 +2,13 @@
 layout: post
 title:  "[보안] 자동로그인(Remember me)의 원리"
 subtitle:   "자동로그인(Remember me)의 원리"
-categories: web
+categories: devlog
 tags: web security
 ---
 
 자동로그인을 구현하는데 가장 널리 쓰이는 디자인은 Charles Miller의 "Persistent Login Cookie Best Practice"이라고 본다.
 
-## Persistent Login Cookie Best Practice
+## 어떤 건데?
 
 ---
 
@@ -83,4 +83,3 @@ tags: web security
 1. 공격자는 세션의 만료시기가 아닌 피해자가 웹 사이트에 다시 접속할 때까지만 도난한 쿠키를 사용할 수 있다.
 
 2. 피해자가 사이트에 접속한 순간 도난 사실이 통보된다.
-

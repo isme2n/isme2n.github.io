@@ -2,7 +2,7 @@
 layout: post
 title:  "[리눅스]가상머신(virtualBox)에서 게스트 확장(드래그앤드롭, 클립보드 공유, 전체화면) 하기"
 subtitle:   "가상머신(virtualBox)에서 게스트 확장(드래그앤드롭, 클립보드 공유, 전체화면) 하기"
-categories:  linux
+categories:  devlog
 tags: linux guest
 ---
 
@@ -19,13 +19,13 @@ tags: linux guest
 
 #### 가상머신의 장치에서 '게스트 확장 CD 이미지 삽입..'을 클릭합니다.
 
-[![](http://postfiles6.naver.net/20160323_197/zooqzqz_1458663975891yt55u_PNG/2.PNG?type=w773)](#) 
+[![](http://postfiles6.naver.net/20160323_197/zooqzqz_1458663975891yt55u_PNG/2.PNG?type=w773)](#)
 
 [![](http://postfiles5.naver.net/20160323_164/zooqzqz_1458663976075gve5y_PNG/3.PNG?type=w773)](#)
 
 #### 확인을 누르면 게스트 확장 모드가 설치가 됩니다. 설치가 완료되면 전체화면, 드래그앤드롭, 클립보드 공유가 가능해집니다.
 
-[![](http://postfiles8.naver.net/20160323_199/zooqzqz_1458664441576mewbB_PNG/3-1.PNG?type=w773)](#) 
+[![](http://postfiles8.naver.net/20160323_199/zooqzqz_1458664441576mewbB_PNG/3-1.PNG?type=w773)](#)
 
 [![](http://postfiles9.naver.net/20160323_216/zooqzqz_1458664441843db9ew_PNG/3-2.PNG?type=w773)](#)
 

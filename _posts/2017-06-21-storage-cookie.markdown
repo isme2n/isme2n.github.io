@@ -2,7 +2,7 @@
 layout: post
 title:  "[web]로컬스토리지, 세션스토리지 그리고 쿠키"
 subtitle:   "로컬스토리지, 세션스토리지 그리고 쿠키"
-categories: web
+categories: devlog
 tags: web storage cookie
 ---
 
@@ -72,7 +72,7 @@ tags: web storage cookie
 
 쿠키는 보통 따로 함수를 만들어서 사용한다.
 
-```
+```js
 function setCookie(cname, cvalue, exdays) {
 
     var d = new Date();
@@ -113,7 +113,7 @@ function getCookie(cname) {
 
 스토리지는 setItem,getItem,remove,clear 등의 함수를 이용해서 사용한다.
 
-```
+```js
 localStorage.setItem('name', 'isme2n');
 localStorage.setItem('gender', 'male');
 localStorage.getItem('name'); // isme2n

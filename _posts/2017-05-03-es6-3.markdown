@@ -2,7 +2,7 @@
 layout: post
 title:  "프론트엔드 개발자를 위한 ES6 #3"
 subtitle:   "ES6 알아보기 마지막 파트."
-categories: javascript
+categories: devlog
 tags : es6 javascript
 ---
 
@@ -128,7 +128,7 @@ dst.baz  === 4
 
 
 #### Number Type Checking
- 
+
 non-number와 무한대를 검사할수 있는 함수가 생겼다.
 
  ```js
@@ -320,4 +320,3 @@ l10nDE.format(new Date("2015-01-02")) === "2.1.2015"
 ### 마치며
 
 ES6에 대해서 알아보았다. 자바스크립트는 점점더 강력해지고있으며 실용적인 기능들이 매우 많아지고, 쓰기 편해지고 있는 것을 알 수 있다.
-

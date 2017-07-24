@@ -2,7 +2,7 @@
 layout: post
 title:  "[리눅스] 라즈베리파이 무선랜 연결하기"
 subtitle:   "라즈베리파이에 무선랜을 설정해보자."
-categories:  linux
+categories:  devlog
 tags: linux raspberrypi wlan
 ---
 
@@ -26,7 +26,7 @@ p.s.이 포스트는 씨리얼을 통해 통신합니다. gui를 통해 다루�
 
 1.씨리얼이 연결된 USB포트 검색
 
-[![](http://postfiles9.naver.net/20160405_200/zooqzqz_1459835799182EnnCT_PNG/1-2.PNG?type=w773)](#) 
+[![](http://postfiles9.naver.net/20160405_200/zooqzqz_1459835799182EnnCT_PNG/1-2.PNG?type=w773)](#)
 
 [![](http://postfiles2.naver.net/20160405_209/zooqzqz_1459835799527qYApk_PNG/1-3.PNG?type=w773)](#)
 

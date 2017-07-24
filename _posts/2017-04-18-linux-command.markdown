@@ -2,7 +2,7 @@
 layout: post
 title:  "Linux 명령어 정리"
 subtitle:   "Linux Command에 대해 알아보자."
-categories: linux
+categories: devlog
 tags: linux command
 ---
 
@@ -15,7 +15,7 @@ tags: linux command
 ## 리눅스 터미널 명령어
 ---
 
-- shutdown : 시스템 종료 
+- shutdown : 시스템 종료
 
 -r : 리부팅
 -c : 취소

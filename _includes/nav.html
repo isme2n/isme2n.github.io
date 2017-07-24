@@ -1,33 +1,32 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-        </div>
+<span class="sr-only">Navigation:</span>
+<ul>
+  {% assign pages = site.pages %}
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ site.baseurl }}/">Home</a>
-                </li>
-                {% for page in site.pages %}{% if page.title %}
-				{% if page.url != '/404.html' %}
-                <li>
-                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                </li>
-				{% endif %}
-                {% endif %}{% endfor %}
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+  {% for document in site.documents %}
+    {% assign pages = pages | push: document %}
+  {% endfor %}
+
+  {% assign subpages = pages | where: "menu", false | sort: "order" %}
+  {% assign pages = pages | where: "menu", true | sort: "order" %}
+  {% assign count = 0%}
+  {% for node in pages %}
+  {% assign count = count | plus: 1 %}
+    <li>
+      <input type="checkbox" id="list-item-{{ count }}"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | relative_url }}">{{ node.title }}</a>
+       {% if node.submenu %}<label class="folder" for="list-item-{{ count }}">▾</label>{% endif %}
     </div>
-    <!-- /.container -->
-</nav>
+     <ul class="list-body">
+       {% for subnode in subpages %}
+           {% if subnode.category == node.slug %}
+             <li>
+               <a class="sidebar-nav-subitem{% if page.url == subnode.url %} active{% endif %}" href="{{ subnode.url | relative_url }}">{{ subnode.title }}</a>
+             </li>
+           {% endif %}
+         {% endfor %}
+     </ul>
+    </li>
+
+  {% endfor %}
+</ul>

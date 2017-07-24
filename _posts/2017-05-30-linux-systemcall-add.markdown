@@ -2,11 +2,11 @@
 layout: post
 title:  "[리눅스]리눅스 시스템 콜(system call) 추가하기"
 subtitle:   "리눅스 시스템 콜(system call) 추가하기"
-categories:  linux
-tags: linux systemcall 
+categories:  devlog
+tags: linux systemcall
 ---
 
-오늘은 리눅스 페도라 운영체제에서 시스템콜을 추가해 보도록 하겠습니다. 시스템 콜이란 '사용자가 일반적으로 접근할 수 없는 커널 메모리, 커널 데이터 등을 사용자가 이용하기 위한 인터페이스' 라고 할 수 있습니다. 
+오늘은 리눅스 페도라 운영체제에서 시스템콜을 추가해 보도록 하겠습니다. 시스템 콜이란 '사용자가 일반적으로 접근할 수 없는 커널 메모리, 커널 데이터 등을 사용자가 이용하기 위한 인터페이스' 라고 할 수 있습니다.
 
 ### 0.시스템 콜 추가 방법
 
@@ -61,11 +61,11 @@ tags: linux systemcall
 
 #### 과정4. 커널 이미지 재생성
 
-[![](http://postfiles9.naver.net/20160320_8/zooqzqz_1458401152349dkoBT_PNG/8.PNG?type=w773)](#) 
+[![](http://postfiles9.naver.net/20160320_8/zooqzqz_1458401152349dkoBT_PNG/8.PNG?type=w773)](#)
 
 [![](http://postfiles16.naver.net/20160320_15/zooqzqz_1458401152708FX1su_PNG/9.PNG?type=w773)](#)
 
-7.이미 커널 컴파일을 하셨다면 System.map과 initrd.img 파일이 이미 '/boot' 디렉토리에 있을 것입니다. 'make bzImage'로 커널 이미지만 새로만들겠습니다. 
+7.이미 커널 컴파일을 하셨다면 System.map과 initrd.img 파일이 이미 '/boot' 디렉토리에 있을 것입니다. 'make bzImage'로 커널 이미지만 새로만들겠습니다.
 
 [![](http://postfiles14.naver.net/20160320_285/zooqzqz_14584011529345Xu9t_PNG/10.PNG?type=w773)](#)
 

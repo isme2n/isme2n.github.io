@@ -2,8 +2,8 @@
 layout: post
 title:  "[정보시각화] Infomation Visualization"
 subtitle:   "[정보시각화] Infomation Visualization"
-categories: doc
-tags: doc summarization
+categories: devlog
+tags: doc data
 ---
 
 정보시각화에 대해서 이야기 해보려한다. 정보시각화와 시각정보 분석은 또 뗄레야 뗄 수 없는 관계인데, 오늘은 정보시각화에 대해 더 알아보자.
@@ -57,4 +57,3 @@ D3등과 같은 툴로 인해 정보를 시각화 하는데에 많은 사람들�
 정보시각화에대해 짧게 정리를 해보았다. UI/UX에 녹아 들어 크게 관심 갖기 어려운 부분이지만, 학문적으로도 꽤나 깊이있는 분야이다.
 
 정보시각화와 시각정보 분석같은경우는 의료기관에서도 사용되며, 많은 관리시스템등에서도 이용된다.
-

@@ -3,7 +3,7 @@ layout: post
 title:  "XECon 2016 후기"
 subtitle:   "XECon 2016에 다녀와서 메모한 것들을 정리해 본다."
 categories: review
-tags: dev webpack xecon
+tags: event webpack xecon
 ---
 
 XECon 2016에 다녀와서 메모한 것들을 정리해 본다.
@@ -31,7 +31,7 @@ XECon 2016에 다녀와서 메모한 것들을 정리해 본다.
 ## 적용법
 
 * yarn
-* babel 
+* babel
 * multiple
 * common module
 * html plugin
@@ -47,8 +47,8 @@ SPA - 모든걸 넘길테니 조립하세요.
 
 여태껏 대세 - BackboneJS + JQuery
 
-BackboneJS 
-* Model - data 
+BackboneJS
+* Model - data
 * Collection - model의 집합
 * Event - user가 만드는
 * View

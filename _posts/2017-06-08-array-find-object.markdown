@@ -2,7 +2,7 @@
 layout: post
 title:  "[JavaScript] Array에서 특정 객체 찾기"
 subtitle:   "[JavaScript] Array에서 특정 객체 찾기"
-categories: javascript
+categories: devlog
 tags: javascript array
 ---
 

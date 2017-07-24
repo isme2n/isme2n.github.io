@@ -2,7 +2,7 @@
 layout: post
 title:  "프론트엔드 개발자를 위한 ES6 #2"
 subtitle:   "ES6에 대해 알아보자."
-categories: javascript
+categories: devlog
 tags : es6 javascript
 ---
 
@@ -34,7 +34,7 @@ let obj = {
 
 #### Method Properties
 
-객체에 메소드를 프로퍼티로 사용할 수 있다. 
+객체에 메소드를 프로퍼티로 사용할 수 있다.
 
 ```js
 obj = {
@@ -74,7 +74,7 @@ var { op: a, lhs: { op: b }, rhs: c } = getASTNode() //Deep Matching
 
 #### Object And Array Matching, Default Values
 
-간단하고 직관적인 객체와 배열의 기본 값을 사용할 수 있다. 
+간단하고 직관적인 객체와 배열의 기본 값을 사용할 수 있다.
 
 ```js
 var obj = { a: 1 }
@@ -120,7 +120,7 @@ d === undefined
 
 #### Value Export/Import
 
-export/import를 지원한다. 
+export/import를 지원한다.
 
 ```js
 //  lib/math.js
@@ -518,4 +518,3 @@ let Obj = {
     }
 }
 ```
-

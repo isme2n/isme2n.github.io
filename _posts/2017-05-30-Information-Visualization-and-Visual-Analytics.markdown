@@ -2,7 +2,7 @@
 layout: post
 title:  "Information Visualization and Visual Analytics"
 subtitle:   "Information Visualization and Visual Analytics"
-categories:  data
+categories:  devlog
 tags: data
 ---
 

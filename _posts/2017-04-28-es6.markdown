@@ -2,7 +2,7 @@
 layout: post
 title:  "프론트엔드 개발자를 위한 ES6 #1"
 subtitle:   "ES6에 대해 알아보자."
-categories: javascript
+categories: devlog
 tags : es6 javascript
 ---
 
@@ -217,4 +217,3 @@ parser("Foo 1 Bar 7 Baz 42", [
     { pattern: /^\s*/y,         action: (match) => {}            }
 ])
 ```
-

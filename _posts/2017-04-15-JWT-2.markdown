@@ -2,8 +2,8 @@
 layout: post
 title:  "JWT - 토큰기반인증 #2 구조"
 subtitle:   "실제구조에 대해 알아보자."
-categories: JWT
-tags: jwt token
+categories: devlog
+tags: web jwt token
 ---
 
 실제구조에 대해 알아보자.
@@ -34,7 +34,7 @@ tags: jwt token
 
 - typ : 토큰의 타입. 'JWT'
 
-- alg : 해싱 알고리즘. 보통 HMAC SHA256 또는 RSA가 사용된다. 
+- alg : 해싱 알고리즘. 보통 HMAC SHA256 또는 RSA가 사용된다.
 
 아래의 모양과 같다.
 

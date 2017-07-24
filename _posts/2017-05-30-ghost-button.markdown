@@ -2,7 +2,7 @@
 layout: post
 title:  "[웹트랜드] 고스트버튼에 대해"
 subtitle:   "고스트버튼에 대해"
-categories:  web
+categories:  devlog
 tags: ghostbutton design web trend
 ---
 
@@ -27,7 +27,7 @@ tags: ghostbutton design web trend
 
 고스트버튼은 UI에 녹아 들지만 중요한 의미를 가지고있어야한다. 아름다움은 헤치지 않고, 의미있는 일을 할 수 있는 녀석이 고스트버튼이다.
 
-고스트버튼은 현대에 가장 잘 쓰이는 컴포넌트중에 하나이다. 전체적인 UI를 헤치지도 않고, 자신의 의미를 가지고있다. 
+고스트버튼은 현대에 가장 잘 쓰이는 컴포넌트중에 하나이다. 전체적인 UI를 헤치지도 않고, 자신의 의미를 가지고있다.
 
 이걸 클릭할 떄는 하이라이트 될 수 있지만. 평소엔 그저 텍스트와 같을 수 있다.
 

@@ -2,8 +2,8 @@
 layout: post
 title:  "Blog 테마 고를 때 확인 할 5가지"
 subtitle:   "블로그를 시작할 때, 아주 큰 고민이생긴다."
-categories: jekyll
-tags: jekyll blog theme
+categories: devlog
+tags: jekyll blog theme devlog
 ---
 
 블로그를 시작할 때 아주 큰 고민이생긴다.
@@ -87,4 +87,3 @@ Github Pages는 기본적으로 사용자, 조직, 프로젝트 페이지로써�
 다음 글은 내가 거의 모든 지킬 테마를 직접 돌아보면서 확인해본 결과 추천할만한 테마들을 소개하려고한다.
 
 위의 모든 것들을 전부 가지고 있는 테마가 아니더라도 레이아웃을 제외하고는 커스텀하는데 몇분 걸리지 않기 때문에 걱정하지 않아도 된다.
-

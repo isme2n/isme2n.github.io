@@ -2,7 +2,7 @@
 layout: post
 title:  "[강좌]React로 웹 어플리케이션 빌드하기"
 subtitle:   "React로 웹 어플리케이션 빌드하기"
-categories: react
+categories: devlog
 tags: javascript react tutorial
 ---
 

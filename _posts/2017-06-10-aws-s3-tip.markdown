@@ -2,7 +2,7 @@
 layout: post
 title:  "[AWS] S3에 서비스 배포 팁"
 subtitle:   "[AWS] S3에 서비스 배포 팁"
-categories: aws
+categories: devlog
 tags: aws deploy
 ---
 

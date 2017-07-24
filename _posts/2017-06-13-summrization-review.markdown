@@ -3,7 +3,7 @@ layout: post
 title:  "기사요약 서비스의 구성"
 subtitle:   "기사요약 서비스의 구성을 공유하려한다."
 categories: doc
-tags: doc summarization
+tags: doc summarization secreport
 ---
 
 [secretary](https://chrome.google.com/webstore/detail/secretary/bijcgcgbhmeemlnidoigdcnokggknikb?hl=ko)라는 기사요약서비스와 [한줄IT](https://twitter.com/R2BQBbW6CM4oFBN)라는 기사요약 트윗을 만들었다. 그 과정에서 느낀 요약 서비스에 대해 이야기 해 보려한다.
@@ -22,9 +22,9 @@ tags: doc summarization
 
 기본적으로 기사요약 서비스를 구성하려면 두가지가 필요하다.
 
-- #### 기사 본문찾기
+- 기사 본문찾기
 
-- #### 기사 요약하기
+- 기사 요약하기
 
 어떤 플랫폼의 기사에서 우리는 본문을 찾아야 하고, 댓글이나 광고가 아닌 본문을 요약해야한다.
 
@@ -58,7 +58,7 @@ tags: doc summarization
 
 이 알고리즘이 뭐냐면, 구글의 페이지랭크라는 알고리즘의 변형이라고 할 수있다. 구글에서 만든 페이지간의 연관성을 찾는 알고리즘인데, 이걸 문장으로 끌고 내려온게 바로 LexRank이다.
 
-LexRank 알고리즘은 알고리즘을 공부했거나, 컴퓨터가 전공인 사람들은 아마 한번쯤 들어봤을 그래프 기반의 알고리즘이다. 
+LexRank 알고리즘은 알고리즘을 공부했거나, 컴퓨터가 전공인 사람들은 아마 한번쯤 들어봤을 그래프 기반의 알고리즘이다.
 
 쉽게 말해 문장간의 연관성을 아주 복잡하게(?) 찾아서 점수를 메기는 방식이다.
 

@@ -2,8 +2,8 @@
 layout: post
 title:  "Winston Logger 사용하기"
 subtitle:   "로그를 남기는건 중요하다."
-categories: meteor
-tags: nodejs meteor winston log
+categories: devlog
+tags: nodejs meteor winston log devlog
 ---
 
 로그를 남기는건 중요하다.
@@ -181,4 +181,3 @@ var logger = new (winston.Logger)({
 이렇게하면 2017-03-03-logs.log라는 파일에 오늘치 로그가 쌓이게 된다.
 
 winston으로 로그관리를 간단히 할 수 있게됬다.
-

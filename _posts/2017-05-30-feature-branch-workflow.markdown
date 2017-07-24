@@ -2,7 +2,7 @@
 layout: post
 title:  "[git]Feature Branch Workflow"
 subtitle:   "Feature Branch Workflow"
-categories:  git
+categories:  devlog
 tags: git feature
 ---
 
@@ -18,7 +18,7 @@ Feture Branch의 핵심 아이디어는 모든 feature 개발이 마스터 브�
 
 ### Feature Branch Workflow 이용법
 
-featuer branch workflow는 여전히 central repository를 사용하며, master는 여전히 오피셜 프로젝트를 이야기한다. 하지만 개발자들은 local master에 직접 커밋하는 대신 새 feature를 개발할 때마다 새 브랜치를 매번생성한다. 피쳐 브랜치는 이름만 봐도 무엇을 개발하는지 설명이 되어야 한다. 이렇게 하면 각 브랜치에서 더 명확하고, 높은 집중도를 유지할 수 있다. 
+featuer branch workflow는 여전히 central repository를 사용하며, master는 여전히 오피셜 프로젝트를 이야기한다. 하지만 개발자들은 local master에 직접 커밋하는 대신 새 feature를 개발할 때마다 새 브랜치를 매번생성한다. 피쳐 브랜치는 이름만 봐도 무엇을 개발하는지 설명이 되어야 한다. 이렇게 하면 각 브랜치에서 더 명확하고, 높은 집중도를 유지할 수 있다.
 
 
 깃은 기술적으로는 마스터 브랜치와 피쳐 브랜치를 구별하지 않는다. 그렇기 때문에 개발자들은 일반적으로 깃을 이용하듯 커밋하고, 편집하면서 이용하면 된다.

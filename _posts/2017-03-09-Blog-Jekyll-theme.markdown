@@ -2,8 +2,8 @@
 layout: post
 title:  "Jekyll Blog 추천 테마 5가지"
 subtitle:   "요즘 Github Pages 기반의 블로그가 많아지고있다."
-categories: jekyll
-tags: jekyll blog theme
+categories: devlog
+tags: jekyll blog theme devlog
 ---
 
 요즘 Github Pages 기반의 블로그가 많아지고있다.
@@ -127,7 +127,6 @@ Demo : https://luminousrubyist.github.io/airspace-jekyll/
 
 이 정도.
 
-나에게 맞는 테마를 고르고 자신만의 컨텐츠를 작성하자. 
+나에게 맞는 테마를 고르고 자신만의 컨텐츠를 작성하자.
 
 읽는 사람과 쓰는 사람 모두 즐거운 블로그를 만들 수 있을 것이다.
-

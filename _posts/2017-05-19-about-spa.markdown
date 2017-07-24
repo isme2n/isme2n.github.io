@@ -2,8 +2,8 @@
 layout: post
 title:  "SPA(Single Page Application)의 원리"
 subtitle:   "오늘은 SPA에 대해서 알아보려한다."
-categories:  web
-tags: javascript
+categories:  devlog
+tags: javascript web
 ---
 
 오늘은 SPA에 대해서 알아보려한다.

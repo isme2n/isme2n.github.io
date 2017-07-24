@@ -2,8 +2,8 @@
 layout: post
 title:  "[Javascript]자바스크립트 성능 최적화 팁"
 subtitle:   "자바스크립트 성능 최적화 팁"
-categories: programming
-tags: programming javascript mobile
+categories: devlog
+tags: devlog javascript
 ---
 
 대부분의 언어가 그렇듯이 자바스크립트는 배우기도 쉽고 사용하기도 쉽지만, 잘 사용하기는 아주 어려운 언어이다. 그냥 작성해도 돌아는 가지만, 더욱 최적화 할 수 있는 방법을 알아보려한다.
@@ -14,7 +14,7 @@ tags: programming javascript mobile
 
 ### || 연산자
 
- || 연산자는 참을 만나면 그 뒤는 연산을 하지 않으므로 if문 대신 사용 하면 코드량과 연산 횟수를 줄일 수 있다.
+ `||` 연산자는 참을 만나면 그 뒤는 연산을 하지 않으므로 if문 대신 사용 하면 코드량과 연산 횟수를 줄일 수 있다.
 
 ```js
 var result;
@@ -35,10 +35,10 @@ const result = some_var || 'default value';
 ```js
 
 var userID; ​
-if (user && user.loggedIn) { 
-    userID = user.id; 
-} else { 
-    userID = null; 
+if (user && user.loggedIn) {
+    userID = user.id;
+} else {
+    userID = null;
 }
 
 // && 연산자 사용
@@ -85,7 +85,7 @@ function enhancedSelectorEx(){
 
 ### innerHTML
 
-innerHTML 횟수는 최소한으로 하는 것이 좋다. 브라우저는 갱신할 때마다 렌더링을 거치게 되기 때문이다. 자세한 내용은 [브라우저가 웹을 그리는 법]()에서 확인할 수 있다.
+innerHTML 횟수는 최소한으로 하는 것이 좋다. 브라우저는 갱신할 때마다 렌더링을 거치게 되기 때문이다. 자세한 내용은 [브라우저가 웹을 그리는 법](https://isme2n.github.io/devlog/2017/07/06/browser-rendering/)에서 확인할 수 있다.
 
 ```js
 //루프를 돌 때마다 브라우저가 웹페이지를 다시 그린다.
@@ -189,7 +189,7 @@ for(var i=0; i<1000; i++){
     arr[i] = i;
 }
 
-arr[999] = "this is string"; 
+arr[999] = "this is string";
 
 ```
 
@@ -207,7 +207,7 @@ try {
     ...
 
     helper_func();
-    
+
     ...
 } catch (e) {
     ...

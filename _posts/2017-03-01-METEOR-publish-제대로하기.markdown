@@ -2,8 +2,8 @@
 layout: post
 title:  "Meteor에서 publish 제대로 하기"
 subtitle:   "Meteor에서 publish할 때 조심해야 하는 경우가 있다."
-categories: meteor
-tags: meteor
+categories: devlog
+tags: meteor devlog
 ---
 
 Meteor에서 publish할 때 조심해야 하는 경우가 있다.
@@ -28,7 +28,7 @@ Meteor에서 publish할 때 조심해야 하는 경우가 있다.
 Meteor.publish('userData', function () {
     return Meteor.users.find();
 })
-``` 
+```
 
 이렇게 하면 유저의 패스워드나 개인신상 정보가 함께 달려가기 때문에 위험하다.
 

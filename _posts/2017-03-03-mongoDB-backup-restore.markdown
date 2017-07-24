@@ -2,8 +2,8 @@
 layout: post
 title:  "MongoDB Backup restore 하기"
 subtitle:   "DB만큼 소중한게 또 있을까."
-categories: mongoDB
-tags: mongodb backup restore
+categories: devlog
+tags: mongodb backup restore devlog
 ---
 
 DB만큼 소중한게 또 있을까.
@@ -39,5 +39,3 @@ mongorestore -h 127.0.0.1:3001 --db meteor backups/meteor/
 ---
 
 DB관리를 소중히하자.
-
-

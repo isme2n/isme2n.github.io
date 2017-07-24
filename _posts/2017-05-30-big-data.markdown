@@ -2,8 +2,8 @@
 layout: post
 title:  "Big Data에 대해"
 subtitle:   "Big Data에 대해"
-categories:  data
-tags: bigdata
+categories:  devlog
+tags: data
 ---
 
 ## Big Data
