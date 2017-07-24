@@ -2,7 +2,7 @@
 layout: in-category-tag
 title: Tip
 slug: tip
-category: essay
+category: tip
 menu: false
 order: 1
 ---

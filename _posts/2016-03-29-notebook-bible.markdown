@@ -2,7 +2,7 @@
 layout: post
 title:  "[노트북 바이블]신학기 개학/개강 기념 가성비 노트북 추천! BEST5"
 subtitle:   "[노트북 바이블]신학기 개학/개강 기념 가성비 노트북 추천! BEST5"
-categories: essay
+categories: tip
 tags: tip
 ---
 

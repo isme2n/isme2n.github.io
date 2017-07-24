@@ -2,7 +2,7 @@
 layout: post
 title:  "[노트북 바이블] 디스플레이 이야기 [1탄 패널 (TN 패널 vs IPS 패널)]"
 subtitle:   "[노트북 바이블] 디스플레이 이야기 [1탄 패널 (TN 패널 vs IPS 패널)]"
-categories: essay
+categories: tip
 tags: tip
 ---
 

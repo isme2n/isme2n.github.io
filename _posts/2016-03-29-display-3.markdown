@@ -2,7 +2,7 @@
 layout: post
 title:  "[노트북바이블][디스플레이 3탄] 해상도"
 subtitle:   "[노트북바이블][디스플레이 3탄] 해상도"
-categories: essay
+categories: tip
 tags: tip
 ---
 
