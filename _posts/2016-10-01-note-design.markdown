@@ -3,7 +3,7 @@ layout: post
 title:  "갤럭시 노트를 통해 본 디자인적 측면의 감성"
 subtitle:   "갤럭시 노트를 통해 본 디자인적 측면의 감성"
 categories: essay
-tags: thought
+tags: essay
 ---
 
 [![](http://postfiles1.naver.net/20161001_144/zooqzqz_147531734933312j4y_JPEG/note7.jpg?type=w773)](#)

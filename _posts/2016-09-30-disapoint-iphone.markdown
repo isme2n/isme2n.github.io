@@ -3,7 +3,7 @@ layout: post
 title:  "아이폰7(iPhone7)에 실망한 4가지"
 subtitle:   "아이폰7(iPhone7)에 실망한 4가지"
 categories: essay
-tags: thought
+tags: essay
 ---
 
 [![](http://postfiles2.naver.net/20161001_65/zooqzqz_1475314041232vNLOc_PNG/iphone.PNG?type=w773)](#)

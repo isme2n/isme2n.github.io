@@ -3,7 +3,7 @@ layout: post
 title:  "갤럭시 노트 7(GalaxyNote7)과 아이폰7(iPhone7)을 통해 본 스마트폰 디자인"
 subtitle:   "갤럭시 노트 7(GalaxyNote7)과 아이폰7(iPhone7)을 통해 본 스마트폰 디자인"
 categories: essay
-tags: thought
+tags: essay
 ---
 
 [![](http://postfiles8.naver.net/20161001_295/zooqzqz_1475315742646TLA0A_JPEG/note7.jpg?type=w773)](#)
