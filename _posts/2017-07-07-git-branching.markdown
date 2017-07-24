@@ -4,6 +4,7 @@ title:  "[git]git flow - git branching 전략"
 subtitle:   "git branching 전략"
 categories: devlog
 tags: git devlog
+header-img: img/git-logo.png
 ---
 
 Git을 이용한 협업은 이제 필수가 되었다. 많의 회사에서 협업능력을 강조하고, 협업을 위한 git의 사용여부를 묻기도한다.

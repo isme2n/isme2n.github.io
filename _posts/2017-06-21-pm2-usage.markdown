@@ -4,7 +4,7 @@ title:  "[PM2]PM2 사용하기 - Node.js 프로세스 관리 도구"
 subtitle:   "Node.js 프로세스 관리 도구 사용하기"
 categories: devlog
 tags: tool nodejs meteor
-header-img: "/github.com/unitech/pm2/raw/master/pres/pm2.20d3ef.png"
+header-img: "/img/pm2-logo.png"
 ---
 
 서버에서 웹 어플리케이션을 운영할 때 데몬(백드라운드 잡)으로 서버를 띄워야하고, 충돌이 나면 재시작등을 해줘야한다.

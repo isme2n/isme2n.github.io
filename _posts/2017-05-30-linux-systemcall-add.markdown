@@ -4,6 +4,7 @@ title:  "[리눅스]리눅스 시스템 콜(system call) 추가하기"
 subtitle:   "리눅스 시스템 콜(system call) 추가하기"
 categories:  devlog
 tags: linux systemcall
+header-img: img/linux-logo.png
 ---
 
 오늘은 리눅스 페도라 운영체제에서 시스템콜을 추가해 보도록 하겠습니다. 시스템 콜이란 '사용자가 일반적으로 접근할 수 없는 커널 메모리, 커널 데이터 등을 사용자가 이용하기 위한 인터페이스' 라고 할 수 있습니다.

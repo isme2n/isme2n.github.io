@@ -4,6 +4,7 @@ title:  "[공부]나를 공부하게 만드는 방법"
 subtitle:   "나를 공부하게 만들어라"
 categories: essay
 tags: essay study
+header-img: img/focus-study.jpg
 ---
 
 오늘은 공부에 대해서 이야기 하려한다. 나는 2010년부터 지금까지 부업으로 꾸준히 고등학생들을 가르쳐오고 있다. 그 친구들과 함께 연구하고, 실천해 본 실현가능한 공부법을 소개하려한다.

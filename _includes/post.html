@@ -19,7 +19,8 @@
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   {% unless include.excerpt %}
     <div class="markdown-body">
-      {% if page.header-img %}<img src="{{ site.url }}/{% if page.header-img %}assets/{{ page.header-img }}{% endif %}"/>
+      {% if page.header-img %}
+      <div class="head-image"><img src="{{ site.url }}/{% if page.header-img %}assets/{{ page.header-img }}{% endif %}"/></div>
                 <br/>{% endif %}
       {{ post.content }}
       <br/>

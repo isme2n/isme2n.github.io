@@ -25,6 +25,11 @@
   font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 
+.markdown-body .head-image {
+  display: flex;
+  justify-content: center;
+}
+
 .markdown-body p {
   word-break: break-word;
 }

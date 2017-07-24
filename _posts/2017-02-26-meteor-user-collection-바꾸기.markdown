@@ -4,6 +4,7 @@ title:  "Meteor default users 콜렉션 바꾸기"
 subtitle:   "Meteor는 기본적으로 유저컬렉션을 users로 fix해 놨다."
 categories: devlog
 tags: meteor devlog
+header-img: img/meteor-logo.png
 ---
 
 Meteor는 기본적으로 유저컬렉션을 users로 fix해 놨다.
