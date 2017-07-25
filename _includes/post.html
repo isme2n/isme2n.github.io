@@ -33,13 +33,15 @@
       <br/>
       <!-- 블로그-하단-반응형 -->
       <ins class="adsbygoogle"
-          style="display:block; width:100%; height:300px;"
+          style="display:block; width:100%; min-height:300px;"
           data-ad-client="ca-pub-9134477021095729"
           data-ad-slot="2380354290"
           data-ad-format="auto"></ins>
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+      <br/>
+      <br/>
     </div>
   {% else %}
     {{ post.excerpt }}
@@ -48,8 +50,6 @@
 
 </article>
 {% unless include.link_title %}
-  <hr class="dingbat" />
-
   <div class="share">
       <h2>Share this post</h2>
       <div class="share-body">
