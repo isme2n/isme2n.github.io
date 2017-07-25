@@ -8,7 +8,24 @@
 <meta name="naver-site-verification" content="22c5b4ef3bfda7fc6100671413989219de7a4ac8"/>
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:type" content="article">
-<meta property="og:image" content="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}assets/img/logo.png{% endif %}">
+
+
+{% for tag_slug in page.tags %}
+  {% unless tag.header-img %}
+    {% assign tag = site.featured_tags | where: "slug", tag_slug | first %}
+  {% endunless %}
+{% endfor %}
+
+{% if page.header-img %}
+  <meta property="og:image" content="{{ site.url }}/assets/{{ page.header-img }}">
+  <br/>
+{% elsif tag.header-img %}
+  <meta property="og:image" content="{{ site.url }}/assets/{{ tag.header-img }}">
+  <br/>
+{% else %}
+  <meta property="og:image" content="{{ site.url }}/assets/img/logo.png">
+{% endif %}
+
 <meta property="og:image:width" content="640" />
 <meta property="og:image:height" content="360" />
 {% capture title %}
