@@ -4,7 +4,7 @@ title:  "[리눅스]가상머신(virtualBox)에 리눅스(Fedora18) 설치하기
 subtitle:   "가상머신(virtualBox)에 리눅스(Fedora18) 설치하기"
 categories:  devlog
 tags: linux install
-header-img: img/linux-logo.png
+
 ---
 
 

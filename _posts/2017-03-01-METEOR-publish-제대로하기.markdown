@@ -4,7 +4,7 @@ title:  "Meteor에서 publish 제대로 하기"
 subtitle:   "Meteor에서 publish할 때 조심해야 하는 경우가 있다."
 categories: devlog
 tags: meteor devlog
-header-img: img/meteor-logo.png
+
 ---
 
 Meteor에서 publish할 때 조심해야 하는 경우가 있다.

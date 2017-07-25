@@ -1,5 +1,5 @@
 ---
-layout: in-category-tag
+layout: tag-blog
 title: MongoDB
 slug: mongodb
 category: devlog

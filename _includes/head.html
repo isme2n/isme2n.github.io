@@ -7,7 +7,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="naver-site-verification" content="22c5b4ef3bfda7fc6100671413989219de7a4ac8"/>
 <meta property="og:title" content="{{ page.title }}">
-<meta property="og:type" content="blog">
+<meta property="og:type" content="article">
 <meta property="og:image" content="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}assets/img/logo.png{% endif %}">
 {% capture title %}
   {% if page.url == "/" %}
@@ -92,8 +92,7 @@
 
 <noscript>
   <link rel="stylesheet" href="{{ style_url | absolute_url }}">
-
-  {% assign font = site.font | default:"'Nanum Barun Gothic Light'" %}
+  {% assign font = site.font | default:"'Sans-serif'" %}
   {% assign font_heading = site.font_heading | default:"'E' %}
   {% assign google_fonts = site.google_fonts | default:"Roboto+Slab:700|Noto+Serif:400,400i,700,700i" %}
 

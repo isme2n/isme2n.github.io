@@ -5,7 +5,7 @@ subtitle:   "github 오픈소스 프로젝트에 Pull Request 보내기"
 categories: devlog
 tags: git
 comments: true
-header-img: img/git-logo.png
+
 ---
 
 이번에 vue를 공부하면서 데이터테이블 라이브러리를 사용하게 되었다. 부족한 기능이 있어 풀리퀘스트를 보내게 되었는데 풀리퀘스트를 보내는 방법에 대해서 알아보자.

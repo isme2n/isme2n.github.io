@@ -4,7 +4,7 @@ title:  "Phantom immediately exited with: 127"
 subtitle:   "phantomjs를 쓸 일이 생겼다."
 categories:  devlog
 tags: nodejs web
-header-img: img/node-logo.png
+
 ---
 
 phantomjs를 쓸 일이 생겼다.

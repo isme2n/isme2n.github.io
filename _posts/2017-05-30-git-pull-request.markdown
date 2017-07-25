@@ -4,7 +4,7 @@ title:  "[git] pull request란?"
 subtitle:   "pull request란?"
 categories:  devlog
 tags: git
-header-img: img/git-logo.png
+
 ---
 
 독립된 피쳐 개발에 있어 브랜치는 풀 리퀘스트를 통해 변화를 논의할 수 있다. 누군가 피쳐개발을 완료했을 때, 그들은 즉시 마스터브랜치에 합치지 않는다. 그들은 피쳐브랜치를 중앙 서버에 푸시하고 풀 리퀘스트 에스킹을 제기하여 다른 이들의 첨언과 함께 마스터에 머지한다. 이는 메인 코드베이스가 되기전 다른 개발자들에게 변화를 리뷰할 기회를 주는 것이다.

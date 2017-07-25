@@ -16,12 +16,18 @@
 
     {% include message.html text=post.description %}
   </header>
+  {% for tag_slug in post.tags %}
+    {% unless tag.header-img %}
+      {% assign tag = site.featured_tags | where: "slug", tag_slug | first %}
+    {% endunless %}
+  {% endfor %}
+  {% if post.header-img %}<div class="head-image"><img src="{{ site.url }}/{% if post.header-img %}assets/{{ post.header-img }}{% endif %}"/></div>
+            <br/>{% elsif tag.header-img %}
+  <div class="head-image"><img src="{{ site.url }}/assets/{{ tag.header-img }}"/></div>
+            <br/>{% endif %}
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   {% unless include.excerpt %}
     <div class="markdown-body">
-      {% if page.header-img %}
-      <div class="head-image"><img src="{{ site.url }}/{% if page.header-img %}assets/{{ page.header-img }}{% endif %}"/></div>
-                <br/>{% endif %}
       {{ post.content }}
       <br/>
       <br/>

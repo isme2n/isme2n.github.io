@@ -5,7 +5,7 @@ subtitle:   "vue.js에 대해"
 categories: devlog
 tags: vue
 comments: true
-header-img: img/vue-logo.png
+
 ---
 
 이번에 사내 백오피스를 전면 개편하면서 vue.js를 사용하기로 했다. vue를 사용해본적이 없기 때문에 공부하면서 내용을 정리하려한다.

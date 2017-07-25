@@ -4,7 +4,7 @@ title:  "[Node]Node.js와 비동기 프로그래밍 "
 subtitle:   "Node.js와 비동기 프로그래밍"
 categories: devlog
 tags: programming nodejs javascript
-header-img: img/node-logo.png
+
 ---
 
 Node js와 비동기 프로그래밍에 대한 이야기를 적어보려한다. 이 이슈는 예전에 어떤 기업의 기술면접에서 질문받았던 내용이다.

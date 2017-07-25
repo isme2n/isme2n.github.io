@@ -31,10 +31,10 @@ image:               /assets/img/nap.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:        "'Spoqa Han Sans', 'Sans-serif'"
+font_heading:        "'Sans-serif'"
 
 # The text font. Expects a string that is a valid CSS font-family value.
-font:                "'Spoqa Han Sans', 'Sans-serif'"
+font:                "'Sans-serif'"
 
 # The string encoding what fonts to fetch from Google Fonts.
 # See: https://qwtel.com/hydejack/docs/configuration/

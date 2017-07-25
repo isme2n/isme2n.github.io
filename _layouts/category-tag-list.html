@@ -4,7 +4,7 @@ layout: base
 
 {% assign category = site.featured_categories | where: "slug", page.slug | first %}
 
-  {% assign tag = site.featured_tags | where: "category", page.slug %}
+{% assign tag = site.featured_tags | where: "category", page.slug %}
 
 {% if page.title.size > 0 %}
   <header>

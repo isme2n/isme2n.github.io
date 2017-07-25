@@ -1,6 +1,5 @@
 ---
 ---
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
 {% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}
 {% include copyright-header.txt %}{{ include_to_scssify | scssify }}
@@ -22,10 +21,11 @@
 }
 
 .markdown-body {
-  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-family: 'Sans-serif';
 }
 
-.markdown-body .head-image {
+.head-image {
+  max-height:300px;
   display: flex;
   justify-content: center;
 }

@@ -4,7 +4,7 @@ title:  "[git]Feature Branch Workflow"
 subtitle:   "Feature Branch Workflow"
 categories:  devlog
 tags: git feature
-header-img: img/git-logo.png
+
 ---
 
 ### Feature Branch Workflow

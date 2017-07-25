@@ -4,7 +4,7 @@ title:  "Winston Logger 사용하기"
 subtitle:   "로그를 남기는건 중요하다."
 categories: devlog
 tags: nodejs meteor winston log devlog
-header-img: img/meteor-logo.png
+
 ---
 
 로그를 남기는건 중요하다.

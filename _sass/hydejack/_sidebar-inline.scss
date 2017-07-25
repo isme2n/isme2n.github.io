@@ -79,29 +79,18 @@
 
 #_yDrawer {
   position: relative;
-  padding: 1rem 0;
 
   @media screen {
-    padding: 2rem 1rem;
     min-height: 640px; // fallback
     min-height: 100vh;
   }
 
   @media screen and (min-width: $break-point-2) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
     width: 18rem; // duplicate!
     margin-left: 0;
   }
 
-  @media screen {
-    &.loaded {
-      min-height: 0;
-      padding: 0;
-    }
-  }
+
 }
 
 .sidebar-bg {
@@ -130,6 +119,7 @@
     height: 100%;
    overflow: auto;
     position: absolute;
+    padding: 4rem 0rem;
     right: 2.5rem;
     left:   2.5rem;
   }
