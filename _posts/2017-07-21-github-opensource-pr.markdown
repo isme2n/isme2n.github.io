@@ -25,7 +25,7 @@ comments: true
 오픈소스와 수정사항을 발견했으면 해당 repo를 fork 한다. 그러면 내 깃에 repo가 생기게 되는데 아래 명령어처럼 자신의 repo를 클론하여 로컬에서 수정한다.
 
 ```
-git clone https://github.com/njleonzhang/vue-data-tables.git
+git clone https://github.com/isme2n/vue-data-tables.git
 ```
 
 수정한 뒤에는 커밋하고 푸쉬해서 자신의 repo를 업데이트 한다.
