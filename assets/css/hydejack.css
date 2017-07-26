@@ -1,6 +1,5 @@
 ---
 ---
-
 {% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}
 {% include copyright-header.txt %}{{ include_to_scssify | scssify }}
 
@@ -27,7 +26,7 @@
 }
 
 .markdown-body {
-  font-family: 'Sans-serif';
+  font-family: 'Lato', sans-serif;
 }
 
 .head-image {

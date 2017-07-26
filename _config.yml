@@ -31,14 +31,14 @@ image:               /assets/img/nap.jpg
 color:               '#4f86aa'
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:        "'Sans-serif'"
+font_heading:        "'Lato', 'Sans-serif'"
 
 # The text font. Expects a string that is a valid CSS font-family value.
-font:                "'Sans-serif'"
+font:                "'Lato', 'Sans-serif'"
 
 # The string encoding what fonts to fetch from Google Fonts.
 # See: https://qwtel.com/hydejack/docs/configuration/
-google_fonts:        Roboto+Slab:700|Noto+Serif:400,400i,700,700i
+google_fonts:        Lato
 
 # If you do not use a Google Fonts, uncomment the line below
 # no_google_fonts:     true
