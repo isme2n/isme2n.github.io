@@ -25,7 +25,7 @@ comments: true
 오픈소스와 수정사항을 발견했으면 해당 repo를 fork 한다. 그러면 내 깃에 repo가 생기게 되는데 아래 명령어처럼 자신의 repo를 클론하여 로컬에서 수정한다.
 
 ```
-git clone https://github.com/isme2n/vue-data-tables.git
+git clone https://github.com/njleonzhang/vue-data-tables.git
 ```
 
 수정한 뒤에는 커밋하고 푸쉬해서 자신의 repo를 업데이트 한다.
@@ -38,7 +38,7 @@ git push
 
 이 후 자신의 repo에 가서 `New pull request`를 클릭하고 base는 원작자의 repo로 head는 나의 repo로 한다.
 
-커냇 내용을 적고 `Create pull request`를 누르면 풀리퀘스트가 완료된다. 보통 자동화 테스트를 거치고, 코드 검토후에 프로젝트에 머지될 것이다.
+커밋 내용을 적고 `Create pull request`를 누르면 풀리퀘스트가 완료된다. 보통 자동화 테스트를 거치고, 코드 검토후에 프로젝트에 머지될 것이다.
 
 ## 마치며
 
