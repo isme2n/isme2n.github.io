@@ -35,6 +35,17 @@ comments: true
 
 예비군 훈련도 훈련이기 때문에 나름 잘 짜여진 커리큘럼속에서 돌아간다. 즉 한 교시마다 수업이 바뀌는 경우가 많아 커다란 책을 들고다니기 어려웠다. 수업이 대부분 일찍 끝나고, 체험형 훈련이기 때문에 내가 체험을 마치거나, 체험할 때까지 기다리는 과정에서 시간이 많이 뜬다. 그 때가 가져간 책이 빛을 발하는 시간이다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 넷
 
 나는 키가 186에 72키로의 커다란 놈이다. 먹는양도 조금 있는 편인데다가, 원래 군대에선 항상 배고픈법이다. 식판을 가득 채워도 배가 부를까 말까한데, 밥이 정말 쥐꼬리 만큼 배급된다. 아니 밥은 자율배식이고 메인반찬이.

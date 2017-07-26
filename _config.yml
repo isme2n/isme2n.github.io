@@ -45,7 +45,7 @@ google_fonts:        Roboto+Slab:700|Noto+Serif:400,400i,700,700i
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-google_analytics:    <UA-92346434-1>
+google_analytics:    UA-92346434-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
 disqus_shortname:    isme2n

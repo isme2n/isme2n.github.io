@@ -101,6 +101,17 @@ Render Object의 필요에 따라 Render Layer가 만들어진다. 그리고 Ren
 
 일반적인 상황이라면 레이어는 하나만 사용하게 된다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 5. Layout
 
 Render Tree가 만들어지면, 이제 각각의 노드들이 어디에 위치할 지 계산하는 과정을 거친다. 이 과정을 Layout과정이라고 한다. position, width, height 등등 위치에 관련된 부분들을 계산한다.
