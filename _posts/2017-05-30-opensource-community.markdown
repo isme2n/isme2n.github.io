@@ -3,7 +3,7 @@ layout: post
 title:  "[오픈소스]오픈 소스 소프트웨어 활용과 커뮤니티 참여"
 subtitle:   "오픈 소스 소프트웨어 활용과 커뮤니티 참여"
 categories:  devlog
-tags: opensource
+tags: git opensource
 ---
 
 가전등의 하드웨어와는 다르게 소프트웨어는 다양한 요구가 함께 된다.
