@@ -44,6 +44,17 @@ tags: doc summarization secreport
 
 뚜렷한 정답은 없지만, 본문찾기 알고리즘과 요약 알고리즘을 함께 적용해 해결하고 있다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 문제 2. 동적인 기사
 
 네이버 블로그의 내용이나 브런치, 미디엄의 인기글들의 리스트는 동적으로 DOM이 생성된다. 이런 경우 일반적인 방법으로는 글을 크롤링 할 수가없다.

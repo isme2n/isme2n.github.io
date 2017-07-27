@@ -32,11 +32,22 @@ tags: essay startup
 
 우리나라의 경우 사람들이 서비스에 지갑을 여는 데에 인색하지만, 물 건너 나라는 내가 산 음식을 나한테 서빙해주는 데에도 가격을 지불한다.
 
-> 딱 한가지만 다른 것들보다 좋아도 밥은 굶지 않을 수 있다. 
+> 딱 한가지만 다른 것들보다 좋아도 밥은 굶지 않을 수 있다.
 
 스타트업은 자신들이 제공할 수 있는 최소한의 가치를 담은 제품을 만들고, 공개한다. 망하면, 또 만든다. 또 망하면, 또또 만든다.
 
 칠전팔기 저리가라다. 제품하나 만드는데 사실 여러번 망한다. 기획이고 개발이고 심지어 팀까지 갈아엎어지는 경우가 부지기수이다.
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 ### 사명감
 
@@ -56,7 +67,7 @@ tags: essay startup
 
 일은 한가지만 잘해도 된다. 하지만, 스타트업에 종사하는 사람이라면 기본적으로 2가지 이상의 일을 함께 하게 되기 마련이다.
 
-특히 규모가 작고, 초기일수록 더 그렇다. 
+특히 규모가 작고, 초기일수록 더 그렇다.
 
 개발을 하면서 기획회의도 참석하고, 마케팅을 하면서 영업과 디자인도 함께하고, 얼마 없는 돈이라도 돈관리도 해야한다.
 
@@ -79,4 +90,3 @@ tags: essay startup
 ---
 
 글쎄, 만약 스타트업형 인간이라는 걸 정의 할 수 있다면 이런게 아닐까. 바닥에 굴러도, 먼지털고 일어나서 멀쩡히 걷는 사람들.
-

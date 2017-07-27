@@ -46,6 +46,17 @@ tags: web storage cookie
 
 쿠키는 사용자의 로컬에도 저장되고, 매 HTTP요청마다 전달된다. 쿠키는 별도의 암호화 없이 전달되기 때문에 로컬또는 요청이 도청당하면 사용자의 정보가 쉽게 도난당할 수 있다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## 스토리지의 장점과 사용
 
 ---

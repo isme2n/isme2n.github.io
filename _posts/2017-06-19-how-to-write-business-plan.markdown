@@ -78,6 +78,17 @@ tags: essay startup
 
 예를 들면 "앱에 접속해서, 신청하면 수많은 벤더가 응답을 해주고, 사용자는 그 중에서 벤더를 선택합니다."를 그림으로 표현하는 것이다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 비즈니스모델
 
 가장 중요한 부분이다. 이 사업이 자생 할 수 있고, 투자자들이 투자금을 회수할 수 있는지가 달려있는 부분이다.
@@ -109,4 +120,3 @@ tags: essay startup
 전반적인 부분들을 모두 한꺼번에 다루려고 하다보니 글이 길어져 크게 중요하지 않은 부분들은 많이 덜어내었다. 아직도 이야기 할 것들이 많다.
 
 기획연재로 천천히 풀어가 보려한다.
-

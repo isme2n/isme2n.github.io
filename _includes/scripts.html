@@ -11,8 +11,9 @@
 
 {% capture icons_url %}{% link assets/icomoon/style.css %}{% endcapture %}
 <!--[if gt IE 8]><!---->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 <script>
-  WebFontConfig = {
+  WebFont.load({
     {% unless site.no_google_fonts %}
     google: {
       families: '{{ google_fonts }}'.split('|')
@@ -23,8 +24,7 @@
       families: ['icomoon'],
       urls: ['{{ icons_url | relative_url }}']
     }
-  };
-  loadJSDeferred('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+  });
 </script>
 <!--<![endif]-->
 

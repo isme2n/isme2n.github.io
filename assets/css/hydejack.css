@@ -25,10 +25,6 @@
   height:300px;
 }
 
-.markdown-body {
-  font-family: 'Lato', sans-serif;
-}
-
 .head-image {
   max-height:300px;
   display: flex;

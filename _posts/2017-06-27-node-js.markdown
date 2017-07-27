@@ -53,6 +53,17 @@ Node js와 비동기 프로그래밍에 대한 이야기를 적어보려한다. 
 
 비동기처리방식은 하나의 요청 처리가 끝나기 전에 제어권을 다음 요청에게 넘기게 된다. 요청의 처리는 다른 곳에 맡기고 다음 처리를 받는것이다. I/O 논블로킹 방식이라고 할 수 있다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## Node.js의 비동기처리
 
 ---

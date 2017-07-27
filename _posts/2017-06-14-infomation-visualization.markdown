@@ -34,6 +34,17 @@ D3등과 같은 툴로 인해 정보를 시각화 하는데에 많은 사람들�
 
 - Visual Analytics
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 정보시각화의 특징
 
 정보시각화는 0.1초만에 많은 데이터를 전달하기를 원하는 니즈에 맞추어 발전해왔다.  더 많은 정보를 빠르고 정확하게 전달하기 위하여 정보시각화는 데이터또는 시각자료를 프로세싱이나 CG등등의 기술들로 적절히 가공하게 된다.
