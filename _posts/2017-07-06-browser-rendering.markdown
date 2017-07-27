@@ -42,17 +42,6 @@ tags: web devlog
 
 6. 웹페이지를 그린다.
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-format="fluid"
-     data-ad-layout="in-article"
-     data-ad-client="ca-pub-9134477021095729"
-     data-ad-slot="3873336698"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 ## 심화공부
 
 ---
@@ -77,6 +66,17 @@ CSS 파싱은 cascading규칙(부모의 특성을 자식이 이어받음)이 추
 
 CSSOM이 구성이 되어야 다음 과정을 밟을 수 있기 때문에, CSS는 렌더링의 블라킹 요소라고도 한다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ### 4. Render Tree
 
 DOM과 CSSOM을 합쳐 Render Tree를 만든다. Render Tree는 DOM Tree에 있는 것들 중에 실제 보이는 것들로만 이루어진다.
@@ -100,17 +100,6 @@ Render Object의 필요에 따라 Render Layer가 만들어진다. 그리고 Ren
 - z-index가 낮은 형제 요소가 레어이로 구성된 경우
 
 일반적인 상황이라면 레이어는 하나만 사용하게 된다.
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-format="fluid"
-     data-ad-layout="in-article"
-     data-ad-client="ca-pub-9134477021095729"
-     data-ad-slot="3873336698"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 ### 5. Layout
 
