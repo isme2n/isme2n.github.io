@@ -27,6 +27,17 @@ comments: true
 
 이런 장점에도 불구하고 웹폰트의 사용을 고려하게 만드는 문제점들이 몇가지 있다.
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-9134477021095729"
+     data-ad-slot="3873336698"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## 웹폰트의 문제
 
 ---
