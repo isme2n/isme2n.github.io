@@ -15,7 +15,6 @@
   padding-bottom: 6%;
   word-wrap: break-word;
   font-size: 16px;
-  word-spacing: 2px;
 }
 
 
@@ -25,6 +24,10 @@
   height:300px;
 }
 
+}
+
+.markdown-body {
+    word-spacing: 1.8px;
 }
 
 @media(min-width: 700px) {
