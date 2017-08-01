@@ -42,10 +42,14 @@
   height:300px;
 }
 
-.head-image {
+.head-image{
   max-height:300px;
   display: flex;
   justify-content: center;
+}
+
+.head-image img {
+    object-fit: contain;
 }
 
 .markdown-body p {
