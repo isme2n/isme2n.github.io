@@ -25,22 +25,23 @@
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   {% unless include.excerpt %}
     <div class="markdown-body">
-    <style>
-    .myAd1190 { display:block; width:98%; height: 280px; }
-    @media(min-width: 600px) { .myAd1190 { display: none; } }
-    </style>
-    <ins class="adsbygoogle myAd1190"
-        data-ad-client="ca-pub-9134477021095729"
-        data-ad-slot="6559875097"
-        ></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
+
 {% if post.header-img %}<div class="head-image"><img src="{{ site.url }}/{% if post.header-img %}assets/{{ post.header-img }}{% endif %}"/></div>
 <br/>{% elsif tag.header-img %}
 <div class="head-image"><img src="{{ site.url }}/assets/{{ tag.header-img }}"/></div>
 <br/>{% endif %}
+<style>
+.myAd1190 { display:block; width:98%; height: 280px; }
+@media(min-width: 600px) { .myAd1190 { display: none; } }
+</style>
+<ins class="adsbygoogle myAd1190"
+    data-ad-client="ca-pub-9134477021095729"
+    data-ad-slot="6559875097"
+    ></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br/>
       {{ post.content }}
       <br/>
       <br/>
