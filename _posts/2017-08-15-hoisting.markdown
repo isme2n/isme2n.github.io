@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[자바스크립트]호이스팅"
-subtitle:   "호이스팅"
+title:  "[자바스크립트]호이스팅(hoisting)"
+subtitle:   "호이스팅 (hoisting)"
 categories: devlog
 tags: javascript
 comments: true
