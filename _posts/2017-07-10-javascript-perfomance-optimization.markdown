@@ -18,7 +18,7 @@ tags: devlog javascript
 
 ```js
 var result;
-if( !some_var ){
+if( some_var ){
     result = some_var;
 }else{
     result = 'default value';
@@ -176,31 +176,6 @@ var l = arr.length;
 for (var i = 0; i < l; i++) {
     ...
 }
-
-```
-
-### array type
-
-배열의 타입이 변경되면 성능 저하가 발생하므로 타입을 관리하는 것이 좋다.
-
-```js
-
-//타입이 변경되는 예
-var arr = [];
-
-for(var i=0; i<1000; i++){
-    arr[i] = i;
-}
-arr[999] = "it occurs array type changing";
-
-// 개선
-var arr =["dummy string"];
-
-for(var i=0; i<1000; i++){
-    arr[i] = i;
-}
-
-arr[999] = "this is string";
 
 ```
 
