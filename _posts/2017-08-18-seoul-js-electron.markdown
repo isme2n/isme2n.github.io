@@ -3,7 +3,7 @@ layout: post
 title:  "[seoul.js] - Electron에서 자바스크립트소스 보호"
 subtitle:   "seoul.js - 밋업"
 categories: review
-tags: events
+tags: event
 comments: true
 ---
 

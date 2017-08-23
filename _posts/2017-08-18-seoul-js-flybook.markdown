@@ -3,7 +3,7 @@ layout: post
 title:  "[seoul.js] - flybook"
 subtitle:   "seoul.js - 밋업"
 categories: review
-tags: events
+tags: event
 comments: true
 ---
 

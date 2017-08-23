@@ -3,7 +3,7 @@ layout: post
 title:  "[GDG] - Reactive Programming"
 subtitle:   "Google Developers Group Campus Summer Party"
 categories: review
-tags: events
+tags: event
 comments: true
 ---
 
