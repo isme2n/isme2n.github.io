@@ -81,6 +81,8 @@
 }
 
 .markdown-body img {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
