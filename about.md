@@ -47,6 +47,10 @@ CTO가 되는게 가장 큰 직업적 목표입니다.
 
 - [이미지필터](https://github.com/isme2n/react-image-filter-app) - 캔버스 이미지 필터를 공부하며 만든 샘플 앱
 
+## 발표
+
+- [GDG Summer Party 테크니컬 세션 - 자바스크립트 제대로 알기](https://www.slideshare.net/MinPark48/ss-79004233)
+
 ## 하고싶은 말
 
 다양한 사이드 프로젝트 제안, 친구 제안, 번개 제안 등등 해주시면 좋아합니다.
