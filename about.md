@@ -51,6 +51,10 @@ CTO가 되는게 가장 큰 직업적 목표입니다.
 
 - [GDG Summer Party 테크니컬 세션 - 자바스크립트 제대로 알기](https://www.slideshare.net/MinPark48/ss-79004233)
 
+## 강의
+
+- [React로 라이브 컴파일러 만들기](https://www.youtube.com/playlist?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W)
+
 ## 하고싶은 말
 
 다양한 사이드 프로젝트 제안, 친구 제안, 번개 제안 등등 해주시면 좋아합니다.
