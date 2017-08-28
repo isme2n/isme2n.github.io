@@ -45,6 +45,8 @@ CTO가 되는게 가장 큰 직업적 목표입니다.
 
 - [secretary](https://chrome.google.com/webstore/detail/secretary/bijcgcgbhmeemlnidoigdcnokggknikb?hl=ko) - 기사요약 크롬 확장서비스
 
+- [이미지필터](https://github.com/isme2n/react-image-filter-app) - 캔버스 이미지 필터를 공부하며 만든 샘플 앱
+
 ## 하고싶은 말
 
 다양한 사이드 프로젝트 제안, 친구 제안, 번개 제안 등등 해주시면 좋아합니다.
