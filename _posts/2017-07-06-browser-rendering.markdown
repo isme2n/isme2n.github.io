@@ -66,6 +66,16 @@ CSS 파싱은 cascading규칙(부모의 특성을 자식이 이어받음)이 추
 
 CSSOM이 구성이 되어야 다음 과정을 밟을 수 있기 때문에, CSS는 렌더링의 블라킹 요소라고도 한다.
 
+### 4. Render Tree
+
+DOM과 CSSOM을 합쳐 Render Tree를 만든다. Render Tree는 DOM Tree에 있는 것들 중에 실제 보이는 것들로만 이루어진다.
+
+즉, display:none으로 설정되어 있는 것은 DOM Tree에 있어도 Render Tree에는 없다. 마찬가지로 head태그안의 메타내용들은 Render Tree에는 존재하지 않는다.
+
+Render Tree에는 Render Object Tree, Render Layer Tree, Render Style Tree, InlineBox Tree등이 포함되어있다.
+
+Render Object Tree가 보이는 것들로 이루어진 트리이다. block, inline, image, text 등등의 Object가 있는데, div는 block, span은 inline 요소에 배정되는 것이다.
+
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
@@ -76,16 +86,6 @@ CSSOM이 구성이 되어야 다음 과정을 밟을 수 있기 때문에, CSS�
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
-### 4. Render Tree
-
-DOM과 CSSOM을 합쳐 Render Tree를 만든다. Render Tree는 DOM Tree에 있는 것들 중에 실제 보이는 것들로만 이루어진다.
-
-즉, display:none으로 설정되어 있는 것은 DOM Tree에 있어도 Render Tree에는 없다. 마찬가지로 head태그안의 메타내용들은 Render Tree에는 존재하지 않는다.
-
-Render Tree에는 Render Object Tree, Render Layer Tree, Render Style Tree, InlineBox Tree등이 포함되어있다.
-
-Render Object Tree가 보이는 것들로 이루어진 트리이다. block, inline, image, text 등등의 Object가 있는데, div는 block, p는 inline 요소에 배정되는 것이다.
 
 Render Object의 필요에 따라 Render Layer가 만들어진다. 그리고 Render Layer중에 GPU처리가 필요하면 Graphic Layer가 만들어진다. 대표적인 예는 아래와 같다.
 
