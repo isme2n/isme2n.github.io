@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[DEVIEW 2017] Typescript가 그대를 이롭게 할지니!"
+title:  "[FECONF 2017] Typescript가 그대를 이롭게 할지니!"
 subtitle:   "Deview"
 categories: review
 tags: event

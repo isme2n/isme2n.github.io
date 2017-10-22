@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[DEVIEW 2017] redux thunk에서 redux saga로 이사하기"
+title:  "[FECONF 2017] redux thunk에서 redux saga로 이사하기"
 subtitle:   "Deview"
 categories: review
 tags: event

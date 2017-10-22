@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[DEVIEW 2017] RxJS 써야겠어요? 안써야겠어요?"
+title:  "[FECONF 2017] RxJS 써야겠어요? 안써야겠어요?"
 subtitle:   "Deview"
 categories: review
 tags: event
