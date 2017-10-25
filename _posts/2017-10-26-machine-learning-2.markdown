@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[머신러닝 배우기] 1.머신러닝의 분류"
+title:  "[머신러닝 배우기] 2.머신러닝의 분류"
 subtitle:   "ML"
 categories: devlog
 tags: ml
