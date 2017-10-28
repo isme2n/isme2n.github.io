@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[머신러닝 배우기] 3.머신러닝의 주요 개념 - 1"
+title:  "[머신러닝 배우기] 3.머신러닝의 주요 개념 - 모델"
 subtitle:   "ML"
 categories: devlog
 tags: ml
