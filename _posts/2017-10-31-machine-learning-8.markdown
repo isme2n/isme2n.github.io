@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[머신러닝 배우기] 7.데이터 - 데이터 표준화와 문제유형"
+title:  "[머신러닝 배우기] 8.데이터 - 데이터 표준화와 문제유형"
 subtitle:   "ML"
 categories: devlog
 tags: ml
