@@ -4,7 +4,7 @@ layout: base
 
 {% assign paginator.posts = site.tags[page.slug] | where: "categories", page.category %}
 
-{% for post in posts %}
+{% for post in paginator.posts %}
   {% include post.html post=post link_title=true excerpt=true %}
 {% endfor %}
 
