@@ -32,7 +32,7 @@ function resizeCallback() {
 
 function menuClickClallback(e) {
   if (!window.isDesktop) {
-    // e.preventDefault();
+    e.preventDefault();
     window.drawer.toggle();
   }
 }
