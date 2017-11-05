@@ -40,11 +40,16 @@
 
   .ad-second{
     text-align: center;
+    display: none;
   }
 
   @media screen {
     max-width: 38rem;
     min-height: 100vh;
+
+    .ad-second{
+      display: none;
+    }
   }
 
   @media screen and (min-width: $break-point-2) {
