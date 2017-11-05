@@ -38,9 +38,6 @@
     text-align: center;
   }
 
-  .ad-second{
-    text-align: center;
-  }
 
   @media screen {
     max-width: 38rem;
@@ -55,6 +52,11 @@
     margin-left: 20rem;
     margin-right: 1rem;
     padding: 4rem 1rem 12rem;
+
+    .ad-second{
+      text-align: center;
+      display: block;
+    }
   }
 
   @media screen and (min-width: $break-point-3) {
