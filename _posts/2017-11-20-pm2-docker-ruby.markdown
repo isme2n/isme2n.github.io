@@ -54,7 +54,7 @@ comments: true
 {
   "apps" : [{
     "name"        : "worker",
-    "script"      : "./worker.js",
+    "script"      : "./worker.rb",
     "watch"       : true,
     "env": {
       "NODE_ENV": "development"
@@ -64,7 +64,7 @@ comments: true
     }
   },{
     "name"       : "api-app",
-    "script"     : "./api.js",
+    "script"     : "./api.rb",
     "instances"  : 4,
     "exec_mode"  : "cluster"
   }]
