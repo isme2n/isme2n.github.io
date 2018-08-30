@@ -2,29 +2,30 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title:               Aiden
+title:               Codelog
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://isme2n.github.io
+url:                 https://yeo0.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
 baseurl:             ""
 
 # A very short description of your page
-tagline:             가장 게으르기위해 가장 부지런한 개발자
+tagline:             Student / 데싸 꿈나무
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  게으르기 때문에 게발자.
-  글쓰는 걸 좋아하고, 디자인과 개발을 좋아한다.
+  
+  지도가 좋아요. 공부도 좋아요.
+  
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              aiden min
-  email:             zoqozqz@gmail.com
+  name:              Yeoyoung Na
+  email:             wooli6@naver.com
 
 # Fallback image and color
 image:               /assets/img/nap.jpg
@@ -48,10 +49,10 @@ google_fonts:        Lato
 google_analytics:    UA-92346434-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
-disqus_shortname:    isme2n
+disqus_shortname:    yeo0
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2017. by isme2n'
+copyright:           '&copy; 2017. by Yeoyoung Na'
 
 # Format of the permalinks
 permalink:           pretty
@@ -111,6 +112,7 @@ exclude:
   - package-lock.json
   - Gemfile
   - Gemfile.lock
+  - vendor
 
 kramdown:
   footnote_backlink: '&#x21a9;&#xfe0e;'
@@ -128,3 +130,13 @@ compress_html:
 
 sass:
   style:             compressed
+  
+ 
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: [search.html, index.html, tags.html]
+    categories: []
+    tags: []
