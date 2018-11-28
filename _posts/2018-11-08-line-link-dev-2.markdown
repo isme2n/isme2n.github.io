@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[BlockChain] 라인 링크 데브 2018 - 2"
-subtitle:   "BlockChain"
+title: "[BlockChain] 라인 링크 데브 2018 - 2"
+subtitle: "BlockChain"
 categories: review
 tags: event
 comments: true
@@ -23,7 +23,7 @@ comments: true
 
 ---
 
-활성화된 서비스에서 사용자 끌어오기, 
+활성화된 서비스에서 사용자 끌어오기,
 
 블록체인에 대해 잘 모르는, 스마트폰 작동 할 줄 아는
 
@@ -69,6 +69,6 @@ ab180 빅데이터 분석
 
 ### 발전1: 사이드체인기술
 
-엔터프라이즈 데이터 프라이버시, 비용절감, 속도 및 확장성 
+엔터프라이즈 데이터 프라이버시, 비용절감, 속도 및 확장성
 
 ### 발전2: 세컨트파티 데이터 거래

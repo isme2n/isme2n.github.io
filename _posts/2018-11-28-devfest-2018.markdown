@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[BlockChain] 라인 링크 데브 2018 - 3"
+title: "[Devfest] 데브페스트 웹테크 2018"
 subtitle: "BlockChain"
 categories: review
 tags: event
