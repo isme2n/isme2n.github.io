@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[함수형 자바스크립트]함수형 자바스크립트"
+title:  "[함수형 자바스크립트] 1.함수형 자바스크립트"
 subtitle:   "함수형 자바스크립트"
 categories: devlog
 tags: nodejs javascript
