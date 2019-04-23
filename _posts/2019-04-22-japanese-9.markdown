@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[일어]7. 동사의 명령, 주고 받는 동사"
+title:  "[일어]9. 동사의 명령, 주고 받는 동사"
 subtitle:   "일어"
 categories: tip
 tags: japan

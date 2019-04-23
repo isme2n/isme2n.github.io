@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[일어]7. 동사의 가정"
+title:  "[일어]8. 동사의 가정"
 subtitle:   "일어"
 categories: tip
 tags: japan

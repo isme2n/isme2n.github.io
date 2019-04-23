@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[일어]6. 동사의 가능, 의지, 권유"
+title:  "[일어]7. 동사의 가능, 의지, 권유"
 subtitle:   "일어"
 categories: tip
 tags: japan

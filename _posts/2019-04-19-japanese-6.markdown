@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[일어]5. 동사의 て 형과 た 형"
+title:  "[일어]6. 동사의 て 형과 た 형"
 subtitle:   "일어"
 categories: tip
 tags: japan

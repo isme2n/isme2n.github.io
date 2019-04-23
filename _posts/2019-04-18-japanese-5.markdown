@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[일어]4. 조사"
+title:  "[일어]5. 조사"
 subtitle:   "일어"
 categories: tip
 tags: japan
