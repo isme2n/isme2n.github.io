@@ -72,4 +72,6 @@ tags: movie
 
 ---
 
+<div class='centered-product'>
 <iframe src="https://coupa.ng/bhQK9d" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>

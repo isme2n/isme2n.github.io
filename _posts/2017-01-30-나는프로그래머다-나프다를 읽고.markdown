@@ -36,6 +36,8 @@ header-img: "/img/i-am-programmer.jpg"
 
 ---
 
+<div class='centered-product'>
 <iframe src="https://coupa.ng/bhQL44" width="120" height="240" frameborder="0" scrolling="no"></iframe>
 
 <iframe src="https://coupa.ng/bhQL4Q" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>

@@ -57,4 +57,6 @@ header-img: img/modu-python.jpeg
 
 ---
 
+<div class='centered-product'>
 <iframe src="https://coupa.ng/bhQL4l" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
