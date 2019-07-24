@@ -45,4 +45,6 @@ tags: things
 
 다음 포스팅에서는 개봉과 사용에 대해서 알아보겠습니다.
 
+---
+
 <iframe src="https://coupa.ng/bhQL0Z" width="120" height="240" frameborder="0" scrolling="no"></iframe>
