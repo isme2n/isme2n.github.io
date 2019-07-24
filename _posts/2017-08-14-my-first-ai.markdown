@@ -25,3 +25,5 @@ comments: true
 ## 추천
 
 인공지능에 대한 감을 잡고싶은 사람들이라면 한 번 읽어보자. 또는 인공지능 공부에 뛰어들고싶지만 막막했던 사람들에게도 추천한다.
+
+<iframe src="https://coupa.ng/bhQL3V" width="120" height="240" frameborder="0" scrolling="no"></iframe>

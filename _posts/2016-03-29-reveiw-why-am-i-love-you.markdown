@@ -69,3 +69,5 @@ tags: movie
  지금 죽을 것 같은 이별을 겪었어도, 다시 사랑할 수 있고, 곧 치유가 됩니다. 소설 속 주인공 '나'가 도와줄 거에요.
 
  지금까지 '알랭 드 보통'의 소설 '왜 나는 너를 사랑하는가'에 대해서 였습니다.
+
+<iframe src="https://coupa.ng/bhQK9d" width="120" height="240" frameborder="0" scrolling="no"></iframe>

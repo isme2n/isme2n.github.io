@@ -33,3 +33,7 @@ header-img: "/img/i-am-programmer.jpg"
 ---
 
 이 책을 읽고 많은 정보를 얻었지만, 정말 배울 수 있었던건 개발자는 끊임없이 배워야 한다는 것이었다. 저 선배들처럼 나도 많은 것을 알고 많은 것을 나누어 줄 수 있는 사람이 되고싶다.
+
+<iframe src="https://coupa.ng/bhQL44" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+
+<iframe src="https://coupa.ng/bhQL4Q" width="120" height="240" frameborder="0" scrolling="no"></iframe>
