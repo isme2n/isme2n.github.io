@@ -3,7 +3,7 @@
 {% capture include_to_scssify %}{% include styles/style.scss %}{% endcapture %}
 {% include copyright-header.txt %}{{ include_to_scssify | scssify }}
 
-.centerd-product {
+.centered-product {
   display: flex;
   justify-content: center;
 }
