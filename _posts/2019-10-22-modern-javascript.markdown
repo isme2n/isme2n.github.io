@@ -3,7 +3,7 @@ layout: post
 title: "[모던자바스크립트] 1.자바스크립트 소개"
 subtitle: "modern javascript, 자바스크립트 소개"
 categories: devlog
-tags: ml
+tags: javascript
 comments: true
 ---
 
