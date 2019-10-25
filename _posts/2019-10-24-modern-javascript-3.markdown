@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[모던자바스크립트] 2. 자바스크립트 기초"
+title: "[모던자바스크립트] 3. 자바스크립트 기초"
 subtitle: "modern javascript, 자바스크립트 기초"
 categories: devlog
 tags: javascript
@@ -40,7 +40,8 @@ bug.html 페이지를 열면 자바스크립트 코드에 오류가 있다. 개
 
 Node.js로 서버환경에서도 사용할 수 있지만, 브라우저를 기준으로 자바스크립트를 공부해 보자. `alert`같은 브라우저 함수를 사용할 예정이니 Node.js를 사용하시는분들은 이런부분들을 조심. 
 
-``` <!DOCTYPE HTML>
+```
+<!DOCTYPE HTML>
 <html>
 
 <body>

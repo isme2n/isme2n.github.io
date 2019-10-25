@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[모던자바스크립트] 1. 코드에디터"
+title: "[모던자바스크립트] 2. 코드에디터"
 subtitle: "modern javascript, 코드에디터"
 categories: devlog
 tags: javascript
