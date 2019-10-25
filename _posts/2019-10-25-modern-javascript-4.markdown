@@ -20,7 +20,8 @@ alert('Hello'); alert('World');
 
 일반적으로는 별도의 줄에 작성한다.
 
-``` alert('Hello');
+```
+alert('Hello');
 alert('World');
 ```
 
