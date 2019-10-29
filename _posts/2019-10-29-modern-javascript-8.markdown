@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[모던자바스크립트] 7. 타입변환"
-subtitle: "modern javascript, 타입변환"
+title: "[모던자바스크립트] 8. 연산자"
+subtitle: "modern javascript, 연산자"
 categories: devlog
 tags: javascript
 comments: true
@@ -10,97 +10,236 @@ comments: true
 > 이 글은 번역 및 정리 글입니다.
 > 출처: javascript.info
 
-# 타입 변환
+# 연산자
 
-대부분의 경우 자바스크립트는 주어진 값을 올바른 유형으로 자동 변환한다.
+## 용어
 
-예를 들면 `alert`는 자동으로 모든 값을 문자열로 변환하여 표시한다. 수학 연산이라면 숫자로 변환한다.
+- 피연산자: 연산자가 적용되는 것. `5 * 2`에는 두개의 피연산자가 있다. `5`와 `2`
+- 단항: 피연산자가 하나인 연산. 단항 부정이라고하면 하나의 연산자의 부호를 바꾸는것일 이야기한다.
+- 이진: 피연산자가 두개인 연산
 
-하지만 값을 명시적으로 예상 자료형으로 변환해야 하는 경우도 있다.
+## 문자열 연결, 이진 +
 
-## 문자열 변환
-
-`String()`을 사용하여 명시적으로 변환가능하다.
-
-```
-let value = true;
-alert(typeof value); // boolean
-
-value = String(value); // value 는 이제 "true"
-alert(typeof value); // string
-```
-
-## 숫자 변환
-
-보통 연산자가 있다면 자동으로 변환된다.
+더하기 연산자는 숫자를 더하거나, 문자열을 병합한다.
 
 ```
-alert( "6" / "2" ); // 3
+let s = "my" + "string";
+alert(s); // mystring
 ```
 
-`Number()`를 사용하여 명시적으로 변환가능하다.
+피연산자중 하나가 문자열이면 다른 피연산자도 문자열로 변환된다.
 
 ```
-let str = "123";
-alert(typeof str); // string
-
-let num = Number(str); // str은 이제 123
-
-alert(typeof num); // number
+alert( '1' + 2 ); // "12"
+alert( 2 + '1' ); // "21"
 ```
 
-숫자가 아닌 값을 넣으면 `NaN`이 반환된다.
+하지만 작업은 왼쪽에서부터 진행되기 때문에 문자열을 만나기전에 숫자 계산만 먼저 할 수도 있다.
 
 ```
-let age = Number("an arbitrary string instead of a number");
-
-alert(age); // NaN
+alert(2 + 2 + '1' ); // "221”이 아니라 "41" 이다.
 ```
 
-- undefined: NaN
-- null: 0
-- true, false: 1, 0
-
-`+` 더하기는 어느 하나가 문자열이라면 문자열 결합연산을 한다.
+문자열 연결은 이진 `+`의 특수기능이다. 다른 산술 연산자는 숫자로만 작동하며 항상 피연산자를 숫자로 변환한다.
 
 ```
-alert( 1 + '2' ); // '12'
+alert( 2 - '1' ); // 1
+alert( '6' / '2' ); // 3
 ```
 
-## 부울 변환
+## 숫자 변환, 단항 +
 
-- falsy 값(0, null, undefined, NaN, false 등)들은 모두 `false`로 변환된다.
-- 다른값들은 `true`
+`+`가 단항에 적용되면 숫자일 경우는 아무일도, 숫자가 아닌경우에는 숫자로 변환시킨다.
 
 ```
-alert( Boolean(1) ); // true
-alert( Boolean(0) ); // false
+// 숫자면 아무일도
+let x = 1;
+alert( +x ); // 1
 
-alert( Boolean("hello") ); // true
-alert( Boolean("") ); // false
+let y = -2;
+alert( +y ); // -2
 
-alert( Boolean("0") ); // true
-alert( Boolean(" ") ); //  true
+// 숫자가 아니면 숫자로
+alert( +true ); // 1
+alert( +"" );   // 0
+```
+
+`Number()`와 동일한 기능을 수행하지만 더 짧게 쓸 수 있다.
+
+```
+let apples = "2";
+let oranges = "3";
+
+// 변환하여 계산하기
+alert( +apples + +oranges ); // 5
+
+// 이거랑 같지만 더 짧다
+// alert( Number(apples) + Number(oranges) ); // 5
+```
+
+## 할당 =
+
+할당연산자인 `=`은 우선순위가 매우 낮아 다른 계산들이 수행 된 다음에 작동한다.
+
+```
+let x = 2 * 2 + 1;
+
+alert( x ); // 5
+```
+
+할당은 연결도 가능하다.
+
+```
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4
+```
+
+이 때 오른쪽에서 왼쪽으로 할당된다.
+
+또한, 할당연산자는 값을 반환한다.
+
+```
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert( a ); // 3
+alert( c ); // 0
+```
+
+신기하지만 읽기 어렵기 때문에 이런코드는 작성하지 않도록하자.
+
+## 나머지 %
+
+나머지 연산자 `%`는 정수 나누기의 나머지이다.
+
+```
+alert( 5 % 2 ); // 1
+alert( 8 % 3 ); // 2
+alert( 6 % 3 ); // 0
+```
+
+## 지수 \*\*
+
+```
+alert( 2 ** 2 ); // 4  (2 * 2)
+alert( 2 ** 3 ); // 8  (2 * 2 * 2)
+alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2)
+```
+
+## 증 ++/감 —
+
+```
+let counter = 2;
+counter++;        // counter = counter + 1
+alert( counter ); // 3
+
+let counter = 2;
+counter--;        // counter = counter - 1
+alert( counter ); // 1
+```
+
+증감은 변수에만 적용할 수 있으며 `5++` 같은경우는 오류가 발생한다.
+
+증감은 접두로도 접미로도 사용될 수 있는데 차이점이 있으니 살펴보자
+
+```
+let counter = 1;
+let a = ++counter; // (*)
+
+alert(a); // 2
+alert(counter); // 2
+```
+
+``
+let counter = 1;
+let a = counter++; // (\*) ++counter 를 counter++ 로 바꿈
+
+alert(a); // 1
+alert(counter); // 2
+
+```
+
+## 비트 연산자
+
+연산자 목록 :
+* AND ( &)
+* 또는 ( |)
+* XOR ( ^)
+* NOT ( ~)
+* 왼쪽 이동 ( <<)
+* 오른쪽 이동 ( >>)
+* 제로 채우기 오른쪽 시프트 ( >>>)
+
+일반적으로 비트를 다룰일은 고수준언어에서는 잦지 않기때문에 잘 사용되지 않는다.
+
+## 제자리에서 수정
+
+`+=` `*=` `/=` `-=` 등이 있다.
+
+```
+
+let n = 2;
+n += 5; // n = 7 (n = n + 5)
+n _= 2; // n = 14 (n = n _ 2)
+
+alert( n ); // 14
+
+```
+
+우선순위로 인해 대부분의 다른 계산 후에 실행된다.
+
+```
+
+let n = 2;
+
+n \*= 3 + 5;
+
+alert( n ); // 16 (n \*= 8)
+
+```
+
+## 쉼표 ,
+
+쉼표연산자는 특이한 연산자 중에 하나이다. 쉼표로 나누어진 모든게 평가되지만 마지막 결과만 반환된다.
+
+```
+
+let a = (1 + 2, 3 + 4);
+
+alert( a ); // 7 ( 1+2 는 계산 뒤 삭제되고, 3+4만 계산되어 반환된다.)
+
 ```
 
 # 숙제
 
-다음 표현의 결과는?
+## 접미사 및 접두사
 
 ```
-"" + 1 + 0
-"" - 1 + 0
-true + false
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-"  -9  " + 5
-"  -9  " - 5
-null + 1
-undefined + 1
-" \t \n" - 2
+
+let a = 1, b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?
+
+```
+
+## 결과는?
+
+a와 x의 결과는?
+
+```
+
+let a = 2;
+
+let x = 1 + (a \*= 2);
+
+```
+
 ```
