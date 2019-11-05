@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[모던자바스크립트] 19. 코멘트"
+title: "[모던자바스크립트] 20. 코멘트"
 subtitle: "modern javascript, 코멘트"
 categories: devlog
 tags: javascript
