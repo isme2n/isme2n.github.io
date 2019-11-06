@@ -22,7 +22,7 @@ comments: true
 
 ### 수동방식으로는 놓치는게 있을 수 있다.
 
-예를 들어 `f(1)`함수가 잘 작동하고 `f(2)`가 잘 작동하지 않는다면, `f(2)`를 수정해서 확인하고 넘어가는게 맞는걸까? 정답은 아니다. 우리는 `f(1)`을 다시 확인해야 한다. 수정사항으로 인해 기존 결과가 달라졌을 수 있기때문이다. 이런 경우를 놓치고 가는경우가 많다.
+예를 들어 `f(1)`함수가 잘 작동하고 `f(2)`가 잘 작동하지 않는다면, `f(2)`를 수정해서 확인하고 넘어가는게 맞는걸까? 정답은 `아니다`. 우리는 `f(1)`을 다시 확인해야 한다. 수정사항으로 인해 기존 결과가 달라졌을 수 있기때문이다. 이런 경우를 놓치고 가는경우가 많다.
 
 우리는 자동화된 테스트를 별도로 작성하여 테스트를 확인할 필요가 있다.
 
@@ -78,61 +78,61 @@ describe("pow", function() {
 
 - Mocha: 테스트기능을 제공하고 실행한다.
 - Chai: 다양한 `assert`를 가지고 있는 라이브러리.
-- Sinon: 함수를 감시하고 내장 함수를 에뮬레이트하는 라이브러리
 
 Node.js를 사용할수도 있고 브라우저에서도 가능하다. 이 예제에서는 브라우저에서 진행한다.
 
 `mocha.html`을 만들고 아래 구문들을 작성하자.
 
-```js
+```html
 <!DOCTYPE html>
 <html>
-<head>
-  <!-- add mocha css, to show results -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-  <!-- add mocha framework code -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-  <script>
-    mocha.setup('bdd'); // minimal setup
-  </script>
-  <!-- add chai -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
-  <script>
-    // chai has a lot of stuff, let's make assert global
-    let assert = chai.assert;
-  </script>
-</head>
+  <head>
+    <!-- add mocha css, to show results -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
+    />
+    <!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd"); // minimal setup
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+    </script>
+  </head>
 
-<body>
+  <body>
+    <script>
+      function pow(x, n) {
+        /* function code is to be written, empty now */
+      }
+    </script>
 
-  <script>
-    function pow(x, n) {
-      /* function code is to be written, empty now */
-    }
-  </script>
+    <!-- the script with tests (describe, it...) -->
+    <script src="test.js"></script>
 
-  <!-- the script with tests (describe, it...) -->
-  <script src="test.js"></script>
+    <!-- the element with id="mocha" will contain test results -->
+    <div id="mocha"></div>
 
-  <!-- the element with id="mocha" will contain test results -->
-  <div id="mocha"></div>
-
-  <!-- run tests! -->
-  <script>
-    mocha.run();
-  </script>
-</body>
-
+    <!-- run tests! -->
+    <script>
+      mocha.run();
+    </script>
+  </body>
 </html>
 ```
 
 이 페이지는 다섯 부분으로 나눌 수 있다.
 
-1. <head> - 테스트를 위해 타사 라이브러리과 스타일을 추가 할 수 있다.
-2. <script> - 테스트를 위한 함수. 우리의 경우 `pow`
-3. 테스트 - 우리의 경우 외부 스크립트 test.js에서 describe("pow", ...)를 한다.
-4. HTML 요소 <div id="mocha">는 Mocha에서 결과를 출력하는 데 사용된다.
-5. 테스트는 명령으로 시작된다 mocha.run().
+1. `<head>` - 테스트를 위해 타사 라이브러리과 스타일을 추가 할 수 있다.
+2. `<script>` - 테스트를 위한 함수. 우리의 경우 `pow`
+3. 테스트 - 우리의 경우 외부 스크립트 test.js에서 `describe("pow", ...)`를 한다.
+4. HTML 요소 `<div id="mocha">`는 Mocha에서 결과를 출력하는 데 사용된다.
+5. 테스트는 명령으로 시작된다 `mocha.run()`.
 
 ![](../assets/img/2019-11-05-18-14-06.png)
 
@@ -140,7 +140,7 @@ Node.js를 사용할수도 있고 브라우저에서도 가능하다. 이 예제
 
 html코드에서 `pow`를 이렇게 작성해보자.
 
-```
+```js
 function pow(x, n) {
   return 8; // :) 사기를 쳐보자!
 }
@@ -158,24 +158,21 @@ function pow(x, n) {
 
 두가지 방법중 하나를 택할 수 있다.
 
-1. assert를 추가
+#### assert를 추가
 
-```
+```js
 describe("pow", function() {
-
   it("raises to n-th power", function() {
     assert.equal(pow(2, 3), 8);
     assert.equal(pow(3, 4), 81);
   });
-
 });
 ```
 
-2. 테스트를 하나 더 만들기
+#### 테스트를 하나 더 만들기
 
-```
+```js
 describe("pow", function() {
-
   it("2 의 3 승은 8", function() {
     assert.equal(pow(2, 3), 8);
   });
@@ -183,7 +180,6 @@ describe("pow", function() {
   it("3 의 4 승은 81", function() {
     assert.equal(pow(3, 4), 81);
   });
-
 });
 ```
 
@@ -279,7 +275,7 @@ describe("test", function() {
 
 이렇게 작성했다면 아래의 순서로 작동된다.
 
-```
+```js
 Testing started – before all tests (before)
 Before a test – enter a test (beforeEach)
 1
