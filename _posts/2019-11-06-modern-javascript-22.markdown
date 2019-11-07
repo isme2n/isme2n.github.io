@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[모던자바스크립트] 21. 폴리필"
+title: "[모던자바스크립트] 22. 폴리필"
 subtitle: "modern javascript, 폴리필"
 categories: devlog
 tags: javascript
