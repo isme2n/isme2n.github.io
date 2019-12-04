@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[12월] 생필품 위주의 쇼핑목록'
-subtitle: '12월, 생필품 위주의 쇼핑목록. 섬유탈취제, 구강청결제, 바디오일, 콜라, 의자'
+title: '[12월] 겨울 생필품 쇼핑목록 BEST 5'
+subtitle: '12월, 겨울 생필품 위주의 쇼핑목록. 섬유탈취제, 구강청결제, 바디오일, 콜라, 의자'
 categories: shopping
 tags: shopping
 comments: true
@@ -9,7 +9,7 @@ comments: true
 
 난 생각보다 청결에 신경을 꽤 쓰는 편이다.
 
-## 1. 나우푸드 100% 천연 호호바 오일
+## 1. [나우푸드 100% 천연 호호바 오일](https://coupa.ng/bko7Fu)
 
 <div class="row-center">
 <iframe src="https://coupa.ng/bko7Fu" width="100%" height="240" frameborder="0" scrolling="no"></iframe>
@@ -21,7 +21,7 @@ comments: true
 
 내 고통을 없애준 `정말 고마운 제품`. 나는 이 제품 덕분에 샤워하는 시간이 기다려진다.
 
-## 2. 리스테린 헬씨 브라이트
+## 2. [리스테린 헬씨 브라이트](https://coupa.ng/bko8w2)
 
 <div class="row-center">
 <iframe src="https://coupa.ng/bko8w2" width="100%" height="240" frameborder="0" scrolling="no"></iframe>
@@ -33,7 +33,7 @@ comments: true
 
 나같은경우 아침을 먹지 않은 날이면 이걸로만 끝내기도 한다.
 
-## 3. 페브리즈 내추리스 레몬그라스&진저
+## 3. [페브리즈 내추리스 레몬그라스&진저](https://coupa.ng/bko8Wl)
 
 <div class="row-center">
 <iframe src="https://coupa.ng/bko8Wl" width="100%" height="240" frameborder="0" scrolling="no"></iframe>
@@ -41,9 +41,9 @@ comments: true
 
 누구나 그렇듯 나도 냄새보다는 `향기로운 향`을 좋아하는 편이라 섬유탈취제를 상비해 놓는 편이다. 특히 가족과 함께 살때는 원인을 알 수 없는 악취가 어딘가에서 날 떄가 있기 때문에 무척 도움이 된다.
 
-이 향은 처음 구매해 보는 향이지만 평이 괜찮고 저렴하길래 3개들이로 구매하기로 했다.
+이 향은 처음 구매해 보는 향이지만 평이 괜찮고 저렴하길래 3개들이로 구매했다.
 
-## 4. 코카콜라 190ml x 30 x 3
+## 4. [코카콜라 190ml x 30 x 3](https://coupa.ng/bko9q4)
 
 <div class="row-center">
 <iframe src="https://coupa.ng/bko9q4" width="100%" height="240" frameborder="0" scrolling="no"></iframe>
@@ -55,13 +55,9 @@ comments: true
 
 몸 관리도 소홀히 할 수는 없어서 하루에 한캔이상은 마시지 않으려고 한다.
 
-## 5. 이케아 예르브피엘레트 의자
+## 5. [이케아 예르브피엘레트 의자](https://www.ikea.com/kr/ko/catalog/products/S19297195/)
 
-<div class="row-center">
-<iframe src="https://coupa.ng/bko9R5" width="120" height="240" frameborder="0" scrolling="no"></iframe>
-
-<iframe src="https://www.ikea.com/kr/ko/catalog/products/S19297195/" width="100%" height="240" frameborder="0" scrolling="no"></iframe>
-</div>
+[이케아 예르브피엘레트 의자](https://www.ikea.com/kr/ko/catalog/products/S19297195/)
 
 이케아 의자중 최상위권에 속하는 `마르쿠스`의 개선판이라고 볼 수 있다. 나는 키가 작지 않은편이지만 마르쿠스는 우리나라사람들에게는 너무 크다는 평이 많다.
 
