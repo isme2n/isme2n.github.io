@@ -4,7 +4,7 @@ title: '[모던자바스크립트] 29. 원시형의 메소드'
 subtitle: 'modern javascript, 원시형의 메소드'
 categories: devlog
 tags: javascript
-comments:
+comments: true
 ---
 
 > 이 글은 번역 및 정리 글입니다.
