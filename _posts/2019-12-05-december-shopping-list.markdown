@@ -7,11 +7,15 @@ tags: shopping
 comments: true
 ---
 
+> 상품 링크가 쿠팡일 경우, 링크를 통한 구매는 저에게 일정액의 수수료를 제공할 수 있습니다.
+
 난 생각보다 청결에 신경을 꽤 쓰는 편이다.
 
-## 나우푸드 100% 천연 호호바 오일
+## 1. 나우푸드 100% 천연 호호바 오일
 
+<div class="row-center">
 <iframe src="https://coupa.ng/bko7Fu" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
 
 나는 몸이 많이 건조한 편이다. 겨울에는 통증이 느껴질정도로 건조한데, 바디로션으로 커버도 잘 안되고(세타필이나 아비노 모두 사용해봤다) 샤워하고 나서 바르는 것도 번거롭고 괜히 찝찝함을 가지고 있다가 이번에 작은용량을 구매해 봤는데 효과가 좋아서 큰 걸 구매하게 되었다.
 
@@ -19,9 +23,11 @@ comments: true
 
 내 고통을 없애준 정말 고마운 제품.
 
-## 리스테린 헬씨 브라이트
+## 2. 리스테린 헬씨 브라이트
 
+<div class="row-center">
 <iframe src="https://coupa.ng/bko8w2" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
 
 이건 예전에 일본가면 꼭 사와야하는 제품으로 사람들이 많이 추천하던 제품이었다. 당시에는 우리나라에는 없는 제품이었지만, 용량이 대용량이라 `괜히 샀다 별로면 어떡하지` 라는 마음에 그냥 넘어갔던 제품이다.
 
@@ -29,17 +35,21 @@ comments: true
 
 나같은경우 아침을 먹지 않은 날이면 이걸로만 끝내기도 한다.
 
-## 페브리즈 내추리스 레몬그라스&진저
+## 3. 페브리즈 내추리스 레몬그라스&진저
 
+<div class="row-center">
 <iframe src="https://coupa.ng/bko8Wl" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
 
 누구나 그렇듯 나도 냄새보다는 `향기로운 향`을 좋아하는 편이라 섬유탈취제를 상비해 놓는 편이다. 특히 가족과 함께 살때는 원인을 알 수 없는 악취가 어딘가에서 날 떄가 있기 때문에 무척 도움이 된다.
 
 이 향은 처음 구매해 보는 향이지만 평이 괜찮고 저렴하길래 3개들이로 구매하기로 했다.
 
-## 코카콜라 190ml _ 30 _ 3
+## 4. 코카콜라 190ml x 30 x 3
 
+<div class="row-center">
 <iframe src="https://coupa.ng/bko9q4" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
 
 빠-밤! 나는 콜라를 좋아한다. 탄산이 가득한 콜라를 좋아해서 1.5리터는 마시지 않는다. 대신 작은 용량으로 마시는데, 185ml가 가장 알맞아서 마시고 있다. 엄청 조그마한데 생각보다 충분하다.
 
@@ -47,9 +57,11 @@ comments: true
 
 몸 관리도 소홀히 할 수는 없어서 하루에 한캔이상은 마시지 않으려고 한다.
 
-## 이케아 예르브피엘레트 의자
+## 5. 이케아 예르브피엘레트 의자
 
+<div class="row-center">
 <iframe src="https://coupa.ng/bko9R5" width="120" height="240" frameborder="0" scrolling="no"></iframe>
+</div>
 
 이케아 의자중 최상위권에 속하는 마르쿠스의 개선판이라고 볼 수 있다. 나는 키가 작지 않은편이지만 마르쿠스는 우리나라사람들에게는 너무 크다는 평이 많다.
 
