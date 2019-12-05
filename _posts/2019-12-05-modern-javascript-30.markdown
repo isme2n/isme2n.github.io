@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[모던자바스크립트] 29. 원시형의 메소드'
+title: '[모던자바스크립트] 30. 원시형의 메소드'
 subtitle: 'modern javascript, 원시형의 메소드'
 categories: devlog
 tags: javascript
