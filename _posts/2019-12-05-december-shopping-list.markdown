@@ -9,7 +9,7 @@ comments: true
 
 난 생각보다 청결에 신경을 꽤 쓰는 편이다.
 
-## 1. [나우푸드 240 천연 호호바 오일](https://coupa.ng/bko7Fu)
+## 1. [나우푸드 100% 천연 호호바 오일](https://coupa.ng/bko7Fu)
 
 <div class="row-center">
 <iframe src="https://coupa.ng/bko7Fu" width="240" height="240" frameborder="0" scrolling="no"></iframe>
